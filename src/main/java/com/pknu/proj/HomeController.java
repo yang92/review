@@ -24,8 +24,6 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		System.out.println("�ö���");
-		System.out.println("check");
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -33,7 +31,7 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		System.out.println("helloworld");
 		model.addAttribute("serverTime", formattedDate );
-		System.out.println("안녕?");
+		
 		//hkjhkjhkjhkj123
 		return "home";
 	}
