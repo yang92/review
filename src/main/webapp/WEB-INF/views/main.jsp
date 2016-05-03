@@ -7,6 +7,8 @@
 <title>MAIN</title>
 </head>
 <body>
-MAIN
+<h1><center>MAIN HERE</center></h1>
+<%@include file = "login.jsp" %>
+
 </body>
 </html>

@@ -15,7 +15,7 @@
 <body>
 	<form action="/proj/login.main" method="post">
 		<center>
-		<font size="20">HelloWorld</font><p/>
+		
 		아이디 : <input type="text" name="id"/><br />
 		비밀번호 : <input type="password" name="password"><br />
 		<input type="submit" value="LOGIN"/>
