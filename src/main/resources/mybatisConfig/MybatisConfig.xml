@@ -17,7 +17,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="MemberDto" type="com.lee.dormitory.dto.MemberDto" />
+		<typeAlias alias="MemberDto" type="com.pknu.proj.dto.MemberDto" />
 	</typeAliases>
 
 	<mappers>

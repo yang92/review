@@ -7,25 +7,30 @@
 	
 	<!--DataSource -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/dormitory"/>
+		<property name="jndiName" value="java:comp/env/yang92"/>
 		<property name="resourceRef" value="true"/>
 	</bean>
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!--Mybatis -->
 	<bean id="MemberDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.lee.dormitory.dao.MemberDao"/>
+		<property name="mapperInterface" value="com.pknu.proj.dao.MemberDao"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="configLocation" value="/WEB-INF/myBatis/MapperConfig.xml"/>
+		<property name="configLocation" value="classpath:/mybatisConfig/MybatisConfig.xml"/>
 	</bean>
 	
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"/>
 	</bean>
+	
+<!-- 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="bbsDao"> -->
+<!-- 		<property value="com.pknu.proj.dao.BBSDao" name="mapperInterface"/> -->
+<!-- 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/> -->
+<!-- 	</bean> -->
 	
 </beans>
