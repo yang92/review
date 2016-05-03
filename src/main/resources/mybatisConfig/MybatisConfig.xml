@@ -21,7 +21,7 @@
 	</typeAliases>
 
 	<mappers>
-		<mapper resource="sql/Member.xml"/>
+		<mapper resource="mapper/Member.xml"/>
 	</mappers>
 	
 	
