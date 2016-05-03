@@ -8,12 +8,12 @@
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>
 	function moveJoin() {
-		document.location.href="join.do";
+		document.location.href="join.main";
 	}
 </script>
 </head>
 <body>
-	<form action="/dormitory/login.do" method="post">
+	<form action="/proj/login.main" method="post">
 		<center>
 		<font size="20">HelloWorld</font><p/>
 		아이디 : <input type="text" name="id"/><br />

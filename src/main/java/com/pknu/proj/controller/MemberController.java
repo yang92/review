@@ -14,12 +14,12 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping(value="/login.do", method = RequestMethod.GET)
+	@RequestMapping(value="/login.main", method = RequestMethod.GET)
 	public String loginForm(){
 		
 		return "login";
 	}
-	@RequestMapping(value="/login.do", method = RequestMethod.POST)
+	@RequestMapping(value="/login.main", method = RequestMethod.POST)
 	public ModelAndView login(String id, String password){
 		ModelAndView mav = new ModelAndView();
 		int result = memberService.loginCheck(id, password);
@@ -39,12 +39,12 @@ public class MemberController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/join.do", method = RequestMethod.GET)
+	@RequestMapping(value="/join.main", method = RequestMethod.GET)
 	public String joinForm(){
 		return "join";
 	}
 	
-	@RequestMapping(value="/join.do", method = RequestMethod.POST)
+	@RequestMapping(value="/join.main", method = RequestMethod.POST)
 	public String join(MemberDto member){
 		memberService.insertMember(member);
 		return "login";

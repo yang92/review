@@ -9,12 +9,12 @@
 <script>
 
 	function moveLogin(){
-		document.location.href="login.do";
+		document.location.href="login.main";
 	}
 </script>
 </head>
 <body>
-	<form action="/dormitory/join.do" method="POST">
+	<form action="/proj/join.main" method="POST">
 		<center>
 			회원가입<br/>
 			아이디 : <input type="text" name="id"/><br />
