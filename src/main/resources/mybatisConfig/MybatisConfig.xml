@@ -17,7 +17,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="MemberDto" type="com.pknu.proj.dto.MemberDto" />
+		<typeAlias alias="memberDto" type="com.pknu.main.dto.MemberDto" />
 	</typeAliases>
 
 	<mappers>
