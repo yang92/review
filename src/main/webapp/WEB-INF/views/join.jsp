@@ -15,6 +15,7 @@
 </head>
 <body>
 <%@include file="join2.jsp"  %>
+<%@include file="birth.html" %>
 	<form action="/proj/join.main" method="POST">
 		<center>
 			회원가입<br/>

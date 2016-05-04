@@ -45,7 +45,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/join.main", method = RequestMethod.GET)
 	public String joinForm(){
-		return "join";
+		return "join2";
 	}
 	
 	@RequestMapping(value="/join.main", method = RequestMethod.POST)
