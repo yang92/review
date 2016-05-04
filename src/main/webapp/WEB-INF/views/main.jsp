@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,12 +25,46 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-<title>MAIN</title>
+<title>WEIVER!!</title>
+<script>
+function moveJoin() {
+	document.location.href="join.main";
+}
+</script>
 </head>
 <body>
 
-<center><img class="img-responsive" src="resources/images/weiver_logo_low.JPG" alt="Chania" width="400" height="100"></center>
-<!-- <center><img src="resources/images/mainLogo.jpg" width="400" height="100"></center> -->
-<%@ include file="login.jsp" %>
+<center><img class="img-responsive" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100"></center>
+    <div class="container">
+	<c:if test="${id!=null}">
+	<%@include file="loginOK.jsp" %>
+	</c:if>
+	<c:if test="${id==null}">
+      <form class="form-signin" action="/proj/login.main" method="post">
+        <div class="col-md-2 col-md-offset-10"><br/><br/>
+	        <label for="inputEmail" class="sr-only">Email address</label>
+	        <input type="text" id="id" name="id" class="form-control" placeholder="ID" required autofocus>
+	        
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+	        <div class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"> Remember me
+	          </label>
+	        </div>
+	        <div class="col-md-7 col-md-offset-6">
+		        <button class="btn btn-sm btn-primary btn-block" type="submit">Log in</button>
+		        <button class="btn btn-sm btn-primary btn-block" type="button" onclick="moveJoin()">Register</button>
+	        </div>
+        </div>
+      </form>	
+	</c:if>
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
 </body>
 </html>

@@ -22,20 +22,22 @@ public class MemberController {
 		return "login";
 	}
 	@RequestMapping(value="/login.main", method = RequestMethod.POST)
-	public ModelAndView login(String id, String password){
+	public ModelAndView login(String id, String password, HttpServletRequest req){
 		ModelAndView mav = new ModelAndView();
+		
 		int result = memberService.loginCheck(id, password);
 		
 		if(result == 1){
+			req.getSession().setAttribute("id", id);
 			mav.setViewName("main");
 		}
 		else if(result == 2){
 			System.out.println("비밀번호 오류");
-			mav.setViewName("login");
+			mav.setViewName("main");
 		}
 		else{
 			System.out.println("가입되지 않은 회원");
-			mav.setViewName("login");
+			mav.setViewName("main");
 		}
 		
 		return mav;
@@ -57,5 +59,10 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main");
 		return mav;
+	}
+	@RequestMapping("/logout.main")
+	public String logout(HttpServletRequest req){
+		req.getSession().setAttribute("id", null);
+		return "main";
 	}
 }
