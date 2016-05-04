@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,19 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-	<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <title>Signin Template for Bootstrap</title>
-
+    <title>Login</title>
+	<!-- Bootstrap -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="resources/css/font-awesome.min.css" media="screen" title="no title">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen" title="no title">
+	
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -41,9 +37,11 @@
     <div class="container">
 
       <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="col-md-6 col-md-offset-3"><br/><br/>
+<!-- 		<h2 class="form-signin-heading">Please sign in</h2> -->
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
@@ -52,6 +50,8 @@
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </div>
       </form>
 
     </div> <!-- /container -->
