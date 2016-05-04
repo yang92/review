@@ -14,6 +14,7 @@
 </script>
 </head>
 <body>
+<%@include file="join2.jsp"  %>
 	<form action="/proj/join.main" method="POST">
 		<center>
 			회원가입<br/>
@@ -27,7 +28,7 @@
       	<option value="female">Female</option>
       	</select><br/>
       BIRTH : <input type="text" name="birth" id="birth"/><br />
-      MEMO : <textarea rows="10" cols="20" name="introduce"></textarea>
+      MEMO : <textarea id="memo" name="memo" rows="10" cols="20" name="introduce"></textarea>
 			
 			<input type="submit" value="회원가입"/>
 			<input type="button" value="취소" onclick="moveLogin()"/>

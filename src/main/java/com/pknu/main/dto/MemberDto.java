@@ -9,7 +9,7 @@ public class MemberDto {
 	private String birth;
 	private String regdate;
 	private String score;
-	private String introduce;
+	private String memo;
 	
 	public String getId() {
 		return id;
@@ -59,16 +59,16 @@ public class MemberDto {
 	public void setScore(String score) {
 		this.score = score;
 	}
-	public String getIntroduce() {
-		return introduce;
+	public String getmemo() {
+		return memo;
 	}
-	public void setIntroduce(String introduce) {
-		this.introduce = introduce;
+	public void setmemo(String memo) {
+		this.memo = memo;
 	}
 	@Override
 	public String toString() {
 		return "MemberDto [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", sex=" + sex
-				+ ", birth=" + birth + ", regdate=" + regdate + ", score=" + score + ", introduce=" + introduce + "]";
+				+ ", birth=" + birth + ", regdate=" + regdate + ", score=" + score + ", memo=" + memo + "]";
 	}
 	
 	
