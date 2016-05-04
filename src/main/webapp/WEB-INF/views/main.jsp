@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<center><img class="img-responsive" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100"></center>
+<center><img class="img-responsive" src="resources/images/weiver_logo_low.JPG" alt="Chania" width="400" height="100"></center>
 <!-- <center><img src="resources/images/mainLogo.jpg" width="400" height="100"></center> -->
 <%@ include file="login.jsp" %>
 </body>
