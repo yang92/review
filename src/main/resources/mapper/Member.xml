@@ -6,14 +6,14 @@
 
 	
 	<insert id="insertMember" parameterType="com.pknu.main.dto.MemberDto">
-		INSERT INTO DOR_MEMBER
-		VALUES(#{id}, #{password}, #{name}, #{grade}, TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS'))
+		INSERT INTO MEMBER
+		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{introduce})
 	</insert>
 	
 	<select id="selectPassword" parameterType="string" resultType="string">
-		SELECT PW
-		FROM DOR_MEMBER
-		WHERE ID = #{id}
+		SELECT MEMBER_PW
+		FROM MEMBER
+		WHERE MEMBER_ID = #{id}
 	</select>
 	
 </mapper>

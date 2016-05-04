@@ -2,20 +2,26 @@ package com.pknu.main.dto;
 
 public class MemberDto {
 	private String id;
-	private String password;
+	private String pw;
 	private String name;
-	private String grade;
+	private String email;
+	private String sex;
+	private String birth;
+	private String regdate;
+	private String score;
+	private String introduce;
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPassword() {
-		return password;
+	public String getPw() {
+		return pw;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getName() {
 		return name;
@@ -23,14 +29,47 @@ public class MemberDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGrade() {
-		return grade;
+	public String getEmail() {
+		return email;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String score) {
+		this.score = score;
+	}
+	public String getIntroduce() {
+		return introduce;
+	}
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 	@Override
 	public String toString() {
-		return "MemberDto [id=" + id + ", password=" + password + ", name=" + name + ", grade=" + grade + "]";
+		return "MemberDto [id=" + id + ", pw=" + pw + ", name=" + name + ", email=" + email + ", sex=" + sex
+				+ ", birth=" + birth + ", regdate=" + regdate + ", score=" + score + ", introduce=" + introduce + "]";
 	}
+	
+	
 }

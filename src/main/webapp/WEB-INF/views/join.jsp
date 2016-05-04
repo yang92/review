@@ -17,17 +17,18 @@
 	<form action="/proj/join.main" method="POST">
 		<center>
 			회원가입<br/>
-			아이디 : <input type="text" name="id"/><br />
-			비밀번호 : <input type="password" name="password"/><br />
-			이름 : <input type="text" name="name"/><br />
-			학년 : 
-			<select name="grade">
-				<option value="">--CHOICE--</option>
-				<option value="1">Freshman</option>
-				<option value="2">Sophomore</option>
-				<option value="3">Junior</option>
-				<option value="4">Senior</option>
-			</select><br />
+			ID : <input type="text" name="id" id="id"><br />
+			PW : <input type="password" name="pw" id="pw"><br />
+      NAME : <input type="text" name="name" id="name"/><br />
+      EMAIL : <input type="text" name="email" id="email"/><br />
+      SEX : 
+      <select id="sex" name="sex">
+      	<option value="male">Male</option>
+      	<option value="female">Female</option>
+      	</select><br/>
+      BIRTH : <input type="text" name="birth" id="birth"/><br />
+      MEMO : <textarea rows="10" cols="20" name="introduce"></textarea>
+			
 			<input type="submit" value="회원가입"/>
 			<input type="button" value="취소" onclick="moveLogin()"/>
 		</center>
