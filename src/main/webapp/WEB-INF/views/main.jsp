@@ -25,18 +25,17 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
 <title>WEIVER!!</title>
 <script>
-function moveJoin() {
-	document.location.href="join.main";
-}
+
 function logout() {
 	document.location.href="logout.main";
 }
 </script>
 </head>
 <body>
-	
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -45,17 +44,17 @@ function logout() {
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="#">Weiver</a>
+	      <a class="navbar-brand" href="/proj/main.main">Weiver</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home</a></li>
+	        <li class="active"><a href="/proj/main.main">Home</a></li>
 	        <li><a href="#">자동차</a></li>
 	        <li><a href="#">음식</a></li>
 	        <li><a href="#">전자기기</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	        <li><a href="/proj/login.main"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	      </ul>
 	    </div>
 	  </div>
@@ -63,41 +62,25 @@ function logout() {
 	
 	<div class="container">
 	<div class="row">
-	  <div class="col-sm-8">
-	  <img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
+	<c:if test="${id==null}">
+		<div class="col-sm-12">
+	  	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
+	  	</div>
+	</c:if>
+   <c:if test="${id!=null}">
+   	  <div class="col-sm-10">
+	  	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
 	  </div>
-	  <div class="col-sm-4">
-	    
-	   <c:if test="${id!=null}">
-			<div class="row">
-				<div class="right-block">
-					${id}님 환영합니다.<br/>
-					<input type="button" class=" btn btn-sm btn-primary" value="logout" onclick="logout()">
-				</div>
+	  <div class="col-sm-2">
+		<div class="row">
+			<div class="text-right">
+				${id}님 환영합니다<br/>
+				현재점수 : 점<br/>
+			<input type="button" class=" btn btn-sm btn-primary" value="Logout" onclick="logout()">
 			</div>
-		</c:if>
-		<c:if test="${id==null}">
-	      <form class="form-signin" action="/proj/login.main" method="post">
-	        <div class=""><br/><br/>
-		        <label for="inputEmail" class="sr-only">Email address</label>
-		        <input type="text" id="id" name="id" class="form-control" placeholder="ID" required autofocus>
-		        
-		        <label for="inputPassword" class="sr-only">Password</label>
-		        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-		        <div class="checkbox">
-		          <label>
-		            <input type="checkbox" value="remember-me"> Remember me
-		          </label>
-		        </div>
-		        <div class="btn-group">
-		        	<button class="btn btn-sm btn-primary" type="submit">Log in</button>
-			        <button class="btn btn-sm btn-primary" type="button" onclick="moveJoin()">Register</button>
-		        </div>
-	        </div>
-	      </form>	
-		</c:if>
-	  
-	  </div>
+		</div>
+	</div>
+	</c:if>
 	</div>
 	<hr>
 	</div>

@@ -51,7 +51,7 @@ public class MemberController {
 	@RequestMapping(value="/join.main", method = RequestMethod.POST)
 	public String join(MemberDto member){
 		memberService.insertMember(member);
-		return "login";
+		return "main";
 	}
 	
 	@RequestMapping("/main.main")
