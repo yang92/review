@@ -40,7 +40,7 @@ function moveMain() {
 <article class="container">
 <div class="col-md-12">
 <div class="page-header text-center">
-	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
+	<a href="/proj/main.main"><img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50"></a>
 	<h1>로그인 <small>Login</small></h1>
 </div>
 <form class="form-horizontal" action="/proj/login.main" method="post">
