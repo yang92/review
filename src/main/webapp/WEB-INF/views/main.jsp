@@ -73,6 +73,7 @@ function logout() {
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	      <c:if test="${id == null}">
+	      	<li><a href="/proj/join.main"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
 	        <li><a href="/proj/login.main"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	      </c:if>
 	      <c:if test="${id != null}">

@@ -26,16 +26,22 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script>
+	  function moveMain() {
+		document.location.href="main.main";
+	}
+  </script>
   </head>
   <body>
 
 
       <article class="container">
 
-
         <div class="col-md-12">
         <div class="page-header">
+        <a href="/proj/main.main">
         <img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
+        </a>
     	    	<h1>회원가입 <small>Register</small></h1>
     	    	
      
@@ -149,7 +155,7 @@
         <div class="form-group">
           <div class="col-sm-12 text-center">
             <button class="btn btn-primary" type="submit">회원가입<i class="fa fa-check spaceLeft"></i></button>
-            <button class="btn btn-danger" type="button">가입취소<i class="fa fa-times spaceLeft"></i></button>
+            <button class="btn btn-danger" type="button" onclick="moveMain()">가입취소<i class="fa fa-times spaceLeft"></i></button>
           </div>
         </div>
         </form>
