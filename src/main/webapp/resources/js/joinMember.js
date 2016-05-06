@@ -20,7 +20,7 @@ $(function(){
 					html="<b>사용가능한 아이디 입니다.</b>"
 					$("#idCheckStatus").html(html).css("color","green");
 				}else{
-					html="<b>아이디가 중복 됩니다.</b>"
+					html="<b>사용불가능한 아이디 입니다.</b>"
 					$("#idCheckStatus").html(html).css("color","red");
 				}
 			}

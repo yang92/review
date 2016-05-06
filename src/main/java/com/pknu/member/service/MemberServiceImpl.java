@@ -1,8 +1,13 @@
 package com.pknu.member.service;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,16 +45,53 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public HashMap<String, String> joinCheckId(String inputId) {
+	public void joinCheckId(String inputId, HttpServletResponse resp) {
 		HashMap<String, String> hm = new HashMap<>();
+		
 		String DBId = memberDao.selectId(inputId);
+		
 		if(DBId != null){
 			hm.put("idUseStatus", "2");
-			return hm;
+			
+		}else{
+			hm.put("idUseStatus", "1");
 		}
 		
-		hm.put("idUseStatus", "1");
-		return hm;
+		JSONObject jb = new JSONObject(hm);
+		
+		PrintWriter pw;
+		try {
+			pw = resp.getWriter();
+			pw.println(jb.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	@Override
+	public void joinCheckPass(String inputFirstPass, String inputSecondPass, HttpServletResponse resp) {
+		
+		HashMap<String, String> hm = new HashMap<>();
+		
+		if(inputFirstPass.equals(inputSecondPass)){
+			hm.put("secondPassCheck", "1");
+		}else{
+			hm.put("secondPassCheck", "2");
+		}
+		
+		
+		
+		JSONObject jb = new JSONObject(hm);
+		
+		PrintWriter pw;
+		try {
+			pw = resp.getWriter();
+			pw.println(jb.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

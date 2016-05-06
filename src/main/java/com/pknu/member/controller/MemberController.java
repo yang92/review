@@ -74,24 +74,17 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/joinCheckId.main")
-	public String joinCheckId(String inputId, HttpServletResponse resp){
-		HashMap<String, String> hm = new HashMap<>();
+	public void joinCheckId(String inputId, HttpServletResponse resp){
 		
-		hm = memberService.joinCheckId(inputId);
+		memberService.joinCheckId(inputId, resp);
+	
+	}
+	
+	@RequestMapping("/passwordCheck.main")
+	public void joinCheckPass(String inputFirstPass, String inputSecondPass, HttpServletResponse resp){
 		
-		
-		JSONObject jb = new JSONObject(hm);
-		
-		PrintWriter pw;
-		try {
-			pw = resp.getWriter();
-			pw.println(jb.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		
-		return null;
+		memberService.joinCheckPass(inputFirstPass, inputSecondPass, resp);
+	
 	}
 	
 }
