@@ -1,5 +1,8 @@
 package com.pknu.member.service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +36,20 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void insertMember(MemberDto member) {
 		memberDao.insertMember(member);
+		
+	}
+
+	@Override
+	public HashMap<String, String> joinCheckId(String inputId) {
+		HashMap<String, String> hm = new HashMap<>();
+		String DBId = memberDao.selectId(inputId);
+		if(DBId != null){
+			hm.put("idUseStatus", "2");
+			return hm;
+		}
+		
+		hm.put("idUseStatus", "1");
+		return hm;
 		
 	}
 

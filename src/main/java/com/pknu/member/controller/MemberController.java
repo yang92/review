@@ -74,10 +74,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/joinCheckId.main")
-	public String joinCheckId(HttpServletResponse resp){
+	public String joinCheckId(String inputId, HttpServletResponse resp){
 		HashMap<String, String> hm = new HashMap<>();
 		
-		hm.put("idUseStatus", "1");
+		hm = memberService.joinCheckId(inputId);
 		
 		
 		JSONObject jb = new JSONObject(hm);
