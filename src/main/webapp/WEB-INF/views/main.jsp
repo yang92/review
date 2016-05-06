@@ -54,7 +54,12 @@ function logout() {
 	        <li><a href="#">전자기기</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
+	      <c:if test="${id == null}">
 	        <li><a href="/proj/login.main"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      </c:if>
+	      <c:if test="${id != null}">
+	        <li><a href="/proj/logout.main"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	      </c:if>
 	      </ul>
 	    </div>
 	  </div>
@@ -76,7 +81,7 @@ function logout() {
 			<div class="text-right">
 				${id}님 환영합니다<br/>
 				현재점수 : 점<br/>
-			<input type="button" class=" btn btn-sm btn-primary" value="Logout" onclick="logout()">
+<!-- 			<input type="button" class=" btn btn-sm btn-primary" value="Logout" onclick="logout()"> -->
 			</div>
 		</div>
 	</div>
