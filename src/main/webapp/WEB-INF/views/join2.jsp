@@ -7,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>회원가입</title>
-
+    
+<!--     생일 -->
+    <script src="resources/birth/jquery-birthday-picker.min.js"></script>
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
     <!-- Bootstrap -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- font awesome -->
@@ -26,66 +31,7 @@
 
 
       <article class="container">
-<!--         <div class="page-header"> -->
-<!--           <h1>회원가입 <small>basic form</small></h1> -->
-<!--         </div> -->
-<!--         <div class="col-md-6 col-md-offset-3"> -->
-<!--           <form role="form"> -->
-<!--           <div class="form-group"> -->
-<!--               <label for="id">ID</label> -->
-<!--               <input type="text" class="form-control" id="id" placeholder="ID"> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--               <label for="InputPassword1">비밀번호</label> -->
-<!--               <input type="password" class="form-control" id="InputPassword1" placeholder="비밀번호"> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--               <label for="InputPassword2">비밀번호 확인</label> -->
-<!--               <input type="password" class="form-control" id="InputPassword2" placeholder="비밀번호 확인"> -->
-<!--               <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--               <label for="username">이름</label> -->
-<!--               <input type="text" class="form-control" id="username" placeholder="이름을 입력해 주세요"> -->
-<!--             </div> -->
-<!--              <div class="form-group"> -->
-<!--               <label for="InputEmail">이메일 주소</label> -->
-<!--               <input type="email" class="form-control" id="InputEmail" placeholder="이메일 주소"> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--               <label for="username">휴대폰 인증</label> -->
-<!--               <div class="input-group"> -->
-<!--                 <input type="tel" class="form-control" id="username" placeholder="- 없이 입력해 주세요"> -->
-<!--                 <span class="input-group-btn"> -->
-<!--                   <button class="btn btn-success">인증번호 전송<i class="fa fa-mail-forward spaceLeft"></i></button> -->
-<!--                 </span> -->
-<!--               </div> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--               <label for="username">인증번호 입력</label> -->
-<!--               <div class="input-group"> -->
-<!--                 <input type="text" class="form-control" id="username" placeholder="인증번호"> -->
-<!--                 <span class="input-group-btn"> -->
-<!--                   <button class="btn btn-success">인증번호 입력<i class="fa fa-edit spaceLeft"></i></button> -->
-<!--                 </span> -->
-<!--               </div> -->
-<!--             </div> -->
-<!--             <div class="form-group"> -->
-<!--                 <label>약관 동의</label> -->
-<!--               <div data-toggle="buttons"> -->
-<!--               <label class="btn btn-primary active"> -->
-<!--                   <span class="fa fa-check"></span> -->
-<!--                   <input id="agree" type="checkbox" autocomplete="off" checked> -->
-<!--               </label> -->
-<!--               <a href="#">이용약관</a>에 동의합니다. -->
-<!--               </div> -->
-<!--             </div> -->
-<!--             <div class="form-group text-center"> -->
-<!--               <button type="submit" class="btn btn-info">회원가입<i class="fa fa-check spaceLeft"></i></button> -->
-<!--               <button type="submit" class="btn btn-warning">가입취소<i class="fa fa-times spaceLeft"></i></button> -->
-<!--             </div> -->
-<!--           </form> -->
-<!--         </div> -->
+
 
         <div class="col-md-12">
         <div class="page-header">
@@ -128,6 +74,8 @@
           <input class="form-control" id="email" name="email" type="email" placeholder="이메일">
         </div>
         </div>
+        
+        
 <!--         <div class="form-group"> -->
 <!--             <label class="col-sm-3 control-label" for="inputNumber">휴대폰번호</label> -->
 <!--               <div class="col-sm-6"> -->
@@ -151,15 +99,24 @@
 <!--             <p class="help-block">전송된 인증번호를 입력해주세요.</p> -->
 <!--           </div> -->
 <!--         </div> -->
+ 	    
+ 	    
  	    <div class="form-group">
           <label class="col-sm-3 control-label" for="sex">성별</label>
         <div class="col-sm-6">
           <select id="sex" name="sex" class="form-control">
             	<option value="male">male</option>
             	<option value="female">female</option>
-          	</select>
+          </select>
         </div>
         </div>
+        
+        
+        <h4>Default Settings</h4>
+		<div id="default-settings">여기나와야함</div>
+        
+        
+        
         
         
  	    <div class="form-group">
@@ -187,6 +144,8 @@
 <!--               <a href="#">이용약관</a> 에 동의 합니다. -->
 <!--             </div> -->
 <!--           </div> -->
+
+
         <div class="form-group">
           <div class="col-sm-12 text-center">
             <button class="btn btn-primary" type="submit">회원가입<i class="fa fa-check spaceLeft"></i></button>
@@ -197,6 +156,19 @@
           <hr>
         </div>
       </article>
+    
+    
+    
+    
+    
+    
+    
+    
+      
+
+    <script>
+    	$("#default-settings").birthdayPicker();
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
