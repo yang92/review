@@ -1,8 +1,8 @@
-package com.pknu.main.dao;
+package com.pknu.member.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.pknu.main.dto.MemberDto;
+import com.pknu.member.dto.MemberDto;
 
 @Repository
 public interface MemberDao {

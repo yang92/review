@@ -1,4 +1,4 @@
-package com.pknu.main.util;
+package com.pknu.member.util;
 
 public interface LoginStatus {
 	public int ok = 1;

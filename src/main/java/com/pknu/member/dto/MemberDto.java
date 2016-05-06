@@ -1,4 +1,4 @@
-package com.pknu.main.dto;
+package com.pknu.member.dto;
 
 public class MemberDto {
 	private String id;

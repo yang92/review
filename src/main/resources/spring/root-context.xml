@@ -14,7 +14,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!--Mybatis -->
 	<bean id="memberDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.pknu.main.dao.MemberDao"/>
+		<property name="mapperInterface" value="com.pknu.member.dao.MemberDao"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>

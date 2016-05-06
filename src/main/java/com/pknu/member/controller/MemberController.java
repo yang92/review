@@ -1,4 +1,4 @@
-package com.pknu.main.controller;
+package com.pknu.member.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pknu.main.dto.MemberDto;
-import com.pknu.main.service.MemberService;
+import com.pknu.member.dto.MemberDto;
+import com.pknu.member.service.MemberService;
 
 @Controller
 public class MemberController {
@@ -45,7 +45,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/join.main", method = RequestMethod.GET)
 	public String joinForm(){
-		return "join2";
+		return "join";
 	}
 	
 	@RequestMapping(value="/join.main", method = RequestMethod.POST)

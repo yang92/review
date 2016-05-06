@@ -1,6 +1,6 @@
-package com.pknu.main.service;
+package com.pknu.member.service;
 
-import com.pknu.main.dto.MemberDto;
+import com.pknu.member.dto.MemberDto;
 
 public interface MemberService {
 

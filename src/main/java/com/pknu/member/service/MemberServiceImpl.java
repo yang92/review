@@ -1,11 +1,11 @@
-package com.pknu.main.service;
+package com.pknu.member.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pknu.main.dao.MemberDao;
-import com.pknu.main.dto.MemberDto;
-import com.pknu.main.util.LoginStatus;
+import com.pknu.member.dao.MemberDao;
+import com.pknu.member.dto.MemberDto;
+import com.pknu.member.util.LoginStatus;
 
 @Service
 public class MemberServiceImpl implements MemberService{
