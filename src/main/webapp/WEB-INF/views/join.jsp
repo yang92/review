@@ -59,7 +59,7 @@
           <label class="col-sm-3 control-label" for="pw">비밀번호</label>
         <div class="col-sm-6">
           <input class="form-control" id="pw" name="pw" type="password" placeholder="비밀번호">
-<!--         <p class="help-block">숫자, 특수문자 포함 8자 이상</p> -->
+        <p class="help-block">숫자, 특수문자 포함 8자 이상</p>
         </div>
         </div>
           <div class="form-group">
