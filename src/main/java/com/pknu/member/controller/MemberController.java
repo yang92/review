@@ -16,6 +16,7 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	
 	@RequestMapping(value="/login.main", method = RequestMethod.GET)
 	public String loginForm(){
 		

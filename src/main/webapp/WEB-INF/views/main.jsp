@@ -68,7 +68,7 @@ function logout() {
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="/proj/main.main">HOME</a></li>
 	        <li><a href="#">자동차</a></li>
-	        <li><a href="#">음식</a></li>
+	        <li><a href="/proj/food.bbs">음식</a></li>
 	        <li><a href="#">전자기기</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
