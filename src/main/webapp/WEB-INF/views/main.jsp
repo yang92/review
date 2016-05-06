@@ -27,7 +27,7 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>WEIVER!!</title>
+<title>we weiver it.</title>
 <script>
 
 function logout() {
@@ -62,11 +62,11 @@ function logout() {
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="/proj/main.main">Weiver</a>
+	      <a class="navbar-brand" href="/proj/main.main">weiver</a>
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="/proj/main.main">Home</a></li>
+	        <li class="active"><a href="/proj/main.main">HOME</a></li>
 	        <li><a href="#">자동차</a></li>
 	        <li><a href="#">음식</a></li>
 	        <li><a href="#">전자기기</a></li>
@@ -85,27 +85,23 @@ function logout() {
 	
 	<div class="container">
 	<div class="row">
-	<c:if test="${id==null}">
-		<div class="col-sm-12">
-	  	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
-	  	</div>
-	</c:if>
-   <c:if test="${id!=null}">
-   	  <div class="col-sm-10">
-	  	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
-	  </div>
-	  <div class="col-sm-2">
+	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="400" height="100">
+	
+ 
+	</div>
+	<hr>
+	  <c:if test="${id!=null}">
+   	 
+	  <div class="text-right">
 		<div class="row">
 			<div class="text-right">
-				${id}님 환영합니다<br/>
-				현재점수 : 점<br/>
+				${id} 님 환영합니다<br/>
+				weiver score [ ] <br/>
 <!-- 			<input type="button" class=" btn btn-sm btn-primary" value="Logout" onclick="logout()"> -->
 			</div>
 		</div>
 	</div>
 	</c:if>
-	</div>
-	<hr>
 	</div>
 	
 	<div class="container text-center">
