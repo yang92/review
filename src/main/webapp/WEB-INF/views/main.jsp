@@ -42,7 +42,9 @@ function logout() {
     }
     .carousel-inner img {
       width: 100%; /* Set width to 100% */
-      min-height: 200px;
+      min-height: 50px;
+      max-height: 500px; 
+/*       vertical-align: middle; */
     }
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -115,21 +117,21 @@ function logout() {
         	<li data-target="#myCarousel" data-slide-to="1"></li>
       	</ol>
 	 
-      <!-- Wrapper for slides -->
+      <!-- Wrapper for slides 이미지 슬라이드 -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="http://placehold.it/800x400?text=IMAGE" alt="Image">
+          <img src="resources/images/척.jpg"  alt="Image">
           <div class="carousel-caption">
-            <h3>Sell $</h3>
+            <h3>척!</h3>
             <p>Money Money.</p>
           </div>      
         </div>
 
         <div class="item">
-          <img src="http://placehold.it/800x400?text=Another Image Maybe" alt="Image">
+          <img src="resources/images/척 by lands59.jpg" alt="Image">
           <div class="carousel-caption">
-            <h3>More Sell $</h3>
-            <p>Lorem ipsum...</p>
+            <h3>sell this picture : 1billion$</h3>
+            <p> chuck! by lands59 </p>
           </div>      
         </div>
       </div>
@@ -172,8 +174,6 @@ function logout() {
   </div>
   </div>
   <hr>
-	
-	 
 	
 	
 	<div class="container text-center">    
