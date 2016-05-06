@@ -29,7 +29,7 @@ public class MemberController {
 		
 		if(result == 1){
 			req.getSession().setAttribute("id", id);
-			mav.setViewName("main");
+			mav.setViewName("redirect:/main.main");
 		}
 		else if(result == 2){
 			System.out.println("비밀번호 오류");
@@ -63,6 +63,6 @@ public class MemberController {
 	@RequestMapping("/logout.main")
 	public String logout(HttpServletRequest req){
 		req.getSession().setAttribute("id", null);
-		return "main";
+		return "redirect:/main.main";
 	}
 }
