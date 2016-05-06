@@ -5,17 +5,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
-<meta name="CODE_LANGUAGE" Content="C#">
-<meta name="vs_defaultClientScript" content="JavaScript">
-<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
-<title>준영랜드</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="../../favicon.ico">
+
+	<!-- Bootstrap -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="resources/css/font-awesome.min.css" media="screen" title="no title">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="resources/css/style.css" media="screen" title="no title">
+	
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<!-- ///////// -->
+<!-- <meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1"> -->
+<!-- <meta name="CODE_LANGUAGE" Content="C#"> -->
+<!-- <meta name="vs_defaultClientScript" content="JavaScript"> -->
+<!-- <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"> -->
+<title>음식 게시판</title>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script>
   
  
-  </script>
+ </script>
  <script type="text/javascript">
 function keydowncheck()
 {
@@ -34,30 +58,9 @@ return result;
 <body>
 <body onkeydown="return keydowncheck();">
 
-<%-- <h1><center><font color="red">ㅎ1000 아 데이터 베이스를 확인해 보렴</font></center></h1> --%>
 	<input type="hidden" id="title" value="${article.title}">
-
-<%-- 	<c:if test="${id!=null}"> --%>
-<%-- 		<%@include file = "loginOk.jsp" %> --%>
-<%-- 	</c:if> --%>
+	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/>
 	
-<!-- 	id값이 null이면 로그인창이 뜨게 한다 -->
-
-	<c:if test="${id==null}">
-		<%@include file = "login.jsp" %>
-
-	</c:if>
-
-<center><img src ="resources/main.gif"  width="400" height="200" title="YANG BONO" ></center>
-
-<!-- 낫시...ㅠㅠㅠㅠ -->
-<!-- <div style=" position: fixed; right: 20px; bottom:20px;"><img src = "resources/낫시.gif" title="낫시!!!낫시!!!낫시!!!!" ></div> -->
-
-	<center><b><br/><img src ="resources/new.gif"  width="500" height="100" ><br/>
-	<input type="button"
-			style="color: pink; background-color: black; font-size: 20pt"
-			value="GOOGLE 위성 위치서비스"
-			onclick="document.location.href='/bbs/location.bbs'"><br/>
 	(전체 글:${totalCount})</b>
 		
 <%-- 	<H1><center>공 지 사 항</center></H1> --%>

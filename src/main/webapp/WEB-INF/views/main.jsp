@@ -173,8 +173,6 @@ function logout() {
   </div>
   <hr>
 	
-	 
-	
 	
 	<div class="container text-center">    
 	  <h3>Our Partners</h3>
