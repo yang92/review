@@ -34,27 +34,46 @@ function moveJoin() {
 function moveMain() {
 	document.location.href="main.main";
 }
+
 </script>
 </head>
 <body>
-<form class="form-inline" action="/proj/login.main" method="post">
+<div class="page-header">
+	<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
+	<h1>로그인 <small>Login</small></h1>
+</div>
+<form class="form-horizontal" action="/proj/login.main" method="post">
+	
 	<div class="form-group">
-	<input type="text" id="id" name="id" class="form-control" placeholder="ID" required autofocus>
-	
-	
-	<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+          <label class="col-sm-3 control-label" for="id">ID</label>
+        <div class="col-sm-6">
+          <input class="form-control" id="id" name="id" type="text" placeholder="ID">
+        </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label" for="pw">Password</label>
+        <div class="col-sm-6">
+          <input class="form-control" id="pw" name="pw" type="password" placeholder="Password">
+       
+        </div>
+        </div>
+	<div class="col-sm-5 text-center">
+		<input type="text" id="id" name="id" class="form-control" placeholder="ID" required autofocus>
+		<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+		
 	</div>
+	<br><br><br><br><br>
 	<div class="checkbox">
-		<label>
+			<label>
 	   		<input type="checkbox" value="remember-me"> Remember me
 		</label>
 	</div>
 	<div class="btn-group right-block">
 		<button class="btn btn-sm btn-primary" type="submit">Log in</button>
-	 <button class="btn btn-sm btn-primary" type="button" onclick="moveJoin()">Register</button>
-	 <button class="btn btn-sm btn-primary" type="button" onclick="moveMain()">Cancel</button>
+		<button class="btn btn-sm btn-primary" type="button" onclick="moveJoin()">Register</button>
+		<button class="btn btn-sm btn-primary" type="button" onclick="moveMain()">Cancel</button>
 	</div>
-	
-      </form>	
+</form>	
 </body>
 </html>
