@@ -50,7 +50,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		String DBId = memberDao.selectId(inputId);
 		
-		if(DBId != null){
+		if(DBId != null || inputId==""){
 			hm.put("idUseStatus", "2");
 			
 		}else{
@@ -70,30 +70,7 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
-	@Override
-	public void joinCheckPass(String inputFirstPass, String inputSecondPass, HttpServletResponse resp) {
-		
-		HashMap<String, String> hm = new HashMap<>();
-		
-		if(inputFirstPass.equals(inputSecondPass)){
-			hm.put("secondPassCheck", "1");
-		}else{
-			hm.put("secondPassCheck", "2");
-		}
-		
-		
-		
-		JSONObject jb = new JSONObject(hm);
-		
-		PrintWriter pw;
-		try {
-			pw = resp.getWriter();
-			pw.println(jb.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
+	
 
 
 

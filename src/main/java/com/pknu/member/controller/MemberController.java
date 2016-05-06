@@ -80,11 +80,5 @@ public class MemberController {
 	
 	}
 	
-	@RequestMapping("/passwordCheck.main")
-	public void joinCheckPass(String inputFirstPass, String inputSecondPass, HttpServletResponse resp){
-		
-		memberService.joinCheckPass(inputFirstPass, inputSecondPass, resp);
-	
-	}
-	
+
 }

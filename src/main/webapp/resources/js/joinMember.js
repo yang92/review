@@ -16,12 +16,17 @@ $(function(){
 			},
 			success : function(data){
 				var html;
-				if(data.idUseStatus=="1"){
-					html="<b>사용가능한 아이디 입니다.</b>"
-					$("#idCheckStatus").html(html).css("color","green");
+				if($("#id").val()==""){
+					html="<b>아이디를 입력하세요.</b>"
+					$("#idCheckStatus").html(html).css("color","blue");
 				}else{
-					html="<b>사용불가능한 아이디 입니다.</b>"
-					$("#idCheckStatus").html(html).css("color","red");
+					if(data.idUseStatus=="1"){
+						html="<b>사용가능한 아이디 입니다.</b>"
+						$("#idCheckStatus").html(html).css("color","green");
+					}else{
+						html="<b>사용불가능한 아이디 입니다.</b>"
+						$("#idCheckStatus").html(html).css("color","red");
+					}
 				}
 			}
 		});
