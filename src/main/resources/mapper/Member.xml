@@ -16,10 +16,11 @@
 		WHERE MEMBER_ID = #{id}
 	</select>
 	
-	<select id="selectId" resultType="String">
-		SELECT MEMBER_ID
+	<select id="selectId" parameterType="string" resultType="string">
+		SELECT MEMBER_ID 
 		FROM MEMBER
 		WHERE MEMBER_ID = #{inputId}
+		
 	</select>
 	
 </mapper>
