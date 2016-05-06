@@ -1,7 +1,13 @@
 package com.pknu.member.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,7 +62,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/main.main")
-	public ModelAndView main(HttpServletRequest request) {
+	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main");
 		return mav;
@@ -66,4 +72,26 @@ public class MemberController {
 		req.getSession().setAttribute("id", null);
 		return "redirect:/main.main";
 	}
+	
+	@RequestMapping("/joinCheckId.main")
+	public String joinCheckId(HttpServletResponse resp){
+		HashMap<String, String> hm = new HashMap<>();
+		
+		hm.put("idUseStatus", "1");
+		
+		
+		JSONObject jb = new JSONObject(hm);
+		
+		PrintWriter pw;
+		try {
+			pw = resp.getWriter();
+			pw.println(jb.toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+	
 }
