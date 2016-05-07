@@ -9,7 +9,7 @@ import com.pknu.bbs.dto.BBSDto;
 
 @Repository
 public interface BBSDao {
-	public int getArticleCount();
-	public List<BBSDto> getArticles();
+	int getArticleCount();
+	List<BBSDto> getArticles();
 
 }

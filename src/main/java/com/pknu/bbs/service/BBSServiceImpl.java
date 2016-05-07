@@ -18,19 +18,17 @@ public class BBSServiceImpl implements BBSService{
 	private BBSDao bbsDao;
 	ModelAndView mav;
 	
-	@Inject
-	List<BBSDto> articleList;
+//	@Inject
+//	List<BBSDto> articleList;
 	
 	public ModelAndView car(){
 		mav = new ModelAndView();
 	   	
-		int totalCount=bbsDao.getArticleCount();			
+//		int totalCount=bbsDao.getArticleCount();			
+//		articleList=bbsDao.getArticles();
 		
-		
-		articleList=bbsDao.getArticles();
-		
-		mav.addObject("totalCount",totalCount);
-		mav.addObject("articleList",articleList);
+//		mav.addObject("totalCount",totalCount);
+//		mav.addObject("articleList",articleList);
 		mav.setViewName("car");
 		return mav;
 	}
