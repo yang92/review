@@ -23,11 +23,17 @@ public class BBSController {
 	}
 	
 	// 게시판 - 자동차
+//	@RequestMapping(value="/car.bbs")
+//	public ModelAndView car(HttpServletRequest request) {
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("test");
+//		return mav;
+//	}
+	
+	// 게시판 - 자동차
 	@RequestMapping(value="/car.bbs")
 	public ModelAndView car(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("test");
-		return mav;
+		return bbsService.car();
 	}
 	
 	// 게시판 - 전자기기

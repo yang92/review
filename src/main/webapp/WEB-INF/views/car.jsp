@@ -103,64 +103,75 @@ return result;
 	    </div>
 	  </div>
 	</nav>
-	
+
 	<div class="container text-center">
 		<div class="row">
-		<a href="/proj/main.main">
-		<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
-		</a>
+			<a href="/proj/main.main"> <img
+				class="img-responsive center-block"
+				src="resources/images/mainLogo.jpg" alt="Chania" width="200"
+				height="50">
+			</a>
 		</div>
-	<hr>
-<%-- 	<input type="hidden" id="title" value="${article.title}"> --%>
-<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
-	
-<!-- 	게시판 test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
+		<hr>
+		<%-- 	<input type="hidden" id="title" value="${article.title}"> --%>
+		<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
 
-			<div class="table-responsive">		<!-- 반응형 테이블 -->
-				<table class="table" align="center">
-					<colgroup>
-						<col width="13%" />
-						<col width="*" class="title" />
-						<!-- *는 나머지 -->
-						<col width="15%" />
-						<col width="8%" />
-						<!-- 8%로 너프 -->
-						<col width="8%" />
-						<col width="8%" />
-					</colgroup>
-					<thead align="center">
-						<tr>
-							<th>번 호</th>
-							<th>제 목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조 회</th>
-							<th>추 천</th>
-						</tr>
-					</thead>
-					<tbody>
-						<%-- 				<c:forEach var="article" items="${articleList}" > --%>
-						<tr>
-							<td>1</td>
-							<td>제목이당</td>
-							<td>guest</td>
-							<td>16/05/07</td>
-							<td>5</td>
-							<td>1</td>
-						</tr>
-						<%-- 					</c:forEach> --%>
-					</tbody>
-				</table>
-			</div>
+		<!-- 	게시판 test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 
+		<div class="table-responsive">
+			<!-- 반응형 테이블 -->
+			<table class="table" align="center">
+				<colgroup>
+					<col width="13%" />
+					<col width="*" class="title" />
+					<!-- *는 나머지 -->
+					<col width="15%" />
+					<col width="8%" />
+					<!-- 8%로 너프 -->
+					<col width="8%" />
+					<col width="8%" />
+				</colgroup>
+				<thead align="center">
+					<tr>
+						<th>번 호</th>
+						<th>제 목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조 회</th>
+						<th>추 천</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- 						<tr> -->
+					<!-- 							<td>1</td> -->
+					<!-- 							<td>제목이당</td> -->
+					<!-- 							<td>guest</td> -->
+					<!-- 							<td>16/05/07</td> -->
+					<!-- 							<td>5</td> -->
+					<!-- 							<td>1</td> -->
+					<!-- 						</tr> -->
+					<c:forEach var="article" items="${articleList}">
+						<tr>
+							<td><c:out value="${article.WEIVER_NO}" /></td>
+							<td><c:out value="${article.WEIVER_TITLE}" /></td>
+							<td><c:out value="${article.MEMBER_ID}" /></td>
+							<td><c:out value="${article.WEIVER_WRITEDATE}" /></td>
+							<td><c:out value="${article.WEIVER_HIT}" /></td>
+							<td><c:out value="${article.WEIVER_GOOD}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</div>
 
+	</div>
 
 
 
 
 
-		<!-- 	test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<!-- 	test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 </div>
 </body>
 </html>
