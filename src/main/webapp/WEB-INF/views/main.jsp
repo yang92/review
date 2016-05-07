@@ -42,8 +42,10 @@ function logout() {
     }
     .carousel-inner img {
       width: 100%; /* Set width to 100% */
+      height:100%;
       min-height: 50px;
       max-height: 500px; 
+      max-width: 500px;
 /*       vertical-align: middle; */
     }
 
@@ -69,9 +71,10 @@ function logout() {
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="/proj/main.main">HOME</a></li>
-	        <li><a href="#">자동차</a></li>
 	        <li><a href="/proj/food.bbs">음식</a></li>
-	        <li><a href="#">전자기기</a></li>
+	        <li><a href="/proj/car.bbs">자동차</a></li>
+	        <li><a href="/proj/electronic.bbs">전자기기</a></li>
+	        <li><a href="/proj/game.bbs">게임</a></li>
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	      <c:if test="${id == null}">
@@ -110,20 +113,21 @@ function logout() {
 	<div class="container text-center">
 	<br>
 	  <div class="row">
+      <!-- Wrapper for slides 메인화면 이미지 슬라이드 -->
 	  	<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
       	<!-- Indicators -->
       	<ol class="carousel-indicators">
-        	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>	<!-- 작은 동그라미 버튼 -->
         	<li data-target="#myCarousel" data-slide-to="1"></li>
+        	<li data-target="#myCarousel" data-slide-to="2"></li>
       	</ol>
 	 
-      <!-- Wrapper for slides 이미지 슬라이드 -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="resources/images/척.jpg"  alt="Image">
+          <img src="resources/images/척.PNG"  alt="Image">
           <div class="carousel-caption">
             <h3>척!</h3>
-            <p>Money Money.</p>
+            <p>vayne bug</p>
           </div>      
         </div>
 
@@ -134,11 +138,23 @@ function logout() {
             <p> chuck! by lands59 </p>
           </div>      
         </div>
+        
+        <div class="item">
+          <img src="resources/images/척 by H1000.jpg" alt="Image">
+          <div class="carousel-caption">
+            <h3>Gold ganda</h3>
+            <p> chuck! by H1000 </p>
+          </div>      
+        </div>
       </div>
       <!-- Left and right controls -->
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>

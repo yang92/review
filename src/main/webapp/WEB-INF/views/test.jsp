@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- <!DOCTYPE html5> -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,12 +29,27 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<!-- ///////// -->
-<!-- <meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1"> -->
-<!-- <meta name="CODE_LANGUAGE" Content="C#"> -->
-<!-- <meta name="vs_defaultClientScript" content="JavaScript"> -->
-<!-- <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"> -->
 <title>음식 게시판</title>
+
+<style>
+/* Add a gray background color and some padding to the footer */
+	table {
+		border-style:solid;border-color:saddlebrown; border-width=10;
+		border-collapse:collapse;
+		border:black;
+		
+		cellpadding="0"; cellspacing="0";
+/* 		vertical-align:bottom; */
+		min-height: 500px;
+		max-width: 1000px;
+		width: 100%;
+	}
+	.title{
+		vertical-align: top;
+	}
+</style>
+
+
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script>
@@ -98,76 +114,53 @@ return result;
 <%-- 	<input type="hidden" id="title" value="${article.title}"> --%>
 <!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
 	
-	<b>(전체 글:${totalCount})</b><p/>
-	
-	<table border="1" width="700" cellpadding= "2" cellspacing="2" align="center">
-		<tr>
-			<td align="center" width="50">글번호</td>
-			<td align="center" width="250">제 목</td>
-			<td align="center" width="100">작성자</td>
-			<td align="center" width="150">작성일</td>
-			<td align="center" width="50">조회</td>
-		</tr>
-		<c:forEach var="article" items="${articleList}" >
-			<tr height="30">
-				<td align="center" width="50">
-					<c:out value="${article.articleNum}"/>
-				</td>
-				<td width="250">
-					
-					<c:if test="${article.depth > 0}">
-						<img src ="resources/blank.png"  width="${20 * article.depth}" height="20">
-						<img src="resources/reply.png" width="30"height="20">
-					</c:if>
-					<c:if test="${article.depth == 0}">
-<!-- 	    				<img src="images/white.gif"  width="0"  height="16"> -->
-	  				</c:if>   
-	  				  
-	  				<a href="/bbs/content.bbs?articleNum=${article.articleNum}&pageNum=${pageNum}&fileStatus=${article.fileStatus}">
-	  				${article.title}</a> &nbsp;&nbsp;[${article.commentCount}]
-	  				<c:if test="${article.hit >=20 }">
-	  					<img src="resources/HIT.png"  border="0" height="20">
-	  				</c:if>
-	  				<c:if test="${article.fileStatus ==1}">
-	  					<img src="resources/디스켓.png" width="30" height="20">
-	  				</c:if>
-				</td>
-				<td align="center" width="100">${article.id}</td>
-				<td align="center" width="150">${article.writeDate}</td>
-				<td align="center" width="50">${article.hit}</td>
-				
-			</tr>
-		</c:forEach>
-		<tr>
-			<td colspan="5" align="center" height="40">
-			${pageCode}
-			</td>
-		</tr>
-	</table>
-	
-	<br/>
-	<form id="form_serch" method="get" action="./">
-		<select id="sch_type" name="sch_type">
-			<option value="subject" selected="selected"> 제목</option>
-			<option value="content">내용</option>
-			<option value="user_name">작성자</option>
-		</select>
-		<input type="text" id="sch_value" name="sch_value"/>
-		<button type="button" class="btn btn-sm btn-primary" onclick="search();">search</button>
-		<input type="button" class="btn btn-sm btn-primary" value="Write" onclick="document.location.href='/bbs/writeForm.bbs'">
-	</form>
-	<script>
-		function search(){
-		
-			var sch_value = jQuery('#form_search #sch_value').val();
-			if(sch_value == ''){alert('검색어를 입력하세요.');}
-			else{
-				jQuery('#form_search').submit();
-			}
-		}
-	</script>
-	<br/><br/><br/><br/><br/>
+<!-- 	게시판 test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 
+			<div class="table-responsive">		<!-- 반응형 테이블 -->
+				<table class="table" align="center">
+					<colgroup>
+						<col width="13%" />
+						<col width="*" class="title" />
+						<!-- *는 나머지 -->
+						<col width="15%" />
+						<col width="8%" />
+						<!-- 8%로 너프 -->
+						<col width="8%" />
+						<col width="8%" />
+					</colgroup>
+					<thead align="center">
+						<tr>
+							<th>번 호</th>
+							<th>제 목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조 회</th>
+							<th>추 천</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%-- 				<c:forEach var="article" items="${articleList}" > --%>
+						<tr>
+							<td>1</td>
+							<td>제목이당</td>
+							<td>guest</td>
+							<td>16/05/07</td>
+							<td>5</td>
+							<td>1</td>
+						</tr>
+						<%-- 					</c:forEach> --%>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+
+
+
+
+
+		<!-- 	test 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 </div>
 </body>
 </html>
