@@ -23,14 +23,6 @@ public class BBSController {
 	}
 	
 	// 게시판 - 자동차
-//	@RequestMapping(value="/car.bbs")
-//	public ModelAndView car(HttpServletRequest request) {
-//		ModelAndView mav = new ModelAndView();
-//		mav.setViewName("test");
-//		return mav;
-//	}
-	
-	// 게시판 - 자동차
 	@RequestMapping(value="/car.bbs")
 	public ModelAndView car(HttpServletRequest request) {
 		return bbsService.car();
@@ -51,4 +43,13 @@ public class BBSController {
 		mav.setViewName("list");
 		return mav;
 	}
+	
+	// 글 읽기 - car
+	@RequestMapping(value="/read_car.bbs")
+	public ModelAndView read_car(HttpServletRequest request, String weiver_no){
+		System.out.println("controller 에서의 weiver no : "+weiver_no);
+		String weiver="WEIVER_CAR";
+		return bbsService.readCar(weiver_no, weiver);
+	}
+	
 }

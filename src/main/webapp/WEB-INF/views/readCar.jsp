@@ -34,12 +34,9 @@
 <style>
 /* Add a gray background color and some padding to the footer */
 	table {
-		border-style:double;
-		border-color:saddlebrown; 
-		border-width=10;
+		border-style:solid;border-color:saddlebrown; border-width=10;
 		border-collapse:collapse;
 		border:black;
-		list-style-type:
 		
 		cellpadding="0"; cellspacing="0";
  		vertical-align:middle;
@@ -48,27 +45,14 @@
 		width: 100%;
 	}
 	
-	th{
-		text-align: center;	
-	}
-	td{
-		text-align: center;	
-	}
-	.tr_interval{
-		list-style: square;
-		height: 30px;
-	}
-	tr{
-		list-style: square;
-		height: 30px;
-	}
-	
 	.thead{
 		vertical-align: middle;
 	}
-/* 	.title{ */
-/* 		vertical-align: top; */
-/* 	} */
+	.tr1{
+		min-height: 30px;
+		max-height: 50px;
+	}
+	
 </style>
 
 
@@ -143,35 +127,41 @@ return result;
 		<div class="table-responsive">
 			<!-- 반응형 테이블 -->
 			<table class="table">
-				<colgroup align="center">
-					<col width="13%" />
-					<col width="*" class="title" />	<!-- *는 나머지 -->
-					<col width="15%" />
-					<col width="8%" />		<!-- 8%로 너프 -->
-					<col width="8%" />
-					<col width="8%" />
-				</colgroup>
-				<thead align="center">
-					<tr class="thead">
-						<th>번 호</th>		<!-- text_center 가운데 정렬 -->
-						<th class="text-left">제 목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>조 회</th>
-						<th>추 천</th>
-					</tr>
+<%-- 				<colgroup align="center"> --%>
+<%-- 					<col width="13%" /> --%>
+<%-- 					<col width="*" class="title" />	<!-- *는 나머지 --> --%>
+<%-- 					<col width="15%" />		<!-- 내용 --> --%>
+<%-- 					<col width="15%" /> --%>
+<%-- 					<col width="8%" />		<!-- 8%로 너프 --> --%>
+<%-- 					<col width="8%" /> --%>
+<%-- 					<col width="8%" /> --%>
+<%-- 				</colgroup> --%>
+<!-- 				<thead align="center"> -->
+<!-- 					<tr align="center" class="thead"> -->
+<!-- 						<th align="center">번 호</th> -->
+<!-- 						<th align="center">제 목</th> -->
+<!-- 						<th align="center">내 용</th> -->
+<!-- 						<th>작성자</th> -->
+<!-- 						<th>작성일</th> -->
+<!-- 						<th>조 회</th> -->
+<!-- 						<th>추 천</th> -->
+<!-- 					</tr> -->
+<!-- 				</thead> -->
+				<thead valign="middle">
+						<tr class="tr1"><td width="15%"><c:out value="${article.weiver_no}" /></td> <td width="*"><c:out value="${article.weiver_title}" /></td> <td width="15%"><c:out value="${article.weiver_writedate}" /></td></tr>
+						<tr><td><c:out value="${article.member_id}" 	/> 새내기</td></tr>
 				</thead>
 				<tbody>
-					<c:forEach var="article" items="${articleList}">
-						<tr class="tr_interval">
-							<td class="text-center"><c:out value="${article.weiver_no}" /></td>
-							<td class="text-left"><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td>
-							<td class="text-center"><c:out value="${article.member_id}" /></td>
-							<td class="text-center"><c:out value="${article.weiver_writedate}" /></td>
-							<td class="text-center"><c:out value="${article.weiver_hit}" /></td>
-							<td class="text-center"><c:out value="${article.weiver_good}" /></td>
-						</tr>
-					</c:forEach>
+						<tr><c:out value="${article.weiver_content}" /></tr>
+						
+						
+<%-- 							<td><c:out value="${article.weiver_no}" /></td> --%>
+<%-- 							<td><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td> --%>
+<%-- 							<td><c:out value="${article.member_id}" /></td> --%>
+<%-- 							<td><c:out value="${article.weiver_content}" /></td> --%>
+<%-- 							<td><c:out value="${article.weiver_writedate}" /></td> --%>
+<%-- 							<td><c:out value="${article.weiver_hit}" /></td> --%>
+<%-- 							<td><c:out value="${article.weiver_good}" /></td> --%>
 				</tbody>
 			</table>
 		</div>

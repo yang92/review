@@ -9,7 +9,10 @@ import com.pknu.bbs.dto.BBSDto;
 
 @Repository
 public interface BBSDao {
-	int getArticleCount();
-	List<BBSDto> getArticles();
+	public int getArticleCount();
+	public List<BBSDto> getArticles();
+	
+	public void hitUp(HashMap<String, String> hm);
+	public BBSDto readCar(String weiver_no);
 
 }
