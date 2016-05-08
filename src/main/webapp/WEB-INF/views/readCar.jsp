@@ -148,8 +148,14 @@ return result;
 <!-- 					</tr> -->
 <!-- 				</thead> -->
 				<thead valign="middle">
-						<tr class="tr1"><td width="15%"><c:out value="${article.weiver_no}" /></td> <td width="*"><c:out value="${article.weiver_title}" /></td> <td width="15%"><c:out value="${article.weiver_writedate}" /></td></tr>
-						<tr><td><c:out value="${article.member_id}" 	/> 새내기</td></tr>
+						<tr class="tr1">
+							<td width="15%"><c:out value="${article.weiver_no}" /></td> 
+							<td width="*"><c:out value="${article.weiver_title}" /></td> 
+							<td width="15%"><c:out value="${article.weiver_writedate}" /></td>
+						</tr>
+						<tr>
+							<td><c:out value="${article.member_id}" 	/> 새내기</td>
+						</tr>
 				</thead>
 				<tbody>
 						<tr><c:out value="${article.weiver_content}" /></tr>
