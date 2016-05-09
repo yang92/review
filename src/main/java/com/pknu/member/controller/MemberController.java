@@ -81,4 +81,10 @@ public class MemberController {
 		return mav;
 	}
 
+	@RequestMapping("/profile.main")
+	public ModelAndView profile() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("memberProfile");
+		return mav;
+	}
 }
