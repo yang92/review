@@ -33,39 +33,39 @@
 
 <style>
 /* Add a gray background color and some padding to the footer */
-	table {
-		border-style:double;
-		border-color:saddlebrown; 
-		border-width=10;
-		border-collapse:collapse;
-		border:black;
-		list-style-type:
+/* 	table { */
+/* 		border-style:double; */
+/* 		border-color:saddlebrown;  */
+/* 		border-width=10; */
+/* 		border-collapse:collapse; */
+/* 		border:black; */
+/* 		list-style-type: */
 		
-		cellpadding="0"; cellspacing="0";
- 		vertical-align:middle;
-		min-height: 500px;
-		max-width: 1000px;
-		width: 100%;
-	}
+/* 		cellpadding="0"; cellspacing="0"; */
+/*  		vertical-align:middle; */
+/* 		min-height: 500px; */
+/* 		max-width: 1000px; */
+/* 		width: 100%; */
+/* 	} */
 	
-	th{
-		text-align: center;	
-	}
-	td{
-		text-align: center;	
-	}
-	.tr_interval{
-		list-style: square;
-		height: 30px;
-	}
-	tr{
-		list-style: square;
-		height: 30px;
-	}
+/* 	th{ */
+/* 		text-align: center;	 */
+/* 	} */
+/* 	td{ */
+/* 		text-align: center;	 */
+/* 	} */
+/* 	.tr_interval{ */
+/* 		list-style: square; */
+/* 		height: 30px; */
+/* 	} */
+/* 	tr{ */
+/* 		list-style: square; */
+/* 		height: 30px; */
+/* 	} */
 	
-	.thead{
-		vertical-align: middle;
-	}
+/* 	.thead{ */
+/* 		vertical-align: middle; */
+/* 	} */
 /* 	.title{ */
 /* 		vertical-align: top; */
 /* 	} */
@@ -78,23 +78,23 @@
   
  
  </script>
- <script type="text/javascript">
-function keydowncheck()
-{
-var result = true;
-var keycode = event.keyCode;
-if(123 == keycode)
-{
-result = false;
-}
-return result;
-}
-</script>
+<!--  <script type="text/javascript"> -->
+<!-- // function keydowncheck() -->
+<!-- // { -->
+<!-- // var result = true; -->
+<!-- // var keycode = event.keyCode; -->
+<!-- // if(123 == keycode) -->
+<!-- // { -->
+<!-- // result = false; -->
+<!-- // } -->
+<!-- // return result; -->
+<!-- // } -->
+<!-- </script> -->
 
 
 </head>
 <body>
-<body onkeydown="return keydowncheck();">
+<!-- <body onkeydown="return keydowncheck();"> -->
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -140,9 +140,9 @@ return result;
 
 		<!-- 	게시판  절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 		<h3>총 글 개수 : ${totalCount }개</h3>
-		<div class="table-responsive">
+		<div class="container">
 			<!-- 반응형 테이블 -->
-			<table class="table">
+			<table class="table table-striped">
 				<colgroup align="center">
 					<col width="13%" />
 					<col width="*" class="title" />	<!-- *는 나머지 -->
@@ -151,8 +151,8 @@ return result;
 					<col width="8%" />
 					<col width="8%" />
 				</colgroup>
-				<thead align="center">
-					<tr class="thead">
+				<thead>
+					<tr>
 						<th>번 호</th>		<!-- text_center 가운데 정렬 -->
 						<th class="text-left">제 목</th>
 						<th>작성자</th>
@@ -163,7 +163,7 @@ return result;
 				</thead>
 				<tbody>
 					<c:forEach var="article" items="${articleList}">
-						<tr class="tr_interval">
+						<tr>
 							<td class="text-center"><c:out value="${article.weiver_no}" /></td>
 							<td class="text-left"><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td>
 							<td class="text-center"><c:out value="${article.weiver_id}" /></td>
