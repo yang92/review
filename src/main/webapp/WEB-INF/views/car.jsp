@@ -166,7 +166,7 @@ return result;
 						<tr class="tr_interval">
 							<td class="text-center"><c:out value="${article.weiver_no}" /></td>
 							<td class="text-left"><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td>
-							<td class="text-center"><c:out value="${article.member_id}" /></td>
+							<td class="text-center"><c:out value="${article.weiver_id}" /></td>
 							<td class="text-center"><c:out value="${article.weiver_writedate}" /></td>
 							<td class="text-center"><c:out value="${article.weiver_hit}" /></td>
 							<td class="text-center"><c:out value="${article.weiver_good}" /></td>

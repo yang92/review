@@ -154,7 +154,7 @@ return result;
 							<td width="15%"><c:out value="${article.weiver_writedate}" /></td>
 						</tr>
 						<tr>
-							<td><c:out value="${article.member_id}" 	/> 새내기</td>
+							<td><c:out value="${article.weiver_id}" 	/> 새내기</td>
 						</tr>
 				</thead>
 				<tbody>

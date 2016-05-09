@@ -2,7 +2,7 @@ package com.pknu.bbs.dto;
 
 public class BBSDto {
 	private int weiver_no;
-	private String member_id;	
+	private String weiver_id;	
 	private String weiver_title;	
 	private String weiver_content;	
 	private String weiver_writedate;	
@@ -17,11 +17,11 @@ public class BBSDto {
 	public void setWeiver_no(int weiver_no) {
 		this.weiver_no = weiver_no;
 	}
-	public String getMember_id() {
-		return member_id;
+	public String getWeiver_id() {
+		return weiver_id;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setWeiver_id(String weiver_id) {
+		this.weiver_id = weiver_id;
 	}
 	public String getWeiver_title() {
 		return weiver_title;
@@ -67,7 +67,7 @@ public class BBSDto {
 	}
 	@Override
 	public String toString() {
-		return "BBSDto [weiver_no=" + weiver_no + ", member_id=" + member_id + ", weiver_title=" + weiver_title
+		return "BBSDto [weiver_no=" + weiver_no + ", weiver_id=" + weiver_id + ", weiver_title=" + weiver_title
 				+ ", weiver_content=" + weiver_content + ", weiver_writedate=" + weiver_writedate + ", weiver_good="
 				+ weiver_good + ", weiver_bad=" + weiver_bad + ", weiver_hit=" + weiver_hit + ", weiver_file="
 				+ weiver_file + "]";
