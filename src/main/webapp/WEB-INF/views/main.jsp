@@ -163,14 +163,76 @@ function logout() {
     </div>
     <br><br>
     
-    <div class="col-sm-3">
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+<!--     게시판 최신 글내용 -->
+    <div class="col-sm-12">
+    	<div class="col-sm-10 text-left">
+    		<h2>최신게시물</h2>
+    		<hr>
+    	 	<div class="col-sm-5 text-left">
+		    	<h3>음식</h3>
+		    	<p>Current Project</p>
+		    </div>
+		    <div class="col-sm-5 text-left">
+		    	<h3>자동차</h3>
+		    	<div class="container">
+		    		<!-- 반응형 테이블 -->
+				<table class="table table-striped">
+				<colgroup align="center">
+					<col width="13%" />
+					<col width="*" class="title" />	<!-- *는 나머지 -->
+					<col width="15%" />
+					<col width="8%" />		<!-- 8%로 너프 -->
+					<col width="8%" />
+					<col width="8%" />
+				</colgroup>
+<!-- 				<thead> -->
+<!-- 					<tr> -->
+<!-- 						<th>번 호</th>		text_center 가운데 정렬 -->
+<!-- 						<th class="text-left">제 목</th> -->
+<!-- 						<th>작성자</th> -->
+<!-- 						<th>작성일</th> -->
+<!-- 						<th>조 회</th> -->
+<!-- 						<th>추 천</th> -->
+<!-- 					</tr> -->
+<!-- 				</thead> -->
+				<tbody>
+					<c:forEach var="article" items="${articleList}">
+						<tr>
+							<td class="text-center"><c:out value="${article.weiver_no}" /></td>
+							<td class="text-left"><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td>
+							<td class="text-center"><c:out value="${article.weiver_id}" /></td>
+							<td class="text-center"><c:out value="${article.weiver_writedate}" /></td>
+							<td class="text-center"><c:out value="${article.weiver_hit}" /></td>
+							<td class="text-center"><c:out value="${article.weiver_good}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		    	</div>
+  			</div>
+    	</div>
+    	<div class="col-sm-2"> 
+			<img src="http://placehold.it/150x500?text=IMAGE" class="img-responsive" alt="광고">
+		</div>
     </div>
-    <div class="col-sm-3"> 
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
+    
+    <div class="col-sm-12">
+    	<div class="col-sm-10">
+    	 	<div class="col-sm-5 text-left">
+		    	<h3>전자기기</h3>
+		    	<p>Current Project</p>
+		    </div>
+		    <div class="col-sm-5 text-left">
+		    	<h3>게임</h3>
+		    	<p>Current Project</p>
+  			</div>
+    	</div>
+    	<div class="col-sm-2"> 
+<!-- 			<img src="http://placehold.it/150x500?text=IMAGE" class="img-responsive" alt="광고2"> -->
+		</div>
     </div>
+    
     <div class="col-sm-3">
       <div class="well">
        <p>Some text..</p>
