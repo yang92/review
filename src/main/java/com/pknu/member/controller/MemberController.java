@@ -61,12 +61,6 @@ public class MemberController {
 		return "main";
 	}
 	
-	@RequestMapping("/main.main")
-	public ModelAndView main() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main");
-		return mav;
-	}
 	@RequestMapping("/logout.main")
 	public String logout(HttpServletRequest req){
 		req.getSession().setAttribute("id", null);
@@ -80,5 +74,11 @@ public class MemberController {
 	
 	}
 	
+	@RequestMapping("/main.main")
+	public ModelAndView main() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main");
+		return mav;
+	}
 
 }
