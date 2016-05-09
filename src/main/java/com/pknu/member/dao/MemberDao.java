@@ -1,6 +1,5 @@
 package com.pknu.member.dao;
 
-import java.util.ArrayList;
 
 import org.springframework.stereotype.Repository;
 

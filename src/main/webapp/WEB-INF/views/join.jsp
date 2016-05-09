@@ -46,7 +46,7 @@
     	    	
      
         </div>
-        <form role="form" class="form-horizontal" action="/proj/join.main" method="POST">
+        <form role="form" class="form-horizontal" action="/proj/join.member" method="POST">
         <div class="form-group">
           <label class="col-sm-3 control-label" for="id">아이디</label>
         <div class="col-sm-6">

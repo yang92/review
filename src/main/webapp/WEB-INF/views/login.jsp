@@ -29,7 +29,7 @@
 <title>Login</title>
 <script>
 function moveJoin() {
-	document.location.href="join.main";
+	document.location.href="join.member";
 }
 function moveMain() {
 	document.location.href="main.main";
@@ -43,7 +43,7 @@ function moveMain() {
 	<a href="/proj/main.main"><img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50"></a>
 	<h1>로그인 <small>Login</small></h1>
 </div>
-<form class="form-horizontal" action="/proj/login.main" method="post">
+<form class="form-horizontal" action="/proj/login.member" method="post">
 	<div class="form-group">
           <label class="col-sm-3 control-label" for="id">ID</label>
         <div class="col-sm-6">

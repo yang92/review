@@ -37,7 +37,32 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style>
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      height:100%;
+      min-height: 50px;
+      max-height: 500px; 
+      max-width: 500px;
+/*       vertical-align: middle; */
+    }
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
+      }
+    }
+</style>
+<script>
+// function searchAll() {
+// 	alert("hello");
+// }
+</script>
 </head>
 
 <body>
@@ -59,8 +84,8 @@
 
             <ul class="nav navbar-top-links navbar-right">
             <c:if test="${id == null}">
-	      		<li><a href="/proj/join.main"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-	        	<li><a href="/proj/login.main"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      		<li><a href="/proj/join.member"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+	        	<li><a href="/proj/login.member"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	      	</c:if>
             <c:if test="${id != null}">
                 <!-- /.dropdown -->
@@ -134,7 +159,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="logout.main"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout.member"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -149,11 +174,13 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="전체 검색">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
+                                <a href="/proj/search.main">
+                                <button class="btn btn-default" type="button" onclick="searchAll()">
+                                	<i class="fa fa-search"></i>
                                 </button>
+                                </a>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -162,22 +189,23 @@
                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
                         </li>
                         <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/food.bbs">맛집</a>
-                                </li>
-                                <li>
-                                    <a href="/proj/food.bbs">리뷰</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a>
+                           
                         </li>
                         <li>
                             <a href="/proj/car.bbs"><i class="fa fa-car fa-fw"></i> 자동차</a>
                         </li>
                         <li>
-                            <a href="/proj/electronic.bbs"><i class="fa fa-bolt fa-fw"></i> 전자기기</a>
+                            <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/proj/food.bbs">스마트폰</a>
+                                </li>
+                                <li>
+                                    <a href="/proj/food.bbs">컴퓨터</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a>
@@ -244,6 +272,55 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <!--슬라이드 이미지 3척 -->
+            <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+      	<!-- Indicators -->
+      	<ol class="carousel-indicators">
+        	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>	<!-- 작은 동그라미 버튼 -->
+        	<li data-target="#myCarousel" data-slide-to="1"></li>
+        	<li data-target="#myCarousel" data-slide-to="2"></li>
+      	</ol>
+	 
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="resources/images/척.PNG"  alt="Image">
+          <div class="carousel-caption">
+            <h3>척!</h3>
+            <p>vayne bug</p>
+          </div>      
+        </div>
+
+        <div class="item">
+          <img src="resources/images/척 by lands59.jpg" alt="Image">
+          <div class="carousel-caption">
+            <h3>sell this picture : 1billion$</h3>
+            <p> chuck! by lands59 </p>
+          </div>      
+        </div>
+        
+        <div class="item">
+          <img src="resources/images/척 by H1000.jpg" alt="Image">
+          <div class="carousel-caption">
+            <h3>Gold ganda</h3>
+            <p> chuck! by H1000 </p>
+          </div>      
+        </div>
+      </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <br><br>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-3 col-md-6">

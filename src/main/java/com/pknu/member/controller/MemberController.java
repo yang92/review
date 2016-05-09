@@ -23,12 +23,12 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
-	@RequestMapping(value="/login.main", method = RequestMethod.GET)
+	@RequestMapping(value="/login.member", method = RequestMethod.GET)
 	public String loginForm(){
 		
 		return "login";
 	}
-	@RequestMapping(value="/login.main", method = RequestMethod.POST)
+	@RequestMapping(value="/login.member", method = RequestMethod.POST)
 	public ModelAndView login(String id, String pw, HttpServletRequest req){
 		ModelAndView mav = new ModelAndView();
 		
@@ -50,38 +50,33 @@ public class MemberController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/join.main", method = RequestMethod.GET)
+	@RequestMapping(value="/join.member", method = RequestMethod.GET)
 	public String joinForm(){
 		return "join";
 	}
 	
-	@RequestMapping(value="/join.main", method = RequestMethod.POST)
+	@RequestMapping(value="/join.member", method = RequestMethod.POST)
 	public String join(MemberDto member){
 		memberService.insertMember(member);
 		return "main";
 	}
 	
-	@RequestMapping("/logout.main")
+	@RequestMapping("/logout.member")
 	public String logout(HttpServletRequest req){
 		req.getSession().setAttribute("id", null);
 		return "redirect:/main.main";
 	}
 	
-	@RequestMapping("/joinCheckId.main")
+	@RequestMapping("/joinCheckId.member")
 	public void joinCheckId(String inputId, HttpServletResponse resp){
 		
 		memberService.joinCheckId(inputId, resp);
 	
 	}
 	
-	@RequestMapping("/main.main")
-	public ModelAndView main() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main");
-		return mav;
-	}
 
-	@RequestMapping("/profile.main")
+
+	@RequestMapping("/profile.member")
 	public ModelAndView profile() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("memberProfile");
