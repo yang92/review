@@ -59,9 +59,10 @@
     }
 </style>
 <script>
-// function searchAll() {
-// 	alert("hello");
-// }
+function searchAll() {
+// 	alert($("#target").val());
+	$("#").submit();
+}
 </script>
 </head>
 
@@ -174,14 +175,15 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="전체 검색">
+<!--                                form으로 감싸자 -->
+                                <input type="text" class="form-control" placeholder="전체 검색" name="target" id="target">
                                 <span class="input-group-btn">
-                                <a href="/proj/search.main">
                                 <button class="btn btn-default" type="button" onclick="searchAll()">
                                 	<i class="fa fa-search"></i>
                                 </button>
-                                </a>
-                            </span>
+                                </span>
+                                
+                            
                             </div>
                             <!-- /input-group -->
                         </li>
