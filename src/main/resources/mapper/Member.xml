@@ -7,7 +7,8 @@
 	
 	<insert id="insertMember" parameterType="com.pknu.member.dto.MemberDto">
 		INSERT INTO MEMBER
-		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{memo})
+		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{memo}
+				, '새싹', null, null, null)
 	</insert>
 	
 	<select id="selectPassword" parameterType="string" resultType="string">
