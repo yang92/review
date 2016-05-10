@@ -5,7 +5,7 @@
 <mapper namespace="com.pknu.member.dao.MemberDao">
 
 	
-	<insert id="insertMember" parameterType="com.pknu.member.dto.MemberDto">
+	<insert id="insertMember" parameterType="memberDto">
 		INSERT INTO MEMBER
 		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{memo}, null, null, null, null)
 	</insert>

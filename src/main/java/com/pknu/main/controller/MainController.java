@@ -20,7 +20,6 @@ public class MainController {
 	}
 	@RequestMapping("/search.main")
 	public ModelAndView search(String target) {
-		System.out.println("controller"+target);
 		return mainService.searchAll(target);
 	}
 }

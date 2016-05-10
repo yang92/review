@@ -14,37 +14,6 @@ public class MemberDto {
 	private String nickname;
 	private String phonenumber;
 	private String picture;
-	
-	public String getMemo() {
-		return memo;
-	}
-	public void setMemo(String memo) {
-		this.memo = memo;
-	}
-	public String getGrade() {
-		return grade;
-	}
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
 	public String getId() {
 		return id;
 	}
@@ -93,11 +62,35 @@ public class MemberDto {
 	public void setScore(String score) {
 		this.score = score;
 	}
-	public String getmemo() {
+	public String getMemo() {
 		return memo;
 	}
-	public void setmemo(String memo) {
+	public void setMemo(String memo) {
 		this.memo = memo;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 	@Override
 	public String toString() {
