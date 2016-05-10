@@ -14,6 +14,7 @@ public class MemberDto {
 	private String nickname;
 	private String phonenumber;
 	private String picture;
+	
 	public String getId() {
 		return id;
 	}

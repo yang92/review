@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.member.dao.MemberDao;
 import com.pknu.member.dto.MemberDto;
@@ -20,6 +21,8 @@ public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	MemberDao memberDao;
+	MemberDto memberDto;
+	ModelAndView mav;
 	
 	@Override
 	public int loginCheck(String id, String password) {
@@ -37,6 +40,7 @@ public class MemberServiceImpl implements MemberService{
 		}
 		return result;
 	}
+
 
 	@Override
 	public void insertMember(MemberDto member) {
@@ -70,6 +74,14 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
+	@Override
+	public ModelAndView userProfile(String id) {
+		mav=new ModelAndView();
+		memberDto = memberDao.userProfile(id);
+		mav.addObject("userInfo", memberDto);
+		mav.setViewName("userProfile");
+		return mav;
+	}
 	
 
 

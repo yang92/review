@@ -11,5 +11,6 @@ public interface MemberDao {
 	String selectPassword(String id);
 	void insertMember(MemberDto member);
 	String selectId(String inputId);
+	MemberDto userProfile(String id);
 
 }

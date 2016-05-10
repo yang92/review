@@ -20,7 +20,12 @@
 		SELECT MEMBER_ID 
 		FROM MEMBER
 		WHERE MEMBER_ID = #{inputId}
-		
+	</select>
+	
+	<select id="userProfile" parameterType="String" resultType="memberDto">
+		SELECT *
+		FROM MEMBER
+		WHERE MEMBER_ID=#{id}
 	</select>
 	
 </mapper>
