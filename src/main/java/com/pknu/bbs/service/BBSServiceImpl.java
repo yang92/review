@@ -2,14 +2,11 @@ package com.pknu.bbs.service;
 
 import java.util.HashMap;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.inject.Inject;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.pknu.bbs.dao.BBSDao;
 import com.pknu.bbs.dto.BBSDto;
 import com.pknu.bbs.util.Page;
@@ -70,9 +67,15 @@ public class BBSServiceImpl implements BBSService{
 		
 		return mav;
 	}
-	
-	
-	
-	
+	//글쓰기
+	@Override
+	public String insertArticle(BBSDto article, HttpSession session) {
+		
+		article.setWeiver_id((String)session.getAttribute("id"));
+		System.out.println(article);
+		bbsDao.insertArticle(article);
+
+		return "redirect:/list.bbs?pageNum=1";
+	}
 	
 }

@@ -14,5 +14,6 @@ public interface BBSDao {
 	
 	public void hitUp(HashMap<String, String> hm);
 	public BBSDto readCar(String weiver_no);
+	public void insertArticle(BBSDto article);
 
 }

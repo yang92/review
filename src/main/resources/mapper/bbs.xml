@@ -29,5 +29,10 @@
 		FROM WEIVER_CAR
 		WHERE WEIVER_NO=#{weiver_no}
 	</select>
+<!-- 	글 쓰기 -->
+	<insert id="insertArticle" parameterType="BBSDto">
+		INSERT INTO WEIVER_CAR values(
+		seq_weiver_no.nextval, #{weiver_id}, #{weiver_title}, #{weiver_content}, sysdate, 0, 0, 0, 0)
+	</insert>
 	
 </mapper>
