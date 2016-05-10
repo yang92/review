@@ -63,8 +63,11 @@
 	}
 	
 </style>
-
-
+<script>
+function moveWrite() {
+	document.location.href="writeForm.bbs";
+}
+</script>
 </head>
 <body>
 <!-- <body onkeydown="return keydowncheck();"> -->
@@ -186,6 +189,11 @@
 										</td>
 									</tr>
 									</c:forEach>
+									<tr>
+										<td>
+										<button class="btn btn-sm btn-primary" type="button" onclick="moveWrite()">글쓰기</button>
+										</td>
+									</tr>
 									<tr>
 										<td>
 											${pageCode}
