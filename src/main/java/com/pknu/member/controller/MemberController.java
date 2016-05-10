@@ -34,7 +34,18 @@ public class MemberController {
 		
 		if(result == 1){
 			req.getSession().setAttribute("id", id);
-			mav.setViewName("redirect:/main.main");
+			
+			if(req.getParameter("loginPath")==""){//리스트에서 바로 로그인할경우
+				mav.setViewName("redirect:/main.main");
+			}
+			else if(req.getParameter("loginPath").equals("ok")){//글쓰기버튼을 통해 로그인 할 경우
+				mav.setViewName("redirect:/writeForm.bbs");
+				
+			}
+			else{
+				System.out.println("loginPath 오류!!!!!");
+				mav.setViewName("redirect:/main.main");
+			}
 		}
 		else if(result == 2){
 			System.out.println("비밀번호 오류");
@@ -44,6 +55,8 @@ public class MemberController {
 			System.out.println("가입되지 않은 회원");
 			mav.setViewName("login");
 		}
+		
+		
 		
 		return mav;
 	}
