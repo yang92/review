@@ -1,13 +1,9 @@
 package com.pknu.member.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -77,11 +73,26 @@ public class MemberController {
 	}
 	
 
-
+	// 유저 프로필 보기
 	@RequestMapping("/profile.member")
-	public ModelAndView profile(String id, HttpServletRequest req) {
-		req.getSession().setAttribute("id", id);
+	public ModelAndView profile(HttpSession session) {
+		String id=null;
+		id=(String) session.getAttribute("id");
+		System.out.println("프로필 보기 완료");
 		
 		return memberService.userProfile(id);
 	}
+	
+	// 유저 프로필 수정ㅎ
+	@RequestMapping("/profileUpdate.member")
+	public String profileUpdate(MemberDto userInfo, HttpSession session) {
+//		String id=null;
+		System.out.println(userInfo.getMember_introduce());
+		System.out.println(userInfo.getMember_phonenumber());
+//		id=(String) session.getAttribute("id");
+		memberService.profileUpdate(userInfo);
+		System.out.println("프로필 수정완료");
+		return "redirect:/profile.member";
+	}
+
 }

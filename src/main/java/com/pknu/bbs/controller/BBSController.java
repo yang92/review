@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,8 +33,9 @@ public class BBSController {
 		return bbsService.readCar(weiver_no, weiver);
 	}
 	//글쓰기(writeForm)
+	@Transactional
 	@RequestMapping("/writeForm.bbs")
-	public String writeForm(){
+	public String writeForm(HttpSession session){
 		return "writeForm";
 	}
 	//글쓰기(write)
