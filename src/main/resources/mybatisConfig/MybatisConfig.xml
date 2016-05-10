@@ -24,6 +24,7 @@
 	<mappers>
 		<mapper resource="mapper/Member.xml"/>
 		<mapper resource="mapper/bbs.xml"/>
+		<mapper resource="mapper/Main.xml"/>
 	</mappers>
 	
 	
