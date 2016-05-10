@@ -20,8 +20,9 @@ public class Page {
 		if(endPage > totalPage) {
 			endPage = totalPage;
 		}			
-
+		
 		sb = new StringBuffer();
+		sb.append("<center>");
 		if(startPage < pageBlock) {
 			sb.append("<img src='resources/left.png' width='30' height='9'>");			
 		} else {
@@ -56,6 +57,7 @@ public class Page {
 			sb.append("<img src='resources/right.png' width='30' height='9'>");
 			
 		}		
+		sb.append("</center>");
 	}
 
 
