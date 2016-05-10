@@ -22,11 +22,13 @@ public class MainController {
 	}
 	@RequestMapping(value="/search.main", method = RequestMethod.POST)
 	public ModelAndView search(String target) {
+		System.out.println("POST POST POST POST POST ");
 		return mainService.searchAll(target);
 	}
 	
 	@RequestMapping(value="/search.main", method = RequestMethod.GET)
 	public ModelAndView afterSearch() {
+		System.out.println("GET GET GET GET");
 		mav.setViewName("search");
 		return mav;
 	}

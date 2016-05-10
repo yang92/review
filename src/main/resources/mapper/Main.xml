@@ -8,11 +8,11 @@
 	<select id="searchTitle" parameterType="String" resultType="BBSDto">
 	SELECT WEIVER_TITLE
 	FROM WEIVER_FOOD
-	WHERE WEIVER_TITLE LIKE '%#{target}%'
+	WHERE WEIVER_TITLE LIKE #{target}
 	UNION ALL
 	SELECT WEIVER_TITLE
 	FROM WEIVER_CAR
-	WHERE WEIVER_TITLE LIKE '%#{target}%'
+	WHERE WEIVER_TITLE LIKE #{target}
 	</select>
 	
 </mapper>

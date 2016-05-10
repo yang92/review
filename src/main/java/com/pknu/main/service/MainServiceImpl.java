@@ -13,16 +13,17 @@ import com.pknu.main.dao.MainDao;
 public class MainServiceImpl implements MainService {
 	@Autowired
 	MainDao mainDao;
-	List<BBSDto> articleList;
+	
 	ModelAndView mav = null;
 	
 	@Override
 	public ModelAndView searchAll(String target) {
+		List<BBSDto> articleList = null;
+		target = "%"+target+"%";
 		
-		
-		//articleList = mainDao.searchTitle(target);
+		articleList = mainDao.searchTitle(target);
 		System.out.println(articleList);
-		//mav.addObject("articleList", articleList);
+		mav.addObject("articleList", articleList);
 		mav.setViewName("redirect:/search.main");
 		
 		return mav;
