@@ -12,5 +12,6 @@ public interface MemberDao {
 	void insertMember(MemberDto member);
 	String selectId(String inputId);
 	MemberDto userProfile(String id);
+	void profileUpdate(MemberDto userInfo);
 
 }

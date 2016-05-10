@@ -12,5 +12,6 @@ public interface MemberService {
 	void insertMember(MemberDto member);
 	void joinCheckId(String inputId, HttpServletResponse resp);
 	ModelAndView userProfile(String id);
+	void profileUpdate(MemberDto userInfo);
 
 }
