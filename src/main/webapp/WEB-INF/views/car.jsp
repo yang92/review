@@ -112,7 +112,7 @@
 		<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
 
 		<!-- 	게시판  절취선---------------------------------------------------------------------------------------------------------------------------------- -->
-		<h3>총 글 개수 : ${totalCount }개</h3>
+<%-- 		<h3>총 글 개수 : ${totalCount }개</h3> --%>
 <!-- 		<div class="container"> -->
 <!--  			반응형 테이블  -->
 <!-- 			<table class="table table-striped"> -->
