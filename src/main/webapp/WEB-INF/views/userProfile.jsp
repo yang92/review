@@ -3,14 +3,19 @@
 <html lang="en">
 
 <head>
+<script type="text/javascript">
+$("#profileUpdateSuccess").on("click", function() {
+	alert("수정이 완료되었습니다.");
+});
+</script>
 <style type="text/css">
 .form-control{
 	max-width: 150px;
 }
 
-.profile_image{
-	max-height: 150px;
-	max-width: 150px;
+#profile_image{
+	height: 150px;
+	width: 150px;
 }
 #info_col{
 	max-width: 400px;
@@ -411,7 +416,7 @@
 <!--                         </div> -->
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                        	<form action="profileUpdate.member"  method="post">
+                        	<form action="/proj/profileUpdate.member" id="profileUpdateSuccess"  method="post">
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <colgroup>
@@ -427,7 +432,8 @@
 <!-- 												<div  class="col-lg-2 col-md-2"> -->
                                             		<img alt="이미지가 없습니다." 
                                             		src="resources/images/척.jpg" 
-                                            		class="img-thumbnail profile_image">
+                                            		class="img-thumbnail"
+                                            		id="profile_image">
 <!--                                             	</div> -->
 												<br/>
                                             <label>프로필 수정</label>
@@ -438,7 +444,7 @@
                                             <td>아이디</td> <td>${userInfo.member_id}</td>
                                         </tr>
                                         <tr>
-                                            <td>비밀번호</td> <td><input class="form-control" type="password" id="pw"  maxlength="16"></td>
+                                            <td>비밀번호</td> <td><input class="form-control" type="password" name="member_pw" id="pw"  maxlength="16"></td>
                                         </tr>
                                         <tr>
                                             <td>비밀번호 확인</td> <td><input class="form-control" type="password" id="secondPass"  maxlength="16"></td>
@@ -447,24 +453,24 @@
                                             <td>이름</td> <td>${userInfo.member_name }</td>
                                         </tr>
                                         <tr>
-                                            <td>닉네임</td> <td><input class="form-control" type="text" id="secondPass"  maxlength="16" value="${userInfo.member_nickname}"></td>
+                                            <td>닉네임</td> <td><input class="form-control" type="text" name="member_nickname" id="secondPass"  maxlength="16" value="${userInfo.member_nickname}"></td>
                                         </tr>
                                         <tr>
                                             <td>등급</td> <td>${userInfo.member_grade }</td>
                                         </tr>
                                         <tr>
-                                            <td>H.P</td> <td><input class="form-control" type="text" id="secondPass"  maxlength="16" value="${userInfo.member_phonenumber}"></td>
+                                            <td>H.P</td> <td><input class="form-control" type="text" name="member_phonenumber" id="secondPass"  maxlength="16" value="${userInfo.member_phonenumber}"></td>
                                         </tr>
                                         <tr>
-                                            <td>E-Mail</td> <td><input class="form-control" type="text" id="secondPass"  maxlength="16" value="${userInfo.member_email}"></td>
+                                            <td>E-Mail</td> <td><input class="form-control" type="text" name="member_email" id="secondPass"  maxlength="16" value="${userInfo.member_email}"></td>
                                         </tr>
                                         <tr>
                                             <td>성별</td> <td>${userInfo.member_sex }</td>
                                         </tr>
                                         <tr>
-                                            <td>생일</td> <td><input class="form-control" type="text" id="secondPass"  maxlength="16" value="${userInfo.member_birth}"></td>
+                                            <td>생일</td> <td><input class="form-control" type="text" name="member_birth" id="secondPass"  maxlength="16" value="${userInfo.member_birth}"></td>
                                         <tr>
-                                            <td>자기소개(최대 100Bytes)</td> <td><textarea class="form-control" rows="3" maxlength="100" id="introduce">${userInfo.member_introduce}</textarea></td>
+                                            <td>자기소개(최대 100Bytes)</td> <td><textarea class="form-control" name="member_introduce" rows="3" maxlength="100" id="introduce">${userInfo.member_introduce}</textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>

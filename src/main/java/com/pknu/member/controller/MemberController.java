@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -84,12 +85,13 @@ public class MemberController {
 	}
 	
 	// 유저 프로필 수정ㅎ
-	@RequestMapping("/profileUpdate.member")
-	public String profileUpdate(MemberDto userInfo, HttpSession session) {
-//		String id=null;
-		System.out.println(userInfo.getMember_introduce());
-		System.out.println(userInfo.getMember_phonenumber());
-//		id=(String) session.getAttribute("id");
+	@RequestMapping(value="/profileUpdate.member", method=RequestMethod.POST)
+	public String profileUpdate(@ModelAttribute("userInfo") MemberDto userInfo, HttpSession session) {
+		System.out.println(userInfo.toString());
+//		if(userInfo.getMember_pw()==""){
+//			userInfo.setMember_pw("null");
+//		}
+		userInfo.setMember_id((String) session.getAttribute("id"));
 		memberService.profileUpdate(userInfo);
 		System.out.println("프로필 수정완료");
 		return "redirect:/profile.member";
