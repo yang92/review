@@ -44,6 +44,7 @@ function moveMain() {
 	<h1>로그인 <small>Login</small></h1>
 </div>
 <form class="form-horizontal" action="/proj/login.member" method="post">
+	<input type="hidden" name="loginPath" value="${loginPath}">
 	<div class="form-group">
           <label class="col-sm-3 control-label" for="id">ID</label>
         <div class="col-sm-6">
