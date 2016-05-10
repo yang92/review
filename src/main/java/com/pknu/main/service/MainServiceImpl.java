@@ -14,17 +14,17 @@ public class MainServiceImpl implements MainService {
 	@Autowired
 	MainDao mainDao;
 	
-	ModelAndView mav = null;
+	ModelAndView mav = new ModelAndView();
 	
 	@Override
 	public ModelAndView searchAll(String target) {
-		List<BBSDto> articleList = null;
+		List<BBSDto> articleList;
+		mav.addObject("target", target);
 		target = "%"+target+"%";
 		
 		articleList = mainDao.searchTitle(target);
-		System.out.println(articleList);
 		mav.addObject("articleList", articleList);
-		mav.setViewName("redirect:/search.main");
+		mav.setViewName("search");
 		
 		return mav;
 	}

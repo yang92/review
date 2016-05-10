@@ -172,7 +172,7 @@
                         <form action="/proj/search.main" method="post">
                             <div class="input-group custom-search-form">
 								
-	                                <input type="text" class="form-control" placeholder="전체 검색" name="target" id="target">
+	                                <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
 	                                <span class="input-group-btn">
 	                                <button class="btn btn-default" type="submit">
 	                                	<i class="fa fa-search"></i>
