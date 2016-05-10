@@ -31,9 +31,9 @@
 	<update id="profileUpdate" parameterType="memberDto">
 		UPDATE MEMBER
 		SET 
-		<if test="#{member_pw}!='null'">
+<!-- 		<if test="#{member_pw}!='null'"> -->
 		member_pw = #{member_pw},
-		</if>
+<!-- 		</if> -->
 		member_nickname = #{member_nickname},
 		member_phonenumber = #{member_phonenumber}, member_email = #{member_email},
 		member_birth = #{member_birth}, member_introduce = #{member_introduce}

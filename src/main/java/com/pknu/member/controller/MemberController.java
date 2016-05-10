@@ -98,12 +98,11 @@ public class MemberController {
 	}
 	
 	// 유저 프로필 수정ㅎ
-	@RequestMapping(value="/profileUpdate.member", method=RequestMethod.POST)
+	@RequestMapping("/profileUpdate.member")
 	public String profileUpdate(@ModelAttribute("userInfo") MemberDto userInfo, HttpSession session) {
+//		String id=null;
 		System.out.println(userInfo.toString());
-//		if(userInfo.getMember_pw()==""){
-//			userInfo.setMember_pw("null");
-//		}
+//		id=(String) session.getAttribute("id");
 		userInfo.setMember_id((String) session.getAttribute("id"));
 		memberService.profileUpdate(userInfo);
 		System.out.println("프로필 수정완료");
