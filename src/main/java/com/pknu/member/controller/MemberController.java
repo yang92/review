@@ -22,6 +22,8 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	ModelAndView mav;
+	
 	
 	@RequestMapping(value="/login.member", method = RequestMethod.GET)
 	public String loginForm(){
@@ -77,9 +79,9 @@ public class MemberController {
 
 
 	@RequestMapping("/profile.member")
-	public ModelAndView profile() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("memberProfile");
-		return mav;
+	public ModelAndView profile(String id, HttpServletRequest req) {
+		req.getSession().setAttribute("id", id);
+		
+		return memberService.userProfile(id);
 	}
 }
