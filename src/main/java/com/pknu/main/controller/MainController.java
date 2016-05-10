@@ -3,7 +3,7 @@ package com.pknu.main.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.main.service.MainService;
@@ -20,16 +20,16 @@ public class MainController {
 		mav.setViewName("main");
 		return mav;
 	}
-	@RequestMapping(value="/search.main", method = RequestMethod.POST)
+	@RequestMapping(value="/search.main")
 	public ModelAndView search(String target) {
-		System.out.println("POST POST POST POST POST ");
+//		System.out.println("POST POST POST POST POST ");
 		return mainService.searchAll(target);
 	}
 	
-	@RequestMapping(value="/search.main", method = RequestMethod.GET)
-	public ModelAndView afterSearch() {
-		System.out.println("GET GET GET GET");
-		mav.setViewName("search");
-		return mav;
-	}
+//	@RequestMapping(value="/search.main", method = RequestMethod.GET)
+//	public ModelAndView afterSearch() {
+//		System.out.println("GET GET GET GET");
+//		mav.setViewName("search");
+//		return mav;
+//	}
 }

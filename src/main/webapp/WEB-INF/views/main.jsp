@@ -80,8 +80,9 @@
 
             <ul class="nav navbar-top-links navbar-right">
             <c:if test="${id == null}">
-	      		<li><a href="/proj/join.member"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
-	        	<li><a href="/proj/login.member"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            	<li class="pull-right"><a href="/proj/login.member"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      		<li class="pull-right"><a href="/proj/join.member"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+	        	
 	      	</c:if>
             <c:if test="${id != null}">
                 <!-- /.dropdown -->
@@ -145,7 +146,7 @@
 <!--                     /.dropdown-alerts -->
 <!--                 </li> -->
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                <li class="dropdown pull-right">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
@@ -172,7 +173,7 @@
                         <form action="/proj/search.main" method="post">
                             <div class="input-group custom-search-form">
 								
-	                                <input type="text" class="form-control" placeholder="전체 검색" name="target" id="target">
+	                                <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
 	                                <span class="input-group-btn">
 	                                <button class="btn btn-default" type="submit">
 	                                	<i class="fa fa-search"></i>
