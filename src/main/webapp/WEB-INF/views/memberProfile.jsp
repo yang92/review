@@ -3,7 +3,17 @@
 <html lang="en">
 
 <head>
+<style type="text/css">
+.form-control{
+	max-width: 150px;
+}
 
+.profile_image{
+	max-height: 150px;
+	max-width: 150px;
+}
+
+</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,6 +48,7 @@
     <![endif]-->
 
 </head>
+
 
 
 <body>
@@ -400,13 +411,16 @@
                                     <tbody>
                                            
                                         <tr height="200px">
-                                            <td>프로필 사진</td> 
-                                            <td>
+                                            
+                                            <td colspan="2">
+                                            		프로필 사진<br/>
 <!-- 												<div  class="col-lg-2 col-md-2"> -->
-                                            		<img alt="이미지가 없습니다." src="resources/images/척.jpg" class="profile_image">
+                                            		<img alt="이미지가 없습니다." 
+                                            		src="resources/images/척.jpg" 
+                                            		class="img-thumbnail profile_image">
 <!--                                             	</div> -->
 												<br/>
-                                            <label>사진 선택</label>
+                                            <label>프로필 수정</label>
                                             <input type="file">
                                         	</td>
                                         </tr>
