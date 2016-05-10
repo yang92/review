@@ -10,7 +10,7 @@ $.ajaxSetup({
 $(function(){
 	$("#id").on("blur",function(){
 		$.ajax({
-			url : "/proj/joinCheckId.main",
+			url : "/proj/joinCheckId.member",
 			data : {
 				inputId : $("#id").val()
 			},

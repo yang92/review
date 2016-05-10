@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,28 +23,13 @@
 <!--     <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
 	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
-	
-	<!-- MetisMenu CSS -->
-    <link href="resources/css/metisMenu.min.css" rel="stylesheet">
-    <!-- Timeline CSS -->
-    <link href="resources/css/timeline.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="resources/css/sb-admin-2.css" rel="stylesheet">
-    <!-- Morris Charts CSS -->
-    <link href="resources/css/morris.css" rel="stylesheet">
-<title>검색</title>
-<script>
-function search() {
-	
-}
-</script>
+
+<title>검색결과</title>
+
 </head>
 <body>
-	<li class="input-group custom-search-form">
-	<input type="text" class="form-control" placeholder="Search...">
-	<span class="input-group-btn">
-	<button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-	</span>
-	</li>
+	<c:forEach var="article" items="${articleList}">
+		검색결과 : ${article.weiver_title} <br />
+	</c:forEach>
 </body>
 </html>
