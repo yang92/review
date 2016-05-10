@@ -384,7 +384,7 @@
             </div>
 <!--          div 바디   절취선 ----------------------------------------------------------------------------- -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <div class="panel panel-default">
 <!--                         <div class="panel-heading"> -->
 <!--                             Striped Rows -->
@@ -398,16 +398,17 @@
                                     	<col width="*%" />
                                     </colgroup>	
                                     <tbody>
-                                            <div class="form-group">
-<!--                                             <div class="col-xs-2 col-md-4" > -->
-												<div>
-                                            	<img alt="" src="resources/images/척.jpg" class="profile_image">
-                                            </div>
+                                           
+                                        <tr height="200px">
+                                            <td>프로필 사진</td> 
+                                            <td>
+<!-- 												<div  class="col-lg-2 col-md-2"> -->
+                                            		<img alt="이미지가 없습니다." src="resources/images/척.jpg" class="profile_image">
+<!--                                             	</div> -->
+												<br/>
                                             <label>사진 선택</label>
                                             <input type="file">
-                                        	</div>
-                                        <tr>
-                                            <td>프로필</td> 
+                                        	</td>
                                         </tr>
                                         <tr>
                                             <td>아이디</td> <td>koo</td>
