@@ -4,7 +4,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface BBSService {
 	// 게시판
-	public ModelAndView car();
+	public ModelAndView list(int pageNum);
 	
 	// 글 읽기
 	public ModelAndView readCar(String weiver_no, String weiver);

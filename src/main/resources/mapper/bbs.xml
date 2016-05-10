@@ -8,8 +8,12 @@
 		SELECT COUNT(*) FROM WEIVER_CAR
 	</select>	
 	
-	<select id="getArticles" resultType="BBSDto">
-		SELECT * FROM WEIVER_CAR  ORDER BY WEIVER_NO desc
+	<select id="getArticles" parameterType="HashMap" resultType="BBSDto">
+		SELECT * 
+		FROM (SELECT ROWNUM RM, WEIVER.* FROM (SELECT *
+												FROM WEIVER_CAR
+												ORDER BY weiver_no DESC)WEIVER)
+		WHERE RM BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
 <!-- 	조회수 -->

@@ -195,7 +195,7 @@ function searchAll() {
                            
                         </li>
                         <li>
-                            <a href="/proj/car.bbs"><i class="fa fa-car fa-fw"></i> 자동차</a>
+                            <a href="/proj/list.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
                         </li>
                         <li>
                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>

@@ -3,6 +3,7 @@ package com.pknu.bbs.service;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dao.BBSDao;
 import com.pknu.bbs.dto.BBSDto;
+import com.pknu.bbs.util.Page;
 
 @Service
 public class BBSServiceImpl implements BBSService{
@@ -18,18 +20,31 @@ public class BBSServiceImpl implements BBSService{
 	BBSDao bbsDao;
 	ModelAndView mav;
 	
+	@Resource
+	Page page;
+	
+	
 	
 	List<BBSDto> articleList;
 	
 	// 게시판
-	public ModelAndView car(){
+	public ModelAndView list(int pageNum){
+		
+		int pageSize=10;
+		int pageBlock=10;
 		mav = new ModelAndView();
-	   	
-		int totalCount=bbsDao.getArticleCount();			
-		articleList=bbsDao.getArticles();
+		int totalCount=bbsDao.getArticleCount();
+		page.paging(pageNum, totalCount, pageSize, pageBlock);
+		
+		HashMap<String, Integer> hm = new HashMap<>();
+		hm.put("startRow", page.getStartRow());
+		hm.put("endRow", page.getEndRow());
+		articleList=bbsDao.getArticles(hm);
 		
 		mav.addObject("totalCount",totalCount);
 		mav.addObject("articleList",articleList);
+		mav.addObject("pageNum", pageNum);
+		mav.addObject("pageCode", page.getSb().toString());
 		mav.setViewName("car");
 		return mav;
 	}

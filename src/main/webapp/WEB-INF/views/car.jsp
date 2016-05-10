@@ -52,6 +52,17 @@
 <!-- // return result; -->
 <!-- // } -->
 <!-- </script> -->
+<style type="text/css">
+	@media (max-width: 479px){
+	.text-resp{
+	font-size: 15px}
+	}
+	@media(min-width: 480px){
+	.text-resp{
+	font-size:20px}
+	}
+	
+</style>
 
 
 </head>
@@ -88,22 +99,22 @@
 	  </div>
 	</nav>
 
-	<div class="container text-center">
-		<div class="row">
-			<a href="/proj/main.main"> <img
-				class="img-responsive center-block"
-				src="resources/images/mainLogo.jpg" alt="Chania" width="200"
-				height="50">
-			</a>
-		</div>
-		<hr>
+<!-- 	<div class="container text-center"> -->
+<!-- 		<div class="row"> -->
+<!-- 			<a href="/proj/main.main"> <img -->
+<!-- 				class="img-responsive center-block" -->
+<!-- 				src="resources/images/mainLogo.jpg" alt="Chania" width="200" -->
+<!-- 				height="50"> -->
+<!-- 			</a> -->
+<!-- 		</div> -->
+<!-- 		<hr> -->
 		<%-- 	<input type="hidden" id="title" value="${article.title}"> --%>
 		<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
 
 		<!-- 	게시판  절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 		<h3>총 글 개수 : ${totalCount }개</h3>
 <!-- 		<div class="container"> -->
- 			<!-- 반응형 테이블 --> 
+<!--  			반응형 테이블  -->
 <!-- 			<table class="table table-striped"> -->
 <%-- 				<colgroup align="center"> --%>
 <%-- 					<col width="13%" /> --%>
@@ -155,7 +166,7 @@
 							<table class="table table-filter">
 								<tbody>
 									<c:forEach var="article" items="${articleList}"> 
-									<tr data-status="pagado">
+									<tr>
 										
 										<td>
 											<div class="media">
@@ -164,9 +175,9 @@
 <!-- 												</a> -->
 												<div class="media-body">
 <!-- 													<span class="media-meta pull-right">Febrero 13, 2016</span> -->
-													<h4 class="title">
+													<h4 class="title text-resp">
 														
-														<a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a>
+														<a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}"><c:out value="${article.weiver_title}" /></a>
 													</h4>
 													<div>${article.weiver_id}&nbsp;|&nbsp;조회 : ${article.weiver_hit}&nbsp;|&nbsp;${article.weiver_writedate}</div>
 												
@@ -175,7 +186,11 @@
 										</td>
 									</tr>
 									</c:forEach>
-									
+									<tr>
+										<td>
+											${pageCode}
+										</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
@@ -187,6 +202,10 @@
 		
 	</div>
 </div>
+
+
+
+
 
 
 
