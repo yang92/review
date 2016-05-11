@@ -108,5 +108,10 @@ public class MemberController {
 		System.out.println("프로필 수정완료");
 		return "redirect:/profile.member";
 	}
+	@RequestMapping("/main2.member")
+	public String main2() {
+		return "main2";
+	}
+	
 
 }

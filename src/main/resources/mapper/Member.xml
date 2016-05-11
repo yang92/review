@@ -7,13 +7,13 @@
 	
 	<insert id="insertMember" parameterType="memberDto">
 		INSERT INTO MEMBER
-		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{memo}, null, null, null, null)
+		VALUES(member_seq.nextval, #{member_id}, #{member_pw}, #{member_name}, #{member_email}, #{member_sex}, #{member_birth}, sysdate, 0, #{member_introduce}, null, null, null, null)
 	</insert>
 	
 	<select id="selectPassword" parameterType="string" resultType="string">
 		SELECT MEMBER_PW
 		FROM MEMBER
-		WHERE MEMBER_ID = #{id}
+		WHERE MEMBER_ID = #{member_id}
 	</select>
 	
 	<select id="selectId" parameterType="string" resultType="string">
@@ -25,7 +25,7 @@
 	<select id="userProfile" parameterType="String" resultType="memberDto">
 		SELECT *
 		FROM MEMBER
-		WHERE MEMBER_ID=#{id}
+		WHERE MEMBER_ID=#{member_id}
 	</select>
 	
 	<update id="profileUpdate" parameterType="memberDto">
