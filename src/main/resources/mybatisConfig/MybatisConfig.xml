@@ -21,6 +21,7 @@
 		<typeAlias alias="BBSDto" type="com.pknu.bbs.dto.BBSDto"/>
 		<typeAlias alias="getListDto" type="com.pknu.bbs.dto.GetListDto"/>
 		<typeAlias alias="categoryDto" type="com.pknu.main.dto.CategoryDto"/>
+		<typeAlias alias="fileDto" type="com.pknu.bbs.dto.FileDto"/>
 	</typeAliases>
 
 	<mappers>

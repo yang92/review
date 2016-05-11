@@ -142,7 +142,7 @@
                         </li>
                         <c:forEach items="${category}" var="category">
                         	<li>
-                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa fa-dashboard fa-fw"></i> ${category.category_realName}</a>
+                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa  fa-angle-double-right fa-fw"></i> ${category.category_realName}</a>
                         	</li>
                         
                         </c:forEach>

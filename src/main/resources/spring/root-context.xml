@@ -40,6 +40,10 @@
 		<constructor-arg ref="sqlSessionFactory"/>
 	</bean>
 	
+	<bean class="java.lang.String" id="saveDir">
+		<constructor-arg value="c:\upload\"/>
+	</bean>
+	
 <!-- 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="bbsDao"> -->
 <!-- 		<property value="com.pknu.main.dao.BBSDao" name="mapperInterface"/> -->
 <!-- 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/> -->
