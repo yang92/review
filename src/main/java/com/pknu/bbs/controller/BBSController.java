@@ -43,8 +43,10 @@ public class BBSController {
 	}
 	//글쓰기(write)
 	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
-	public String write(@ModelAttribute("article") BBSDto article, HttpSession session, MultipartHttpServletRequest mReq){
+	public String write(@ModelAttribute("article") BBSDto article, String editor, HttpSession session, MultipartHttpServletRequest mReq){
+		System.out.println("editor -> "+editor);
 		System.out.println(article+"////"+mReq);
+		article.setWeiver_id((String)session.getAttribute("id"));
 		return bbsService.insertArticle(article, session, mReq);
 	}
 	//글 삭제

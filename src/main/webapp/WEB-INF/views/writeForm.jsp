@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
 <head>
 <meta charset="utf-8">
@@ -28,38 +28,251 @@
     <!-- Custom Fonts -->
     <link href="resources/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords"
+	content="opensource rich wysiwyg text editor jquery bootstrap execCommand html5" />
+<meta name="description"
+	content="This tiny jQuery Bootstrap WYSIWYG plugin turns any DIV into a HTML5 rich text editor" />
+<link rel="apple-touch-icon"
+	href="//mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" />
+<link rel="shortcut icon"
+	href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico">
+<link href="resources/editor/prettify.css" rel="stylesheet">
+<link
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css"
+	rel="stylesheet">
+<link
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+<link
+	href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css"
+	rel="stylesheet">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="resources/editor/jquery.hotkeys.js"></script>
+<script
+	src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script src="resources/editor/prettify.js"></script>
+<link href="resources/editor/index.css" rel="stylesheet">
+<script src="resources/editor/bootstrap-wysiwyg.js"></script>
+
+<script type="text/javascript"> // 자바 스크립트 시작
+
+function writeCheck()
+  {
+   var form = document.writeform;
+   
+//    if( !form.name.value )   // form 에 있는 name 값이 없을 때
+//    {
+//     alert( "이름을 적어주세요" ); // 경고창 띄움
+//     form.name.focus();   // form 에 있는 name 위치로 이동
+//     return;
+//    }
+   
+//    if( !form.password.value )
+//    {
+//     alert( "비밀번호를 적어주세요" );
+//     form.password.focus();
+//     return;
+//    }
+   
+//   if( !form.title.value )
+//    {
+//     alert( "제목을 적어주세요" );
+//     form.title.focus();
+//     return;
+//    }
+ 
+//   if( !form.memo.value )
+//    {
+//     alert( "내용을 적어주세요" );
+//     form.memo.focus();
+//     return;
+//    }
+ 
+  form.submit();
+  }
+ </script>
 </head>
 <body>
-<form action="/proj/write.bbs" method="post" enctype="multipart/form-data">
-	<table border="2" width="200">
-		<tr>
-			<td>글쓴이 :</td>
-			<td>${id}</td>
-		</tr>
-		<tr>
-			<td>제목 :</td>
-			<td><input type="text" name="weiver_title" ></td>
-		</tr>
-		<tr>
-			<td colspan="2"><!-- 행 합침 -->
-			<textarea rows="20" cols="50" name="weiver_content"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>첨부 :</td>
-			<td><input type="file" name="fname" multiple></td>
-		</tr>
-		<tr>
-			<td><input type="submit" value="글쓰기"></td>
-			<td><input type="reset" value="글쓰기취소"></td>
-		</tr>
-	</table>
-</form>
-</body>
+<form action="/proj/write.bbs" method="post" enctype="multipart/form-data" >
+<!-- ------------------------------------------------------ -->
+<!-- 절취선------------------------------------------------------ -->
+<!-- ------------------------------------------------------ -->
+<div class="container">
+		<div class="hero-unit">
+<!-- 			<div class="pull-right"> -->
+<!-- 				<div class="fb-like" data-href="http://facebook.com/mindmupapp" -->
+<!-- 					data-send="false" data-layout="button_count" data-width="100" -->
+<!-- 					data-show-faces="false"></div> -->
+<!-- 			</div> -->
+			<hr />
+<!-- 			<div id="alerts"></div> -->
+			<div class="btn-toolbar" data-role="editor-toolbar"
+				data-target="#editor">
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i
+						class="icon-font"></i><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					</ul>
+				</div>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown"
+						title="Font Size"><i class="icon-text-height"></i>&nbsp;<b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+						<li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+						<li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i
+						class="icon-bold"></i></a> <a class="btn" data-edit="italic"
+						title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a> <a
+						class="btn" data-edit="strikethrough" title="Strikethrough"><i
+						class="icon-strikethrough"></i></a> <a class="btn"
+						data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
+						class="icon-underline"></i></a>
+				</div>
+				<div class="btn-group">
+					<a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i
+						class="icon-list-ul"></i></a> <a class="btn"
+						data-edit="insertorderedlist" title="Number list"><i
+						class="icon-list-ol"></i></a> <a class="btn" data-edit="outdent"
+						title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
+					<a class="btn" data-edit="indent" title="Indent (Tab)"><i
+						class="icon-indent-right"></i></a>
+				</div>
+				<div class="btn-group">
+					<a class="btn" data-edit="justifyleft"
+						title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
+					<a class="btn" data-edit="justifycenter"
+						title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>
+					<a class="btn" data-edit="justifyright"
+						title="Align Right (Ctrl/Cmd+R)"><i class="icon-align-right"></i></a>
+					<a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
+						class="icon-align-justify"></i></a>
+				</div>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown"
+						title="Hyperlink"><i class="icon-link"></i></a>
+					<div class="dropdown-menu input-append">
+						<input class="span2" placeholder="URL" type="text"
+							data-edit="createLink" />
+						<button class="btn" type="button">Add</button>
+					</div>
+					<a class="btn" data-edit="unlink" title="Remove Hyperlink"><i
+						class="icon-cut"></i></a>
+
+				</div>
+
+				<div class="btn-group">
+					<a class="btn" title="Insert picture (or just drag & drop)"
+						id="pictureBtn"><i class="icon-picture"></i></a> <input
+						type="file" data-role="magic-overlay" data-target="#pictureBtn"
+						data-edit="insertImage" />
+				</div>
+				<div class="btn-group">
+					<a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i
+						class="icon-undo"></i></a> <a class="btn" data-edit="redo"
+						title="Redo (Ctrl/Cmd+Y)"><i class="icon-repeat"></i></a>
+				</div>
+				<input type="text" data-edit="inserttext" id="voiceBtn"
+					x-webkit-speech="" name="editor">
+			</div>
+
+			<div id="editor" ></div>
+			<input type="button" class="btn btn-sm btn-primary" onclick="javascript:writeCheck();">
+		</div>	
+		
+		
+		
+		</div>
+		</form>
+			
+		<script>
+			$(function() {
+				function initToolbarBootstrapBindings() {
+					var fonts = [ 'Serif', 'Sans', 'Arial', 'Arial Black',
+							'Courier', 'Courier New', 'Comic Sans MS',
+							'Helvetica', 'Impact', 'Lucida Grande',
+							'Lucida Sans', 'Tahoma', 'Times',
+							'Times New Roman', 'Verdana' ], fontTarget = $(
+							'[title=Font]').siblings('.dropdown-menu');
+					$
+							.each(
+									fonts,
+									function(idx, fontName) {
+										fontTarget
+												.append($('<li><a data-edit="fontName ' + fontName +'" style="font-family:\''+ fontName +'\'">'
+														+ fontName
+														+ '</a></li>'));
+									});
+					$('a[title]').tooltip({
+						container : 'body'
+					});
+					$('.dropdown-menu input').click(function() {
+						return false;
+					}).change(
+							function() {
+								$(this).parent('.dropdown-menu').siblings(
+										'.dropdown-toggle').dropdown('toggle');
+							}).keydown('esc', function() {
+						this.value = '';
+						$(this).change();
+					});
+
+					$('[data-role=magic-overlay]').each(
+							function() {
+								var overlay = $(this), target = $(overlay
+										.data('target'));
+								overlay.css('opacity', 0).css('position',
+										'absolute').offset(target.offset())
+										.width(target.outerWidth()).height(
+												target.outerHeight());
+							});
+					if ("onwebkitspeechchange" in document
+							.createElement("input")) {
+						var editorOffset = $('#editor').offset();
+						$('#voiceBtn').css('position', 'absolute').offset(
+								{
+									top : editorOffset.top,
+									left : editorOffset.left
+											+ $('#editor').innerWidth() - 35
+								});
+					} else {
+						$('#voiceBtn').hide();
+					}
+				}
+				;
+				function showErrorAlert(reason, detail) {
+					var msg = '';
+					if (reason === 'unsupported-file-type') {
+						msg = "Unsupported format " + detail;
+					} else {
+						console.log("error uploading file", reason, detail);
+					}
+					$(
+							'<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'
+									+ '<strong>File upload error</strong> '
+									+ msg + ' </div>').prependTo('#alerts');
+				}
+				;
+				initToolbarBootstrapBindings();
+				$('#editor').wysiwyg({
+					fileUploadError : showErrorAlert
+				});
+				window.prettyPrint && prettyPrint();
+			});
+		</script>
+		
+		<a href="http://210.119.12.240"><img
+			style="position: absolute; top: 0; right: 0; border: 0;"
+			src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+			alt="옆동네 가기"></a>
+		<div id="fb-root"></div>
 </html>
+
+<!-- 공------------------------------------------------------ -->
+<!-- 백------------------------------------------------------ -->
