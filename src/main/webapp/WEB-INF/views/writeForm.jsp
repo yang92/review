@@ -36,7 +36,7 @@
     <![endif]-->
 </head>
 <body>
-<form action="/proj/write.bbs" method="post">
+<form action="/proj/write.bbs" method="post" enctype="multipart/form-data">
 	<table border="2" width="200">
 		<tr>
 			<td>글쓴이 :</td>
@@ -51,7 +51,10 @@
 			<textarea rows="20" cols="50" name="weiver_content"></textarea>
 			</td>
 		</tr>
-		
+		<tr>
+			<td>첨부 :</td>
+			<td><input type="file" name="fname" multiple></td>
+		</tr>
 		<tr>
 			<td><input type="submit" value="글쓰기"></td>
 			<td><input type="reset" value="글쓰기취소"></td>

@@ -251,7 +251,7 @@ function moveWrite() {
 <!-- 													<span class="media-meta pull-right">Febrero 13, 2016</span> -->
 													<h4 class="title text-resp">
 														
-														<a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}"><c:out value="${article.weiver_title}" /></a>
+														<a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}&fileStatus=${article.weiver_file}"><c:out value="${article.weiver_title}" /></a>
 													</h4>
 													<div>${article.weiver_id}&nbsp;|&nbsp;조회 : ${article.weiver_hit}&nbsp;|&nbsp;${article.weiver_writedate}</div>
 												

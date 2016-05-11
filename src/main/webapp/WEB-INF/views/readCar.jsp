@@ -168,6 +168,22 @@ return result;
 <%-- 							<td><c:out value="${article.weiver_writedate}" /></td> --%>
 <%-- 							<td><c:out value="${article.weiver_hit}" /></td> --%>
 <%-- 							<td><c:out value="${article.weiver_good}" /></td> --%>
+				<tr>
+					<td colspan="2">다운로드 </td>			
+					<td colspan="2">
+					<c:if test="${article.weiver_file !=0 }">
+						<c:if test="${fileList!=null}">
+							<ul>
+							<c:forEach var="file" items="${fileList}">
+								<li>
+								<a href="/proj/download.bbs?orginFname=${file.orginFname}&storedFname=${file.storedFname}">${file.orginFname}</a>
+								</li>
+							</c:forEach>
+							</ul>
+						</c:if>
+					</c:if>
+					</td>			
+				</tr>		
 				</tbody>
 				<tr>
 			      <c:if test="${id !=null}">

@@ -1,6 +1,7 @@
 package com.pknu.bbs.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,24 +28,24 @@ public class BBSController {
 		return bbsService.list(pageNum);
 	}
 	
-	
 	// 글 읽기
 	@RequestMapping(value="/read_car.bbs")
-	public ModelAndView read_car(HttpServletRequest request, String weiver_no, int pageNum){
+	public ModelAndView read_car(HttpServletRequest request, String weiver_no, int pageNum, int fileStatus){
 		//System.out.println("controller 에서의 weiver no : "+weiver_no);
 		String weiver="WEIVER_CAR";
-		return bbsService.readCar(weiver_no, weiver, pageNum);
+		return bbsService.readCar(weiver_no, weiver, pageNum, fileStatus);
 	}
 	//글쓰기(writeForm)
 	@Transactional
 	@RequestMapping("/writeForm.bbs")
-	public String writeForm(HttpSession session){
+	public String writeForm(HttpSession session, HttpServletResponse res){
 		return "writeForm";
 	}
 	//글쓰기(write)
-	@RequestMapping("/write.bbs")
-	public String write(BBSDto article, HttpSession session){
-		return bbsService.insertArticle(article, session);
+	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
+	public String write(@ModelAttribute("article") BBSDto article, HttpSession session, MultipartHttpServletRequest mReq){
+		System.out.println(article+"////"+mReq);
+		return bbsService.insertArticle(article, session, mReq);
 	}
 	//글 삭제
 	@RequestMapping("/delete.bbs")
@@ -58,9 +59,7 @@ public class BBSController {
 	}
 	
 	@RequestMapping("/update.bbs")
-	public ModelAndView updateArticle(BBSDto article, @ModelAttribute("pageNum") String pageNum){		
-		//아래와 같이 사용시에는 오류가 남, Integer는 set,get 메소드가 없음 @ModelAttribute("fileNumList") ArrayList<Integer> fileNumList,
-		//UpdateDto를 만들어서 set,get 메소드를 사용해야지 jsp에서 복수개의 name 속성을 가지는 값이 넘오옴 
+	public ModelAndView updateArticle(BBSDto article, @ModelAttribute("pageNum") String pageNum){
 		return bbsService.updateArticle(article);		
 	}
 	

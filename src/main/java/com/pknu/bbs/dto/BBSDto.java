@@ -71,7 +71,7 @@ public class BBSDto {
 				+ ", weiver_content=" + weiver_content + ", weiver_writedate=" + weiver_writedate + ", weiver_good="
 				+ weiver_good + ", weiver_bad=" + weiver_bad + ", weiver_hit=" + weiver_hit + ", weiver_file="
 				+ weiver_file + "]";
-	}	
+	}
 	
 	
 }

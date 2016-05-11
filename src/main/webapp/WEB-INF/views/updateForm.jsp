@@ -47,11 +47,11 @@
 		</tr>
 		<tr>
 			<td>제목 :</td>
-			<td><input type="text" name="weiver_title" value="${article.title}"></td>
+			<td><input type="text" name="weiver_title" value="${article.weiver_title}"></td>
 		</tr>
 		<tr>
 			<td colspan="2"><!-- 행 합침 -->
-			<textarea rows="20" cols="50" name="weiver_content">${article.content}</textarea>
+			<textarea rows="20" cols="50" name="weiver_content">${article.weiver_content}</textarea>
 			</td>
 		</tr>
 		
