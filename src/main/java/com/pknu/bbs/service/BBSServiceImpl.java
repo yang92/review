@@ -26,6 +26,7 @@ public class BBSServiceImpl implements BBSService{
 	List<BBSDto> articleList;
 	
 	// 게시판
+	@Override
 	public ModelAndView list(String tableName, int pageNum){
 		
 		
