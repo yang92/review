@@ -74,7 +74,7 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
-	@Override
+	@Override	// 프로필도 보고 수정도 하러가기
 	public ModelAndView userProfile(String id) {
 		mav=new ModelAndView();
 		memberDto = memberDao.userProfile(id);
@@ -82,8 +82,14 @@ public class MemberServiceImpl implements MemberService{
 		mav.setViewName("userProfile");
 		return mav;
 	}
-	
 
+
+	@Override
+	public void profileUpdate(MemberDto userInfo) {
+		memberDao.profileUpdate(userInfo);
+	}
+	
+	
 
 
 }

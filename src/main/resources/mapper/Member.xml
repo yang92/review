@@ -28,4 +28,25 @@
 		WHERE MEMBER_ID=#{id}
 	</select>
 	
+	<update id="profileUpdate" parameterType="memberDto">
+		UPDATE MEMBER
+		SET 
+<!-- 		<if test="#{member_pw}!='null'"> -->
+		member_pw = #{member_pw},
+<!-- 		</if> -->
+		member_nickname = #{member_nickname},
+		member_phonenumber = #{member_phonenumber}, member_email = #{member_email},
+		member_birth = #{member_birth}, member_introduce = #{member_introduce}
+		WHERE MEMBER_ID = #{member_id}
+		
+	
+	</update>
+	
 </mapper>
+
+
+
+
+
+
+
