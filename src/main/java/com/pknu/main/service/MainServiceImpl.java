@@ -33,7 +33,6 @@ public class MainServiceImpl implements MainService {
 
 	@Override
 	public ArrayList<CategoryDto> getCategory() {
-		// TODO Auto-generated method stub
 		return mainDao.getCategory();
 	}
 	

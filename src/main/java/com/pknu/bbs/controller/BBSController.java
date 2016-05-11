@@ -19,20 +19,10 @@ public class BBSController {
 	@Autowired
 	private BBSService bbsService;
 	
-	// 게시판 - 자동차
-	@RequestMapping(value="/list.bbs")
-	public ModelAndView list(@RequestParam("pageNum") int pageNum, String whatPage){
 
-			
-		
-		
-		return bbsService.list(bbsService.getCategoryNum(whatPage),pageNum);
-	}
 	
 	@RequestMapping(value="/{whatPage}.bbs")
 	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage) {
-
-			
 		
 		
 		return bbsService.list(bbsService.getCategoryNum(whatPage),pageNum);

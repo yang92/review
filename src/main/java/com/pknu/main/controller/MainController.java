@@ -21,10 +21,10 @@ public class MainController {
 	@RequestMapping("/")
 	public ModelAndView main() {
 		
-		ArrayList<CategoryDto> getCategoryes = new ArrayList<>(); 
-		getCategoryes = mainService.getCategory();
-		mav.addObject("category", getCategoryes);
-		for(CategoryDto i: getCategoryes){
+		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+		getCategories = mainService.getCategory();
+		mav.addObject("category", getCategories);
+		for(CategoryDto i: getCategories){
 			System.out.println(i.getCategory_realName());
 		}
 		mav.setViewName("main");
