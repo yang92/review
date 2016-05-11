@@ -16,6 +16,10 @@
 		WHERE RM BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
+	<select id="getTableName" parameterType="String" resultType="String">
+		SELECT TABLENAME FROM CATEGORY WHERE CATEGORY_NAME=#{whatPage}
+	</select>
+	
 <!-- 	조회수 -->
 	<update id="hitUp" parameterType="java.util.HashMap">
 		UPDATE WEIVER_CAR 
@@ -27,15 +31,37 @@
 	<select id="readCar" parameterType="String" resultType="BBSDto">
 		SELECT * 
 		FROM WEIVER_CAR
-		WHERE WEIVER_NO=#{weiver_no}
+		WHERE WEIVER_NO = #{weiver_no}
 	</select>
+	<select id="getFiles" parameterType="String" resultType="fileDto">
+		SELECT *
+		FROM FILELIST
+		WHERE WEIVER_NO = #{weiver_no}
+	</select>
+	
 <!-- 	글 쓰기 -->
 	<insert id="insertArticle" parameterType="BBSDto">
 		INSERT INTO WEIVER_CAR values(
 		weiver_no_seq.nextval, #{weiver_id}, #{weiver_title}, #{weiver_content}, sysdate, 0, 0, 0, 0)
 	</insert>
-	<select id="getTableName" parameterType="String" resultType="String">
-		SELECT TABLENAME FROM CATEGORY WHERE CATEGORY_NAME=#{whatPage}
+	<select id="getNextArticleNum" resultType="int">
+		SELECT weiver_no_seq.nextval FROM DUAL
+	</select>
+	<insert id="insertFile" parameterType="fileDto">
+		INSERT INTO FILELIST
+		values(file_seq.nextval, #{originFname}, #{storedFname}, #{fileLength}, #{articleNum})
+	</insert>
+<!-- 	글삭제 -->
+	<delete id="deleteArticle" parameterType="String">
+		DELETE
+		FROM WEIVER_CAR
+		WHERE WEIVER_NO = #{weiver_no}
+	</delete>
+<!-- 	글 수정 -->
+	<select id="getUpdateArticle" parameterType="String" resultType="BBSDto">
+		SELECT *
+		FROM WEIVER_CAR
+		WHERE WEIVER_NO=#{weiver_no}
 	</select>
 	
 </mapper>
