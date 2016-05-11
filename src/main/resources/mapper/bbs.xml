@@ -34,5 +34,17 @@
 		INSERT INTO WEIVER_CAR values(
 		weiver_no_seq.nextval, #{weiver_id}, #{weiver_title}, #{weiver_content}, sysdate, 0, 0, 0, 0)
 	</insert>
+<!-- 	글삭제 -->
+	<delete id="deleteArticle" parameterType="String">
+		DELETE
+		FROM WEIVER_CAR
+		WHERE WEIVER_NO = #{weiver_no}
+	</delete>
+<!-- 	글 수정 -->
+	<select id="getUpdateArticle" parameterType="String" resultType="BBSDto">
+		SELECT *
+		FROM WEIVER_CAR
+		WHERE WEIVER_NO=#{weiver_no}
+	</select>
 	
 </mapper>

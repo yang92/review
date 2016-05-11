@@ -1,5 +1,6 @@
 package com.pknu.bbs.service;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -11,7 +12,13 @@ public interface BBSService {
 	public ModelAndView list(int pageNum);
 	
 	// 글 읽기
-	public ModelAndView readCar(String weiver_no, String weiver);
+	public ModelAndView readCar(String weiver_no, String weiver, int pageNum);
 	// 글 쓰기
 	public String insertArticle(BBSDto article, HttpSession session);
+	// 글 삭제
+	public String deleteArticle(String weiver_no, int pageNum);
+	//글 수정1
+	public ModelAndView updateForm(String weiver_no, int pageNum, int weiver_file);
+	//글 수정2
+	public ModelAndView updateArticle(BBSDto article);
 }

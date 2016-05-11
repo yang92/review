@@ -4,6 +4,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface MainService {
 
-	ModelAndView searchAll(String target);
+	ModelAndView searchAll(String target, int pageNum);
 
 }

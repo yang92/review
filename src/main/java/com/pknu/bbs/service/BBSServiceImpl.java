@@ -48,7 +48,7 @@ public class BBSServiceImpl implements BBSService{
 
 	// 글 읽기
 	@Override
-	public ModelAndView readCar(String weiver_no, String weiver) {
+	public ModelAndView readCar(String weiver_no, String weiver, int pageNum) {
 		mav = new ModelAndView();
 		BBSDto article=null;
 		System.out.println("weiver ->>>"+weiver);
@@ -63,6 +63,7 @@ public class BBSServiceImpl implements BBSService{
 		System.out.println("$$$$$$$$$$$$$$$$$$$ 글 select 완료 : "+article.getWeiver_content());
 		
 		mav.addObject("article", article);
+		mav.addObject("pageNum", pageNum);
 		mav.setViewName("readCar");
 		
 		return mav;
@@ -77,5 +78,39 @@ public class BBSServiceImpl implements BBSService{
 
 		return "redirect:/list.bbs?pageNum=1";
 	}
-	
+	//글삭제
+	@Override
+	public String deleteArticle(String weiver_no, int pageNum) {
+		//deleteFile(articleNum);
+		bbsDao.deleteArticle(weiver_no);
+
+		return "redirect:/list.bbs?pageNum="+pageNum;
+	}
+
+	@Override
+	public ModelAndView updateForm(String weiver_no, int pageNum, int weiver_file) {
+		mav = new ModelAndView();
+		//List<FileDto> fileList = null;
+		BBSDto article = null;
+
+		article = bbsDao.getUpdateArticle(weiver_no);
+
+		if(weiver_file==1){
+			//fileList = bbsDao.getFiles(articleNum);
+			//mav.addObject("fileList", fileList);
+		}
+
+		mav.addObject("article", article);
+		mav.addObject("weiver_file", weiver_file);
+
+		mav.setViewName("updateForm");
+
+		return mav;	
+	}
+
+	@Override
+	public ModelAndView updateArticle(BBSDto article) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

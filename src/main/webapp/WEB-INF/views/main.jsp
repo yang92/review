@@ -71,9 +71,6 @@
 	}
 </style>
 
-
-
-
 </head>
 
 <body>
@@ -127,15 +124,14 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                         <form action="/proj/search.main" method="post">
+                        	<input type="hidden" name="pageNum" value="1">
                             <div class="input-group custom-search-form">
-								
-	                                <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
-	                                <span class="input-group-btn">
-	                                <button class="btn btn-default" type="submit">
-	                                	<i class="fa fa-search"></i>
-	                                </button>
-	                                </span>
-                               
+							    <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                	<i class="fa fa-search"></i>
+                                </button>
+                                </span>
                              </div>
                               </form>
                             <!-- /input-group -->

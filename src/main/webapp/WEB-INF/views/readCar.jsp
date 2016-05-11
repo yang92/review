@@ -169,9 +169,47 @@ return result;
 <%-- 							<td><c:out value="${article.weiver_hit}" /></td> --%>
 <%-- 							<td><c:out value="${article.weiver_good}" /></td> --%>
 				</tbody>
-			</table>
-		</div>
-
+				<tr>
+			      <c:if test="${id !=null}">
+			    	  <td align="right">	    	
+			    	  <div class="btn-group">
+			    	  <c:if test="${id == article.weiver_id}">
+				    	  <input type="button" value="수정하기" class="btn btn-sm btn-primary" onclick="document.location.href='/proj/updateForm.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}&weiver_file=${article.weiver_file}'">
+				    	  <input type="button" value="삭제하기" class="btn btn-sm btn-primary" onclick="document.location.href='/proj/delete.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}'">
+			    	  </c:if>
+			    	  <c:if test="${id != article.weiver_id}">
+				    	  <input type="button" value="수정하기" disabled="disabled" class="btn btn-sm btn-primary">
+				    	  <input type="button" value="삭제하기" disabled="disabled" class="btn btn-sm btn-primary">
+			    	  </c:if>
+			    	  		<input type="button" value="목록으로" class="btn btn-sm btn-primary" onclick="document.location.href='/proj/list.bbs?pageNum=${pageNum}'">
+			    	  </div>
+			    	  </td>
+			      </c:if> 	
+			      <c:if test="${id == null}">
+			    	  <td align="right">
+			    	  <div class="btn-group">
+			    	  <input type="button" value="수정하기" disabled="disabled" class="btn btn-sm btn-primary">
+			    	  <input type="button" value="삭제하기" disabled="disabled" class="btn btn-sm btn-primary">
+			    	  <input type="button" value="목록으로" class="btn btn-sm btn-primary" onclick="document.location.href='/proj/list.bbs?pageNum=${pageNum}'">
+			    	  </div>
+			    	  </td>   
+			      </c:if>      	 	      	 
+			     </tr>
+<!-- 			     <tr> -->
+<!-- 				     <td colspan="4"> -->
+<!-- 				   	   <textarea rows="5" cols="70" id="commentContent"></textarea><br><br> -->
+<%-- 					   <c:if test="${id ==null}"> --%>
+<!-- 				    	  <input type="button" value="comment 쓰기" disabled="disabled">    	   -->
+<%-- 				       </c:if>  --%>
+<%-- 				       <c:if test="${id !=null}"> --%>
+<!-- 			    	 	 <input type="button" value="comment 쓰기" id="commentWrite"> -->
+<%-- 			     	   </c:if>	     	   --%>
+<%-- 			     	   <input type="button" value="comment 읽기(${article.commentCount})" onclick="getComment(1,event)" id="commentRead">	     	        --%>
+<!-- 				   </td>  -->
+<!-- 				 </tr> 		 -->
+					</table>
+				</div>
+				
 	</div>
 
 

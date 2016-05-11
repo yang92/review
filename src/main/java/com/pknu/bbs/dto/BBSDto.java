@@ -9,7 +9,7 @@ public class BBSDto {
 	private String weiver_good;	
 	private String weiver_bad;	
 	private String weiver_hit;	
-	private String weiver_file;
+	private int weiver_file;
 	
 	public int getWeiver_no() {
 		return weiver_no;
@@ -59,10 +59,10 @@ public class BBSDto {
 	public void setWeiver_hit(String weiver_hit) {
 		this.weiver_hit = weiver_hit;
 	}
-	public String getWeiver_file() {
+	public int getWeiver_file() {
 		return weiver_file;
 	}
-	public void setWeiver_file(String weiver_file) {
+	public void setWeiver_file(int weiver_file) {
 		this.weiver_file = weiver_file;
 	}
 	@Override
