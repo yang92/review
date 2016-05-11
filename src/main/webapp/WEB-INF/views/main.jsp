@@ -59,6 +59,21 @@
     }
 </style>
 
+
+<!-- back to TOP -->
+<style type="text/css">
+	.back-to-top {
+		cursor: pointer;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		display: none;
+	}
+</style>
+
+
+
+
 </head>
 
 <body>
@@ -85,66 +100,7 @@
 	        	
 	      	</c:if>
             <c:if test="${id != null}">
-                <!-- /.dropdown -->
-<!--                 <li class="dropdown"> -->
-<!--                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"> -->
-<!--                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i> -->
-<!--                     </a> -->
-<!--                     <ul class="dropdown-menu dropdown-alerts"> -->
-<!--                         <li> -->
-<!--                             <a href="#"> -->
-<!--                                 <div> -->
-<!--                                     <i class="fa fa-comment fa-fw"></i> New Comment -->
-<!--                                     <span class="pull-right text-muted small">4 minutes ago</span> -->
-<!--                                 </div> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                         <li class="divider"></li> -->
-<!--                         <li> -->
-<!--                             <a href="#"> -->
-<!--                                 <div> -->
-<!--                                     <i class="fa fa-twitter fa-fw"></i> 3 New Followers -->
-<!--                                     <span class="pull-right text-muted small">12 minutes ago</span> -->
-<!--                                 </div> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                         <li class="divider"></li> -->
-<!--                         <li> -->
-<!--                             <a href="#"> -->
-<!--                                 <div> -->
-<!--                                     <i class="fa fa-envelope fa-fw"></i> Message Sent -->
-<!--                                     <span class="pull-right text-muted small">4 minutes ago</span> -->
-<!--                                 </div> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                         <li class="divider"></li> -->
-<!--                         <li> -->
-<!--                             <a href="#"> -->
-<!--                                 <div> -->
-<!--                                     <i class="fa fa-tasks fa-fw"></i> New Task -->
-<!--                                     <span class="pull-right text-muted small">4 minutes ago</span> -->
-<!--                                 </div> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                         <li class="divider"></li> -->
-<!--                         <li> -->
-<!--                             <a href="#"> -->
-<!--                                 <div> -->
-<!--                                     <i class="fa fa-upload fa-fw"></i> Server Rebooted -->
-<!--                                     <span class="pull-right text-muted small">4 minutes ago</span> -->
-<!--                                 </div> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                         <li class="divider"></li> -->
-<!--                         <li> -->
-<!--                             <a class="text-center" href="#"> -->
-<!--                                 <strong>See All Alerts</strong> -->
-<!--                                 <i class="fa fa-angle-right"></i> -->
-<!--                             </a> -->
-<!--                         </li> -->
-<!--                     </ul> -->
-<!--                     /.dropdown-alerts -->
-<!--                 </li> -->
+
                 <!-- /.dropdown -->
                 <li class="dropdown pull-right">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -856,7 +812,30 @@
         </div>
         <!-- /#page-wrapper -->
 
-    </div>
+
+
+<!-- back to TOP -->
+		<a id="back-to-top" href="#"
+			class="btn btn-primary btn-lg back-to-top" role="button"
+			title="Click to return on the top page" data-toggle="tooltip"
+			data-placement="left"><span
+			class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -875,6 +854,33 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="resources/js/sb-admin-2.js"></script>
+
+
+<!-- back to TOP -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+				} else {
+					$('#back-to-top').fadeOut();
+				}
+			});
+			// scroll body to 0px on click
+			$('#back-to-top').click(function() {
+				$('#back-to-top').tooltip('hide');
+				$('body,html').animate({
+					scrollTop : 0
+				}, 800);
+				return false;
+			});
+
+			$('#back-to-top').tooltip('show');
+
+		});
+	</script>
+
+
 
 </body>
 

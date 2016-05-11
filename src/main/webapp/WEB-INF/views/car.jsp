@@ -40,18 +40,7 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<!--  <script type="text/javascript"> -->
-<!-- // function keydowncheck() -->
-<!-- // { -->
-<!-- // var result = true; -->
-<!-- // var keycode = event.keyCode; -->
-<!-- // if(123 == keycode) -->
-<!-- // { -->
-<!-- // result = false; -->
-<!-- // } -->
-<!-- // return result; -->
-<!-- // } -->
-<!-- </script> -->
+<!-- 글씨 크기 조정 -->
 <style type="text/css">
 	@media (max-width: 479px){
 	.text-resp{
@@ -63,6 +52,62 @@
 	}
 	
 </style>
+
+
+<!-- 게시판 검색 기능 -->
+<script type="text/javascript">
+$(document).ready(function() {
+    var activeSystemClass = $('.list-group-item.active');
+
+    //something is entered in search form
+    $('#system-search').keyup( function() {
+       var that = this;
+        // affect all table rows on in systems table
+        var tableBody = $('.table-list-search tbody');
+        var tableRowsClass = $('.table-list-search tbody tr');
+        $('.search-sf').remove();
+        tableRowsClass.each( function(i, val) {
+        
+            //Lower text for case insensitive
+            var rowText = $(val).text().toLowerCase();
+            var inputText = $(that).val().toLowerCase();
+            if(inputText != '')
+            {
+                $('.search-query-sf').remove();
+                tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                    + $(that).val()
+                    + '"</strong></td></tr>');
+            }
+            else
+            {
+                $('.search-query-sf').remove();
+            }
+
+            if( rowText.indexOf( inputText ) == -1 )
+            {
+                //hide rows
+                tableRowsClass.eq(i).hide();
+                
+            }
+            else
+            {
+                $('.search-sf').remove();
+                tableRowsClass.eq(i).show();
+            }
+        });
+        //all tr elements are hidden
+        if(tableRowsClass.children(':visible').length == 0)
+        {
+            tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+        }
+    });
+});
+</script>
+
+
+
+
+
 <script>
 function moveWrite() {
 	document.location.href="writeForm.bbs";
@@ -159,13 +204,39 @@ function moveWrite() {
 <!-- <br/><br/><br/> -->
 <%-- ${article.weiver_title} --%>
 	<!-- 	게시판 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
 <div class="container">
 	<div class="row">
 		<section class="content">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="table-container">
+					
+					
+					
+<!-- 						검색기능 -->
+							<form action="#" method="get">
+								<div class="input-group">
+									<!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+									<input class="form-control" id="system-search" name="q"
+										placeholder="Search for" required> <span
+										class="input-group-btn">
+										<button type="submit" class="btn btn-default">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+									</span>
+								</div>
+							</form>
+							
+							
+							
+							
+							
+							
+							<div class="table-container">
 							<table class="table table-filter">
 								<tbody>
 									<c:forEach var="article" items="${articleList}"> 
