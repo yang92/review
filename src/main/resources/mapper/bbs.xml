@@ -17,7 +17,9 @@
 	</select>
 	
 	<select id="getTableName" parameterType="String" resultType="String">
-		SELECT TABLENAME FROM CATEGORY WHERE CATEGORY_NAME=#{whatPage}
+		SELECT TABLENAME 
+		FROM CATEGORY 
+		WHERE CATEGORY_NAME = #{whatPage}
 	</select>
 	
 <!-- 	조회수 -->

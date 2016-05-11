@@ -43,10 +43,11 @@ public class BBSServiceImpl implements BBSService{
 		int pageSize=10;
 		int pageBlock=10;
 		mav = new ModelAndView();
-		int totalCount=bbsDao.getArticleCount();
+		GetListDto getListDto = new GetListDto();
+		
+		int totalCount = bbsDao.getArticleCount();
 		page.paging(pageNum, totalCount, pageSize, pageBlock);
 				
-		GetListDto getListDto = new GetListDto();
 		getListDto.setStartRow(page.getStartRow());
 		getListDto.setEndRow(page.getEndRow());
 		getListDto.setTableName(tableName);
