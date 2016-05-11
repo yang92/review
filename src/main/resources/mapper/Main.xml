@@ -15,4 +15,8 @@
 	WHERE WEIVER_TITLE LIKE #{target}
 	</select>
 	
+	<select id="getCategory" resultType="categoryDto">
+		SELECT CATEGORY_NAME, CATEGORY_REALNAME FROM CATEGORY
+	</select>
+	
 </mapper>

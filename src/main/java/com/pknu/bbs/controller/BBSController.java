@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,14 +21,26 @@ public class BBSController {
 	
 	// 게시판 - 자동차
 	@RequestMapping(value="/list.bbs")
-	public ModelAndView list(@RequestParam("pageNum") int pageNum) {
-		return bbsService.list(pageNum);
+	public ModelAndView list(@RequestParam("pageNum") int pageNum, String whatPage){
+
+			
+		
+		
+		return bbsService.list(bbsService.getCategoryNum(whatPage),pageNum);
 	}
 	
+	@RequestMapping(value="/{whatPage}.bbs")
+	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage) {
+
+			
+		
+		
+		return bbsService.list(bbsService.getCategoryNum(whatPage),pageNum);
+	}
 	
 	// 글 읽기
 	@RequestMapping(value="/read_car.bbs")
-	public ModelAndView read_car(HttpServletRequest request, String weiver_no){
+	public ModelAndView read_car(@PathVariable String whatPage,HttpServletRequest request, String weiver_no){
 		System.out.println("controller 에서의 weiver no : "+weiver_no);
 		String weiver="WEIVER_CAR";
 		return bbsService.readCar(weiver_no, weiver);
@@ -43,5 +56,6 @@ public class BBSController {
 	public String write(BBSDto article, HttpSession session){
 		return bbsService.insertArticle(article, session);
 	}
+	
 	
 }

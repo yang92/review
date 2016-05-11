@@ -3,6 +3,23 @@ package com.pknu.main.dto;
 public class CategoryDto {
 	private String category_no;	
 	private String category_name;
+	private String tableName;
+	private String category_realName;
+	
+	
+	
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+	public String getCategory_realName() {
+		return category_realName;
+	}
+	public void setCategory_realName(String category_realName) {
+		this.category_realName = category_realName;
+	}
 	public String getCategory_no() {
 		return category_no;
 	}

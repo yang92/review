@@ -19,6 +19,8 @@
 	<typeAliases>
 		<typeAlias alias="memberDto" type="com.pknu.member.dto.MemberDto" />
 		<typeAlias alias="BBSDto" type="com.pknu.bbs.dto.BBSDto"/>
+		<typeAlias alias="getListDto" type="com.pknu.bbs.dto.GetListDto"/>
+		<typeAlias alias="categoryDto" type="com.pknu.main.dto.CategoryDto"/>
 	</typeAliases>
 
 	<mappers>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 import com.pknu.bbs.dao.BBSDao;
 import com.pknu.bbs.dto.BBSDto;
+import com.pknu.bbs.dto.GetListDto;
 import com.pknu.bbs.util.Page;
 
 @Service
@@ -25,7 +26,10 @@ public class BBSServiceImpl implements BBSService{
 	List<BBSDto> articleList;
 	
 	// 게시판
-	public ModelAndView list(int pageNum){
+	public ModelAndView list(String tableName, int pageNum){
+		
+		
+		System.out.println(tableName);
 		
 		int pageSize=10;
 		int pageBlock=10;
@@ -33,10 +37,14 @@ public class BBSServiceImpl implements BBSService{
 		int totalCount=bbsDao.getArticleCount();
 		page.paging(pageNum, totalCount, pageSize, pageBlock);
 		
-		HashMap<String, Integer> hm = new HashMap<>();
-		hm.put("startRow", page.getStartRow());
-		hm.put("endRow", page.getEndRow());
-		articleList=bbsDao.getArticles(hm);
+
+		
+		GetListDto getListDto = new GetListDto();
+		getListDto.setStartRow(page.getStartRow());
+		getListDto.setEndRow(page.getEndRow());
+		getListDto.setTableName(tableName);
+
+		articleList=bbsDao.getArticles(getListDto);
 		
 		mav.addObject("totalCount",totalCount);
 		mav.addObject("articleList",articleList);
@@ -77,5 +85,16 @@ public class BBSServiceImpl implements BBSService{
 
 		return "redirect:/list.bbs?pageNum=1";
 	}
+
+	@Override
+	public String getCategoryNum(String whatPage) {
+		// TODO Auto-generated method stub
+
+		
+		return bbsDao.getTableName(whatPage);
+	}
+	
+	
+	
 	
 }

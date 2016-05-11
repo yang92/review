@@ -231,6 +231,28 @@ function moveWrite() {
 								</div>
 							</form>
 							
+							<div>
+								<ul style="height:auto;">
+									<li class="col-xs-5" style="list-style : none; float:left; max-width:250px;" >title</li>
+									<li class="col-xs-2" style="list-style : none; float:left;" >id</li>
+									<li class="col-xs-2" style="list-style : none; float:left;" >조회수</li>
+									<li class="col-xs-2" style="list-style : none; float:left;" >날짜</li>
+								</ul>								
+								<br/>
+								<hr>
+								<c:forEach var="article" items="${articleList}"> 
+									<ul style="height:auto;">
+										<li class="col-xs-5" style="list-style : none; float:left;  max-width:250px; max-height:20px; overflow:hidden" >${article.weiver_title}</li>
+										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_id}</li>
+										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_hit}</li>
+										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_writedate}</li>
+									</ul>
+									<br/>
+									<hr>
+								</c:forEach>
+								
+							</div>
+							
 							
 							
 							

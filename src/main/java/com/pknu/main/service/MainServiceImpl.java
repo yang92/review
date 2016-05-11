@@ -1,5 +1,6 @@
 package com.pknu.main.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dto.BBSDto;
 import com.pknu.main.dao.MainDao;
+import com.pknu.main.dto.CategoryDto;
 
 @Service
 public class MainServiceImpl implements MainService {
@@ -28,5 +30,13 @@ public class MainServiceImpl implements MainService {
 		
 		return mav;
 	}
+
+	@Override
+	public ArrayList<CategoryDto> getCategory() {
+		// TODO Auto-generated method stub
+		return mainDao.getCategory();
+	}
+	
+	
 
 }

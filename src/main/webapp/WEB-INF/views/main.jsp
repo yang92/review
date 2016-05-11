@@ -140,6 +140,13 @@
                               </form>
                             <!-- /input-group -->
                         </li>
+                        <c:forEach items="${category}" var="category">
+                        	<li>
+                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa fa-dashboard fa-fw"></i> ${category.category_realName}</a>
+                        	</li>
+                        
+                        </c:forEach>
+                        
                         <li>
                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
                         </li>
@@ -148,7 +155,7 @@
                            
                         </li>
                         <li>
-                            <a href="/proj/list.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
+                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
                         </li>
                         <li>
                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
@@ -205,7 +212,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">Blank Page</a>처
                                 </li>
                                 <li>
                                     <a href="login.html">Login Page</a>
@@ -219,6 +226,21 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+        
+        
+        
+        
+        <div>
+        	<c:if test="${whatPage==car}">
+        	</c:if>
+        </div>
+        
+        
+        
+        
+        
+        
+        
 
         <div id="page-wrapper">
             <div class="row">
@@ -262,18 +284,15 @@
         </div>
       </div>
       <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background-image:none;">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background-image:none;">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      
     </div>
     <br><br>
             <!-- /.row -->
