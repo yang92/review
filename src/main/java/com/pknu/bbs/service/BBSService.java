@@ -9,7 +9,7 @@ import com.pknu.bbs.dto.BBSDto;
 
 public interface BBSService {
 	// 게시판
-	public ModelAndView list(String tableName, int pageNum);
+	public ModelAndView list(String tableName, int pageNum, String whatPage);
 	
 	// 글 읽기
 	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus);

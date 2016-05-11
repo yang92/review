@@ -25,7 +25,7 @@ public class BBSController {
 	
 	@RequestMapping(value="/{whatPage}.bbs")
 	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage) {
-		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum);//list로 tableName이랑 pageNum전달
+		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage);//list로 tableName이랑 pageNum전달
 	}
 
 	// 글 읽기

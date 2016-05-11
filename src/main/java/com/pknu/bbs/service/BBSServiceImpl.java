@@ -37,7 +37,7 @@ public class BBSServiceImpl implements BBSService{
 	
 	// 게시판
 	@Override
-	public ModelAndView list(String tableName, int pageNum){
+	public ModelAndView list(String tableName, int pageNum, String whatPage){
 				
 		System.out.println(tableName);
 		int pageSize=10;
@@ -58,7 +58,7 @@ public class BBSServiceImpl implements BBSService{
 		mav.addObject("articleList",articleList);
 		mav.addObject("pageNum", pageNum);
 		mav.addObject("pageCode", page.getSb().toString());
-		mav.setViewName("car");
+		mav.setViewName(whatPage);
 		return mav;
 	}
 
