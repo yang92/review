@@ -108,5 +108,11 @@ public class MemberController {
 		System.out.println("프로필 수정완료");
 		return "redirect:/profile.member";
 	}
+	
+	// 유저 프로필 보기
+		@RequestMapping("/carTest.member")
+		public String test() {
+			return "carTest";
+		}
 
 }
