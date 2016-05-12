@@ -24,9 +24,6 @@
     <!-- Custom CSS -->
     <link href="resources/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="resources/css/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="resources/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -40,9 +37,6 @@
 <!--     table 전용 css -->
 <!--     <link rel="stylesheet" href="resources/css/table.css" media="screen" title="no title"> -->
 	
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -69,6 +63,9 @@
 	font-size:20px}
 	}
 	
+div{
+	clear: both;
+}
 </style>
 
 
@@ -303,11 +300,6 @@ function moveWrite() {
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="resources/js/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="resources/js/raphael-min.js"></script>
-    <script src="resources/js/morris.min.js"></script>
-    <script src="resources/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="resources/js/sb-admin-2.js"></script>
