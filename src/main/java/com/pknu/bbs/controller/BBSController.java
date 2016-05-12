@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dto.BBSDto;
@@ -50,7 +50,7 @@ public class BBSController {
 	//글쓰기(write)
 	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
 	public String write(@ModelAttribute("weiver_content") String content,
-			@ModelAttribute("weiver_title") String title, HttpSession session){
+			@ModelAttribute("weiver_title") String title, HttpSession session, MultipartHttpServletRequest mReq){
 		BBSDto article = new BBSDto();
 		//System.out.println(weiver_content);
 		
@@ -59,7 +59,7 @@ public class BBSController {
 		article.setWeiver_id((String)session.getAttribute("id"));
 		article.setWeiver_title(title);
 		article.setWeiver_content(content);
-		return bbsService.insertArticle(article, session);
+		return bbsService.insertArticle(article, session, mReq);
 	}
 	//글 삭제
 	@RequestMapping("/delete.bbs")

@@ -91,7 +91,7 @@ function post_to_url(path, params) {
 </script>
 </head>
 <body>
-<form action="/proj/write.bbs" method="post" >
+<form action="/proj/write.bbs" method="post" enctype="multipart/form-data">
 <!-- ------------------------------------------------------ -->
 <!-- 절취선------------------------------------------------------ -->
 <!-- ------------------------------------------------------ -->
@@ -180,6 +180,9 @@ function post_to_url(path, params) {
 			</div>
 
 			<div id="editor"></div>
+			<div>
+				첨부 :<input type="file" name="fname" multiple>
+			</div>
 			<input type="button" class="btn btn-sm btn-primary" onclick="writeContent()" value="글쓰기">
 		</div>	
 		

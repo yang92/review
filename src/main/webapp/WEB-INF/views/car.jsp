@@ -230,11 +230,12 @@ function moveWrite() {
 									<br/>
 									<hr>
 								</c:forEach>
-								<ul>
-									<li>
-										${pageCode}
-									</li>
-								</ul>
+								<div>
+									<button class="btn btn-sm btn-primary" type="button" onclick="moveWrite()">글쓰기</button>
+								</div>
+								<div>
+									${pageCode}
+								</div>
 							</div>
 							
 							
