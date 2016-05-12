@@ -36,7 +36,7 @@
 <!-- 		</if> -->
 		member_nickname = #{member_nickname},
 		member_phonenumber = #{member_phonenumber}, member_email = #{member_email},
-		member_birth = #{member_birth}, member_introduce = #{member_introduce}
+		member_birth = #{member_birth}, member_memo = #{member_memo}
 		WHERE MEMBER_ID = #{member_id}
 		
 	

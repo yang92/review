@@ -41,7 +41,8 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 	}
 
-
+	
+	
 	@Override
 	public void insertMember(MemberDto member) {
 		memberDao.insertMember(member);
@@ -74,7 +75,8 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
-	@Override	// 프로필도 보고 수정도 하러가기
+	// 프로필도 보고 수정도 하러가기
+	@Override	
 	public ModelAndView userProfile(String id) {
 		mav=new ModelAndView();
 		memberDto = memberDao.userProfile(id);
@@ -83,7 +85,8 @@ public class MemberServiceImpl implements MemberService{
 		return mav;
 	}
 
-
+	
+	// 프로필 수정
 	@Override
 	public void profileUpdate(MemberDto userInfo) {
 		memberDao.profileUpdate(userInfo);
