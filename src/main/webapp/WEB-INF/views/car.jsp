@@ -63,6 +63,9 @@
 	font-size:20px}
 	}
 	
+div{
+	clear: both;
+}
 </style>
 
 
