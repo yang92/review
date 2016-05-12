@@ -57,9 +57,17 @@
 <script src="resources/editor/bootstrap-wysiwyg.js"></script>
 
 <script> // 자바 스크립트 시작
-function writeCheck() {
+// function writeTitle() {
+// 	var content = document.getElementById('title').innerHTML;
+// 	post_to_url("/proj/write.bbs", {'weiver_title': title});
+// }
+
+function writeContent() {
 	var content = document.getElementById('editor').innerHTML;
-	post_to_url("/proj/write.bbs", {'weiver_content': content});
+
+	post_to_url("/proj/write.bbs", {'weiver_content': content, 'weiver_title': $("#title").val()});
+
+	
 }
 
 function post_to_url(path, params) {
@@ -73,6 +81,7 @@ function post_to_url(path, params) {
         hiddenField.setAttribute("type", "hidden");
         hiddenField.setAttribute("name", key);
         hiddenField.setAttribute("value", params[key]);
+        
         form.appendChild(hiddenField);
     }
     document.body.appendChild(form);
@@ -88,6 +97,7 @@ function post_to_url(path, params) {
 <!-- ------------------------------------------------------ -->
 <div class="container">
 		<div class="hero-unit">
+		<input type="text" class="form-control" id="title" name="title">
 <!-- 			<div class="pull-right"> -->
 <!-- 				<div class="fb-like" data-href="http://facebook.com/mindmupapp" -->
 <!-- 					data-send="false" data-layout="button_count" data-width="100" -->
@@ -170,7 +180,7 @@ function post_to_url(path, params) {
 			</div>
 
 			<div id="editor"></div>
-			<input type="button" class="btn btn-sm btn-primary" onclick="writeCheck()" value="글쓰기">
+			<input type="button" class="btn btn-sm btn-primary" onclick="writeContent()" value="글쓰기">
 		</div>	
 		
 		

@@ -43,12 +43,16 @@ public class BBSController {
 	}
 	//글쓰기(write)
 	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
-	public String write(@ModelAttribute("weiver_content") String weiver_content, HttpSession session){
+	public String write(@ModelAttribute("weiver_content") String content,
+			@ModelAttribute("weiver_title") String title, HttpSession session){
 		BBSDto article = new BBSDto();
 		//System.out.println(weiver_content);
 		
+		System.out.println((String)session.getAttribute("id")+" 님께서 새글을 쓰셨습니다.");
+		
 		article.setWeiver_id((String)session.getAttribute("id"));
-		article.setWeiver_content(weiver_content);
+		article.setWeiver_title(title);
+		article.setWeiver_content(content);
 		return bbsService.insertArticle(article, session);
 	}
 	//글 삭제
