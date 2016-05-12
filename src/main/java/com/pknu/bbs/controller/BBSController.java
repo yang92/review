@@ -1,5 +1,7 @@
 package com.pknu.bbs.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,11 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dto.BBSDto;
 import com.pknu.bbs.service.BBSService;
+import com.pknu.main.dto.CategoryDto;
 
 @Controller
 public class BBSController {
@@ -25,7 +28,10 @@ public class BBSController {
 	
 	@RequestMapping(value="/{whatPage}.bbs")
 	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage) {
-		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage);//list로 tableName이랑 pageNum전달
+		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+		getCategories = bbsService.getCategory();
+		
+		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage, getCategories);//list로 tableName이랑 pageNum전달
 	}
 
 	// 글 읽기

@@ -25,7 +25,7 @@
     <link href="resources/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+ <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -44,14 +44,14 @@
 	        	
 	      	</c:if>
             <c:if test="${id != null}">
-                <!-- /.dropdown -->
 
+                <!-- /.dropdown -->
                 <li class="dropdown pull-right">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="profile.member"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -84,6 +84,13 @@
                               </form>
                             <!-- /input-group -->
                         </li>
+                        <c:forEach items="${category}" var="category">
+                        	<li>
+                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa  fa-angle-double-right fa-fw"></i> ${category.category_realName}</a>
+                        	</li>
+                        
+                        </c:forEach>
+                        
                         <li>
                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
                         </li>
@@ -92,7 +99,7 @@
                            
                         </li>
                         <li>
-                            <a href="/proj/list.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
+                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
                         </li>
                         <li>
                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
@@ -149,7 +156,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">Blank Page</a>처
                                 </li>
                                 <li>
                                     <a href="login.html">Login Page</a>

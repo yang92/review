@@ -1,5 +1,6 @@
 package com.pknu.bbs.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Resource;
@@ -15,6 +16,7 @@ import com.pknu.bbs.dto.FileDto;
 import com.pknu.bbs.dto.GetListDto;
 import com.pknu.bbs.util.FileSaveHelper;
 import com.pknu.bbs.util.Page;
+import com.pknu.main.dto.CategoryDto;
 
 @Service
 public class BBSServiceImpl implements BBSService{
@@ -37,7 +39,7 @@ public class BBSServiceImpl implements BBSService{
 	
 	// 게시판
 	@Override
-	public ModelAndView list(String tableName, int pageNum, String whatPage){
+	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories){
 		
 		System.out.println(tableName);
 		int pageSize=10;
@@ -58,6 +60,7 @@ public class BBSServiceImpl implements BBSService{
 		mav.addObject("articleList",articleList);
 		mav.addObject("pageNum", pageNum);
 		mav.addObject("pageCode", page.getSb().toString());
+		mav.addObject("category", getCategories);
 		mav.setViewName(whatPage);
 		return mav;
 	}
@@ -165,6 +168,11 @@ public class BBSServiceImpl implements BBSService{
 
 		mav.setViewName("redirect:/content.bbs");		
 		return mav;
+	}
+
+	@Override
+	public ArrayList<CategoryDto> getCategory() {
+		return bbsDao.getCategory();
 	}
 
 

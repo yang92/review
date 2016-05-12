@@ -66,4 +66,8 @@
 		WHERE WEIVER_NO=#{weiver_no}
 	</select>
 	
+	<select id="getCategory" resultType="categoryDto">
+		SELECT CATEGORY_NAME, CATEGORY_REALNAME FROM CATEGORY
+	</select>
+	
 </mapper>

@@ -1,14 +1,17 @@
 package com.pknu.bbs.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dto.BBSDto;
+import com.pknu.main.dto.CategoryDto;
 
 public interface BBSService {
 	// 게시판
-	public ModelAndView list(String tableName, int pageNum, String whatPage);
+	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories);
 	
 	// 글 읽기
 	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus);
@@ -22,4 +25,6 @@ public interface BBSService {
 	public ModelAndView updateArticle(BBSDto article);
 	//카테고리
 	public String getCategoryNum(String whatPage);
+
+	public ArrayList<CategoryDto> getCategory();
 }

@@ -1,23 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="shortcut icon" href="resources/images/w_r.JPG">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<!-- Bootstrap -->
+    <title>Weiver</title>
+
+    <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="resources/css/font-awesome.min.css" media="screen" title="no title">
-    <!-- Custom style -->
-    <link rel="stylesheet" href="resources/css/style.css" media="screen" title="no title">
-    
+	
+    <!-- MetisMenu CSS -->
+    <link href="resources/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="resources/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resources/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="resources/css/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resources/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     
 <!--     table 전용 css -->
 <!--     <link rel="stylesheet" href="resources/css/table.css" media="screen" title="no title"> -->
@@ -104,10 +122,6 @@ $(document).ready(function() {
 });
 </script>
 
-
-
-
-
 <script>
 function moveWrite() {
 	document.location.href="writeForm.bbs";
@@ -115,6 +129,10 @@ function moveWrite() {
 </script>
 </head>
 <body>
+<div id="wrapper">
+<%@include file="category.jsp" %>
+
+
 <!-- <body onkeydown="return keydowncheck();"> -->
 <!-- 	<nav class="navbar navbar-inverse"> -->
 <!-- 	  <div class="container-fluid"> -->
@@ -160,55 +178,13 @@ function moveWrite() {
 		<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
 
 		<!-- 	게시판  절취선---------------------------------------------------------------------------------------------------------------------------------- -->
-<%-- 		<h3>총 글 개수 : ${totalCount }개</h3> --%>
-<!-- 		<div class="container"> -->
-<!--  			반응형 테이블  -->
-<!-- 			<table class="table table-striped"> -->
-<%-- 				<colgroup align="center"> --%>
-<%-- 					<col width="13%" /> --%>
-<%-- 					<col width="*" class="title" />	<!-- *는 나머지 --> --%>
-<%-- 					<col width="15%" /> --%>
-<%-- 					<col width="8%" />		<!-- 8%로 너프 --> --%>
-<%-- 					<col width="8%" /> --%>
-<%-- 					<col width="8%" /> --%>
-<%-- 				</colgroup> --%>
-<!-- 				<thead> -->
-<!-- 					<tr> -->
-<!-- 						<th>번 호</th>		text_center 가운데 정렬 -->
-<!-- 						<th class="text-left">제 목</th> -->
-<!-- 						<th>작성자</th> -->
-<!-- 						<th>작성일</th> -->
-<!-- 						<th>조 회</th> -->
-<!-- 						<th>추 천</th> -->
-<!-- 					</tr> -->
-<!-- 				</thead> -->
-<!-- 				<tbody> -->
-					
-<%-- 					<c:forEach var="article" items="${articleList}"> --%>
-<!-- 						<tr> -->
-<%-- 							<td class="text-center"><c:out value="${article.weiver_no}" /></td> --%>
-<%-- 							<td class="text-left"><a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}"><c:out value="${article.weiver_title}" /></a></td> --%>
-<%-- 							<td class="text-center"><c:out value="${article.weiver_id}" /></td> --%>
-<%-- 							<td class="text-center"><c:out value="${article.weiver_writedate}" /></td> --%>
-<%-- 							<td class="text-center"><c:out value="${article.weiver_hit}" /></td> --%>
-<%-- 							<td class="text-center"><c:out value="${article.weiver_good}" /></td> --%>
-<!-- 						</tr> -->
-<%-- 					</c:forEach> --%>
-					
-<!-- 				</tbody> -->
-<!-- 			</table> -->
-<!-- 		</div> -->
 
-<!-- 	</div> -->
-
-<!-- <br/><br/><br/> -->
-<%-- ${article.weiver_title} --%>
 	<!-- 	게시판 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
 
 
 
 
-<div class="container">
+<div class="container page-wrapper">
 	<div class="row">
 		<section class="content">
 			<div class="col-md-8 col-md-offset-2">
@@ -231,7 +207,7 @@ function moveWrite() {
 								</div>
 							</form>
 							
-							<div>
+							<div class="hidden-xs hidden-sm">
 								<ul style="height:auto;">
 									<li class="col-xs-5" style="list-style : none; float:left; max-width:250px;" >title</li>
 									<li class="col-xs-2" style="list-style : none; float:left;" >id</li>
@@ -242,7 +218,14 @@ function moveWrite() {
 								<hr>
 								<c:forEach var="article" items="${articleList}"> 
 									<ul style="height:auto;">
-										<li class="col-xs-5" style="list-style : none; float:left;  max-width:250px; max-height:20px; overflow:hidden" >${article.weiver_title}</li>
+									
+										
+										<li class="col-xs-5" style="list-style : none; float:left;  max-width:250px; max-height:20px; overflow:hidden" >
+										<a href="/proj/read_car.bbs?weiver_no=${article.weiver_no}&pageNum=${pageNum}&fileStatus=${article.weiver_file}">
+										${article.weiver_title}
+										</a>
+										</li>
+										
 										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_id}</li>
 										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_hit}</li>
 										<li class="col-xs-2" style="list-style : none; float:left;" >${article.weiver_writedate}</li>
@@ -258,7 +241,7 @@ function moveWrite() {
 							
 							
 							
-							<div class="table-container">
+							<div class="table-container hidden-md hidden-lg">
 							<table class="table table-filter">
 								<tbody>
 									<c:forEach var="article" items="${articleList}"> 
@@ -305,10 +288,24 @@ function moveWrite() {
 </div>
 
 
+</div>
+ <!-- /#wrapper -->
 
+    <!-- jQuery -->
+    <script src="resources/js/jquery.min.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
 
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="resources/js/metisMenu.min.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+    <script src="resources/js/raphael-min.js"></script>
+    <script src="resources/js/morris.min.js"></script>
+    <script src="resources/js/morris-data.js"></script>
 
+    <!-- Custom Theme JavaScript -->
+    <script src="resources/js/sb-admin-2.js"></script>
 </body>
 </html>

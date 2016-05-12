@@ -1,5 +1,6 @@
 package com.pknu.bbs.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.pknu.bbs.dto.BBSDto;
 import com.pknu.bbs.dto.FileDto;
 import com.pknu.bbs.dto.GetListDto;
+import com.pknu.main.dto.CategoryDto;
 
 @Repository
 public interface BBSDao {
@@ -27,6 +29,8 @@ public interface BBSDao {
 	public void deleteArticle(String weiver_no);
 	//수정
 	public BBSDto getUpdateArticle(String weiver_no);
+	
+	public ArrayList<CategoryDto> getCategory();
 	
 
 }

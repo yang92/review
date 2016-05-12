@@ -840,20 +840,6 @@
 			data-placement="left"><span
 			class="glyphicon glyphicon-chevron-up"></span></a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>
     <!-- /#wrapper -->
 
