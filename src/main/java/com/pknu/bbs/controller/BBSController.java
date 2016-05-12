@@ -50,7 +50,7 @@ public class BBSController {
 	//글쓰기(write)
 	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
 	public String write(@ModelAttribute("weiver_content") String content,
-			@ModelAttribute("weiver_title") String title, HttpSession session, MultipartHttpServletRequest mReq){
+			@ModelAttribute("weiver_title") String title, HttpSession session){
 		BBSDto article = new BBSDto();
 		//System.out.println(weiver_content);
 		
@@ -59,7 +59,7 @@ public class BBSController {
 		article.setWeiver_id((String)session.getAttribute("id"));
 		article.setWeiver_title(title);
 		article.setWeiver_content(content);
-		return bbsService.insertArticle(article, session, mReq);
+		return bbsService.insertArticle(article, session);
 	}
 	//글 삭제
 	@RequestMapping("/delete.bbs")

@@ -64,9 +64,9 @@
 
 function writeContent() {
 	var content = document.getElementById('editor').innerHTML;
-
+	//alert($("#fname").val());
+	
 	post_to_url("/proj/write.bbs", {'weiver_content': content, 'weiver_title': $("#title").val()});
-
 	
 }
 
@@ -87,11 +87,33 @@ function post_to_url(path, params) {
     document.body.appendChild(form);
     form.submit();
 }
-
+/*
+$(function(){
+	$("#writeForm").on("submit",function(){		
+		$.ajax({	
+			url:"/proj/write.bbs",
+// 			data{}에서는 EL을 ""로 감싸야함..그외에는 그냥 사용
+			data:{				
+				weiver_title : $("#title").val(),
+				weiver_content : $("#editor").val()
+			},
+// 			beforeSend : function(){
+// 				alert("시작전");
+// 			},
+			complete: function(){
+				alert("comment가 정성적으로 입력되었습니다");
+			},
+			success:function(data){							
+				$("#commentContent").val("");
+				showHtml(data,1);				
+			}					
+		}); 
+	});	
+});*/
 </script>
 </head>
 <body>
-<form action="/proj/write.bbs" method="post" enctype="multipart/form-data">
+<form action="/proj/write.bbs" method="post" id="writeForm">
 <!-- ------------------------------------------------------ -->
 <!-- 절취선------------------------------------------------------ -->
 <!-- ------------------------------------------------------ -->
@@ -180,9 +202,7 @@ function post_to_url(path, params) {
 			</div>
 
 			<div id="editor"></div>
-			<div>
-				첨부 :<input type="file" name="fname" multiple>
-			</div>
+		
 			<input type="button" class="btn btn-sm btn-primary" onclick="writeContent()" value="글쓰기">
 		</div>	
 		
