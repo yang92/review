@@ -207,7 +207,7 @@ function moveWrite() {
 								</div>
 							</form>
 							
-							<div class="hidden-xs hidden-sm">
+							<div class="hidden-xs">
 								<ul style="height:auto;">
 									<li class="col-xs-5" style="list-style : none; float:left; max-width:250px;" >title</li>
 									<li class="col-xs-2" style="list-style : none; float:left;" >id</li>
@@ -233,7 +233,11 @@ function moveWrite() {
 									<br/>
 									<hr>
 								</c:forEach>
-								
+								<ul>
+									<li>
+										${pageCode}
+									</li>
+								</ul>
 							</div>
 							
 							
@@ -241,7 +245,7 @@ function moveWrite() {
 							
 							
 							
-							<div class="table-container hidden-md hidden-lg">
+							<div class="table-container hidden-md hidden-lg hidden-sm">
 							<table class="table table-filter">
 								<tbody>
 									<c:forEach var="article" items="${articleList}"> 
