@@ -63,16 +63,17 @@
  
  </script>
  <script type="text/javascript">
-function keydowncheck()
-{
-var result = true;
-var keycode = event.keyCode;
-if(123 == keycode)
-{
-result = false;
-}
-return result;
-}
+	function keydowncheck()
+	{
+		var result = true;
+		var keycode = event.keyCode;
+		
+		if(123 == keycode)
+			{
+				result = false;	
+			}
+		return result;
+	}
 </script>
 
 
