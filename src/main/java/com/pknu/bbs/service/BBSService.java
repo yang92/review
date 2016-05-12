@@ -2,7 +2,6 @@ package com.pknu.bbs.service;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pknu.bbs.dto.BBSDto;
@@ -14,7 +13,7 @@ public interface BBSService {
 	// 글 읽기
 	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus);
 	// 글 쓰기
-	public String insertArticle(BBSDto article, HttpSession session, MultipartHttpServletRequest mReq);
+	public String insertArticle(BBSDto article, HttpSession session);
 	// 글 삭제
 	public String deleteArticle(String weiver_no, int pageNum);
 	//글 수정1

@@ -56,46 +56,33 @@
 <link href="resources/editor/index.css" rel="stylesheet">
 <script src="resources/editor/bootstrap-wysiwyg.js"></script>
 
-<script type="text/javascript"> // 자바 스크립트 시작
+<script> // 자바 스크립트 시작
+function writeCheck() {
+	var content = document.getElementById('editor').innerHTML;
+	post_to_url("/proj/write.bbs", {'weiver_content': content});
+}
 
-function writeCheck()
-  {
-   var form = document.writeform;
-   
-//    if( !form.name.value )   // form 에 있는 name 값이 없을 때
-//    {
-//     alert( "이름을 적어주세요" ); // 경고창 띄움
-//     form.name.focus();   // form 에 있는 name 위치로 이동
-//     return;
-//    }
-   
-//    if( !form.password.value )
-//    {
-//     alert( "비밀번호를 적어주세요" );
-//     form.password.focus();
-//     return;
-//    }
-   
-//   if( !form.title.value )
-//    {
-//     alert( "제목을 적어주세요" );
-//     form.title.focus();
-//     return;
-//    }
- 
-//   if( !form.memo.value )
-//    {
-//     alert( "내용을 적어주세요" );
-//     form.memo.focus();
-//     return;
-//    }
- 
-  form.submit();
-  }
- </script>
+function post_to_url(path, params) {
+    method = "POST";
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+    
+    for(var key in params) {
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", key);
+        hiddenField.setAttribute("value", params[key]);
+        form.appendChild(hiddenField);
+    }
+    document.body.appendChild(form);
+    form.submit();
+}
+
+</script>
 </head>
 <body>
-<form action="/proj/write.bbs" method="post" enctype="multipart/form-data" >
+<form action="/proj/write.bbs" method="post" >
 <!-- ------------------------------------------------------ -->
 <!-- 절취선------------------------------------------------------ -->
 <!-- ------------------------------------------------------ -->
@@ -182,8 +169,8 @@ function writeCheck()
 					x-webkit-speech="" name="editor">
 			</div>
 
-			<div id="editor" ></div>
-			<input type="button" class="btn btn-sm btn-primary" onclick="javascript:writeCheck();">
+			<div id="editor"></div>
+			<input type="button" class="btn btn-sm btn-primary" onclick="writeCheck()" value="글쓰기">
 		</div>	
 		
 		

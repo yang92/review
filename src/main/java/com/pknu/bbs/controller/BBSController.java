@@ -43,11 +43,13 @@ public class BBSController {
 	}
 	//글쓰기(write)
 	@RequestMapping(value="/write.bbs", method = RequestMethod.POST)
-	public String write(@ModelAttribute("article") BBSDto article, String editor, HttpSession session, MultipartHttpServletRequest mReq){
-		System.out.println("editor -> "+editor);
-		System.out.println(article+"////"+mReq);
+	public String write(@ModelAttribute("weiver_content") String weiver_content, HttpSession session){
+		BBSDto article = new BBSDto();
+		//System.out.println(weiver_content);
+		
 		article.setWeiver_id((String)session.getAttribute("id"));
-		return bbsService.insertArticle(article, session, mReq);
+		article.setWeiver_content(weiver_content);
+		return bbsService.insertArticle(article, session);
 	}
 	//글 삭제
 	@RequestMapping("/delete.bbs")

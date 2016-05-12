@@ -38,7 +38,7 @@ public class BBSServiceImpl implements BBSService{
 	// 게시판
 	@Override
 	public ModelAndView list(String tableName, int pageNum, String whatPage){
-				
+		
 		System.out.println(tableName);
 		int pageSize=10;
 		int pageBlock=10;
@@ -91,24 +91,24 @@ public class BBSServiceImpl implements BBSService{
 	}
 	//글쓰기
 	@Override
-	public String insertArticle(BBSDto article, HttpSession session, MultipartHttpServletRequest mReq) {
+	public String insertArticle(BBSDto article, HttpSession session) {
 		
 		article.setWeiver_id((String)session.getAttribute("id"));
-		List<MultipartFile> mfile = mReq.getFiles("fname");
+//		List<MultipartFile> mfile = mReq.getFiles("fname");
 
-		if(mfile.get(0).isEmpty()){//파일업로드 안된 경우
+//		if(mfile.get(0).isEmpty()){//파일업로드 안된 경우
 			System.out.println("파일업로드 XXXX");
 			bbsDao.insertArticle(article);
-		}
-		else{//파일업로드 된 경우
-			System.out.println("파일업로드 한경우");
-			int weiver_no = bbsDao.getNextArticleNum();
-			article.setWeiver_no(weiver_no);
-			article.setWeiver_file("1");
-			bbsDao.insertArticle(article);
-			commonsFileUpload(mfile, weiver_no);
-		}
-		return "redirect:/list.bbs?pageNum=1";
+//		}
+//		else{//파일업로드 된 경우
+//			System.out.println("파일업로드 한경우");
+//			int weiver_no = bbsDao.getNextArticleNum();
+//			article.setWeiver_no(weiver_no);
+//			article.setWeiver_file("1");
+//			bbsDao.insertArticle(article);
+//			commonsFileUpload(mfile, weiver_no);
+//		}
+		return "redirect:/car.bbs?pageNum=1";
 	}
 	
 	private void commonsFileUpload(List<MultipartFile> mfile, int articleNum) {
@@ -135,7 +135,7 @@ public class BBSServiceImpl implements BBSService{
 		//deleteFile(articleNum);
 		bbsDao.deleteArticle(weiver_no);
 
-		return "redirect:/list.bbs?pageNum="+pageNum;
+		return "redirect:/car.bbs?pageNum="+pageNum;
 	}
 
 	@Override
@@ -161,13 +161,12 @@ public class BBSServiceImpl implements BBSService{
 
 	@Override
 	public ModelAndView updateArticle(BBSDto article) {
-		
-		return null;
+		mav= new ModelAndView();
+
+		mav.setViewName("redirect:/content.bbs");		
+		return mav;
 	}
 
 
-	
-	
-	
 	
 }
