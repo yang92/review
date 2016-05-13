@@ -75,7 +75,11 @@
 		FROM WEIVER_CAR
 		WHERE WEIVER_NO=#{weiver_no}
 	</select>
-	
+	<select id="updateArticle" parameterType="BBSDto">
+		update WEIVER_CAR
+		set title=#{weiver_title}, content=#{weiver_content}, fileStatus=#{weiver_file}
+		where ARTICLENUM=#{weiver_no}
+	</select>
 	<select id="getCategory" resultType="categoryDto">
 		SELECT CATEGORY_NAME, CATEGORY_REALNAME FROM CATEGORY
 	</select>

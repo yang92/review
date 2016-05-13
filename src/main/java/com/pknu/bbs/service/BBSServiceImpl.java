@@ -156,8 +156,10 @@ public class BBSServiceImpl implements BBSService{
 	@Override
 	public ModelAndView updateArticle(BBSDto article) {
 		mav= new ModelAndView();
-
-		mav.setViewName("redirect:/content.bbs");		
+		bbsDao.updateArticle(article);
+		mav.addObject("articleNum", article.getWeiver_no());
+		mav.addObject("fileStatus", article.getWeiver_file());
+		mav.setViewName("readCar");		
 		return mav;
 	}
 

@@ -32,6 +32,7 @@ public interface BBSDao {
 	public BBSDto getUpdateArticle(String weiver_no);
 	
 	public ArrayList<CategoryDto> getCategory();
+	public void updateArticle(BBSDto article);
 	
 
 }

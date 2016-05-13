@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Weiver - 글 읽기</title>
+    <title>Weiver - 글 수정</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
@@ -52,6 +53,113 @@
 
 </head>
 <body>
+  <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="main.main"><img src="resources/images/mainLogo.jpg" width="130"></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+            <c:if test="${id == null}">
+            	<li class="pull-right"><a href="/proj/login.member"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	      		<li class="pull-right"><a href="/proj/join.member"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+	        	
+	      	</c:if>
+            <c:if test="${id != null}">
+
+                <!-- /.dropdown -->
+                <li class="dropdown pull-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="profile.member"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="logout.member"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+                </c:if>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                        <form action="/proj/search.main" method="post">
+                            <div class="input-group custom-search-form">
+								
+	                                <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
+	                                <span class="input-group-btn">
+	                                <button class="btn btn-default" type="submit">
+	                                	<i class="fa fa-search"></i>
+	                                </button>
+	                                </span>
+                               
+                             </div>
+                              </form>
+                            <!-- /input-group -->
+                        </li>
+                        <c:forEach items="${category}" var="category">
+                        	<li>
+                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa  fa-angle-double-right fa-fw"></i> ${category.category_realName}</a>
+                        	</li>
+                        
+                        </c:forEach>
+                        
+                        <li>
+                            <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
+                        </li>
+                        <li>
+                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a>
+                           
+                        </li>
+                        <li>
+                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
+                        </li>
+                        <li>
+                            <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/proj/food.bbs">스마트폰</a>
+                                </li>
+                                <li>
+                                    <a href="/proj/food.bbs">컴퓨터</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/proj/game.bbs">Panels and Wells</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div>
 <form action="/proj/update.bbs" method="post">
 <input type="hidden" name="weiver_no" value="${weiver_no}">
 <input type="hidden" name="weiver_file" value="${weiver_file}">
@@ -72,10 +180,71 @@
 		</tr>
 		
 		<tr>
-			<td><input type="submit" value="수정하기"></td>
-			<td><input type="reset" value="되돌리기"></td>
+			<td><input type="submit" value="수정하기" class="btn btn-primary btn-block"></td>
+			<td><input type="reset" value="되돌리기" class="btn btn-primary btn-block"></td>
 		</tr>
 	</table>
 </form>
+</div>
+        
+        
+        
+        <div>
+        	<c:if test="${whatPage==car}">
+        	</c:if>
+        </div>
+<!-- back to TOP -->
+		<a id="back-to-top" href="#"
+			class="btn btn-primary btn-lg back-to-top" role="button"
+			title="Click to return on the top page" data-toggle="tooltip"
+			data-placement="left"><span
+			class="glyphicon glyphicon-chevron-up"></span></a>
+
+<!-- 	</div> -->
+    <!-- /#wrapper -->
+
+
+</div>
+    <!-- jQuery -->
+    <script src="resources/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="resources/js/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+<!--     <script src="resources/js/raphael-min.js"></script> -->
+<!--     <script src="resources/js/morris.min.js"></script> -->
+<!--     <script src="resources/js/morris-data.js"></script> -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="resources/js/sb-admin-2.js"></script>
+
+
+<!-- back to TOP -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+				} else {
+					$('#back-to-top').fadeOut();
+				}
+			});
+			// scroll body to 0px on click
+			$('#back-to-top').click(function() {
+				$('#back-to-top').tooltip('hide');
+				$('body,html').animate({
+					scrollTop : 0
+				}, 800);
+				return false;
+			});
+
+			$('#back-to-top').tooltip('show');
+
+		});
+	</script>
 </body>
 </html>
