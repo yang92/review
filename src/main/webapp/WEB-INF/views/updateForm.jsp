@@ -54,9 +54,7 @@
 </head>
 <body>
   <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -97,102 +95,46 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                        <form action="/proj/search.main" method="post">
-                            <div class="input-group custom-search-form">
-								
-	                                <input type="text" class="form-control" placeholder="통합검색" name="target" id="target">
-	                                <span class="input-group-btn">
-	                                <button class="btn btn-default" type="submit">
-	                                	<i class="fa fa-search"></i>
-	                                </button>
-	                                </span>
-                               
-                             </div>
-                              </form>
-                            <!-- /input-group -->
-                        </li>
-                        <c:forEach items="${category}" var="category">
-                        	<li>
-                            	<a href="/proj/${category.category_name}.bbs?pageNum=1"><i class="fa  fa-angle-double-right fa-fw"></i> ${category.category_realName}</a>
-                        	</li>
-                        
-                        </c:forEach>
-                        
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
-                        </li>
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a>
-                           
-                        </li>
-                        <li>
-                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
-                        </li>
-                        <li>
-                            <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/food.bbs">스마트폰</a>
-                                </li>
-                                <li>
-                                    <a href="/proj/food.bbs">컴퓨터</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/game.bbs">Panels and Wells</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
+          
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div>
-<form action="/proj/update.bbs" method="post">
-<input type="hidden" name="weiver_no" value="${weiver_no}">
-<input type="hidden" name="weiver_file" value="${weiver_file}">
-<input type="hidden" name="pageNum" value="${pageNum}">
-	<table border="2" width="200">
-		<tr>
-			<td>글쓴이 :</td>
-			<td>${id}</td>
-		</tr>
-		<tr>
-			<td>제목 :</td>
-			<td><input type="text" name="weiver_title" value="${article.weiver_title}"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><!-- 행 합침 -->
-			<textarea rows="20" cols="50" name="weiver_content">${article.weiver_content}</textarea>
-			</td>
-		</tr>
-		
-		<tr>
-			<td><input type="submit" value="수정하기" class="btn btn-primary btn-block"></td>
-			<td><input type="reset" value="되돌리기" class="btn btn-primary btn-block"></td>
-		</tr>
-	</table>
-</form>
-</div>
+	<br/><br/>
+        
+        <div class="container page-wrapper">
+			<form action="/proj/update.bbs" method="post">
+				<input type="hidden" name="weiver_no" value="${weiver_no}">
+				<input type="hidden" name="weiver_file" value="${weiver_file}">
+				<input type="hidden" name="pageNum" value="${pageNum}">
+				<table border="2" width="200" align ="center">
+					<tr>
+						<td>글쓴이 :</td>
+						<td>${id}</td>
+					</tr>
+					<tr>
+						<td>제목 :</td>
+						<td><input type="text" name="weiver_title"
+							value="${article.weiver_title}"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<!-- 행 합침 --> <textarea rows="20" cols="50" name="weiver_content">${article.weiver_content}</textarea>
+						</td>
+					</tr>
+
+					<tr>
+						<td><input type="submit" value="수정하기"
+							class="btn btn-primary btn-block"></td>
+						<td><input type="reset" value="되돌리기"
+							class="btn btn-primary btn-block"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
         
         
-        
-        <div>
-        	<c:if test="${whatPage==car}">
-        	</c:if>
-        </div>
+        <br/><br/>
+       
 <!-- back to TOP -->
 		<a id="back-to-top" href="#"
 			class="btn btn-primary btn-lg back-to-top" role="button"
@@ -215,9 +157,9 @@
     <script src="resources/js/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-<!--     <script src="resources/js/raphael-min.js"></script> -->
-<!--     <script src="resources/js/morris.min.js"></script> -->
-<!--     <script src="resources/js/morris-data.js"></script> -->
+    <script src="resources/js/raphael-min.js"></script>
+    <script src="resources/js/morris.min.js"></script>
+    <script src="resources/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="resources/js/sb-admin-2.js"></script>

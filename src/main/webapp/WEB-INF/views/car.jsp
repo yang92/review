@@ -203,57 +203,6 @@ function moveWrite() {
         </nav>
 
 
-<!-- <body onkeydown="return keydowncheck();"> -->
-<!-- 	<nav class="navbar navbar-inverse"> -->
-<!-- 	  <div class="container-fluid"> -->
-<!-- 	    <div class="navbar-header"> -->
-<!-- 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> -->
-<!-- 	        <span class="icon-bar"></span> -->
-<!-- 	        <span class="icon-bar"></span> -->
-<!-- 	        <span class="icon-bar"></span>                         -->
-<!-- 	      </button> -->
-<!-- 	      <a class="navbar-brand" href="/proj/main.main">weiver</a> -->
-<!-- 	    </div> -->
-<!-- 	    <div class="collapse navbar-collapse" id="myNavbar"> -->
-<!-- 	      <ul class="nav navbar-nav"> -->
-<!-- 	        <li><a href="/proj/main.main">HOME</a></li> -->
-<!-- 	        <li><a href="/proj/food.bbs">음식</a></li> -->
-<!-- 	        <li class="active"><a href="/proj/car.bbs">자동차</a></li> -->
-<!-- 	        <li><a href="/proj/electronic.bbs">전자기기</a></li> -->
-<!-- 	        <li><a href="/proj/game.bbs">게임</a></li> -->
-<!-- 	      </ul> -->
-<!-- 	      <ul class="nav navbar-nav navbar-right"> -->
-<%-- 	      <c:if test="${id == null}"> --%>
-<!-- 	      	<li><a href="/proj/join.main"><span class="glyphicon glyphicon-plus"></span> Register</a></li> -->
-<!-- 	        <li><a href="/proj/login.main"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-<%-- 	      </c:if> --%>
-<%-- 	      <c:if test="${id != null}"> --%>
-<!-- 	        <li><a href="/proj/logout.main"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> -->
-<%-- 	      </c:if> --%>
-<!-- 	      </ul> -->
-<!-- 	    </div> -->
-<!-- 	  </div> -->
-<!-- 	</nav> -->
-
-<!-- 	<div class="container text-center"> -->
-<!-- 		<div class="row"> -->
-<!-- 			<a href="/proj/main.main"> <img -->
-<!-- 				class="img-responsive center-block" -->
-<!-- 				src="resources/images/mainLogo.jpg" alt="Chania" width="200" -->
-<!-- 				height="50"> -->
-<!-- 			</a> -->
-<!-- 		</div> -->
-<!-- 		<hr> -->
-		<%-- 	<input type="hidden" id="title" value="${article.title}"> --%>
-		<!-- 	<input type="button" class="btn btn-sm btn-primary" value="GOOGLE 위성 위치서비스" onclick="document.location.href='/bbs/location.bbs'"><br/> -->
-
-		<!-- 	게시판  절취선---------------------------------------------------------------------------------------------------------------------------------- -->
-
-	<!-- 	게시판 절취선---------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-
-
 <div class="container page-wrapper">
 	<div class="row">
 		<section class="content">
