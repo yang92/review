@@ -147,79 +147,79 @@
                         
                         </c:forEach>
                         
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
-                        </li>
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a>
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a> -->
                            
-                        </li>
-                        <li>
-                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
-                        </li>
-                        <li>
-                            <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/food.bbs">스마트폰</a>
-                                </li>
-                                <li>
-                                    <a href="/proj/food.bbs">컴퓨터</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/game.bbs">Panels and Wells</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a> -->
+<!--                              <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">스마트폰</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">컴퓨터</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/game.bbs">Panels and Wells</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Third Level <span class="fa arrow"></span></a> -->
+<!--                                     <ul class="nav nav-third-level"> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                     </ul> -->
+<!--                                     /.nav-third-level -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="blank.html">Blank Page</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="login.html">Login Page</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -230,10 +230,7 @@
         
         
         
-        <div>
-        	<c:if test="${whatPage==car}">
-        	</c:if>
-        </div>
+        
         
         
         
@@ -391,26 +388,26 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <i class="fa fa-car fa-fw"></i> 자동차
+<!--                             <div class="pull-right"> -->
+<!--                                 <div class="btn-group"> -->
+<!--                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"> -->
+<!--                                         Actions -->
+<!--                                         <span class="caret"></span> -->
+<!--                                     </button> -->
+<!--                                     <ul class="dropdown-menu pull-right" role="menu"> -->
+<!--                                         <li><a href="#">Action</a> -->
+<!--                                         </li> -->
+<!--                                         <li><a href="#">Another action</a> -->
+<!--                                         </li> -->
+<!--                                         <li><a href="#">Something else here</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="divider"></li> -->
+<!--                                         <li><a href="#">Separated link</a> -->
+<!--                                         </li> -->
+<!--                                     </ul> -->
+<!--                                 </div> -->
+<!--                             </div> -->
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

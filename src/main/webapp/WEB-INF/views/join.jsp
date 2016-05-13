@@ -120,8 +120,7 @@
         </div>
         
         
-        <h4>Default Settings</h4>
-		<div id="default-settings">여기나와야함</div>
+        
         
         
         
