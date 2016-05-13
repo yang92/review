@@ -102,10 +102,9 @@
 	<br/><br/>
         
         <div class="container page-wrapper">
-			<form action="/proj/update.bbs" method="post">
-				<input type="hidden" name="weiver_no" value="${weiver_no}">
-				<input type="hidden" name="weiver_file" value="${weiver_file}">
+			<form action="/proj/update.bbs">
 				<input type="hidden" name="pageNum" value="${pageNum}">
+				<input type="hidden" name="weiver_no" value="${weiver_no}">
 				<table border="2" width="200" align ="center">
 					<tr>
 						<td>글쓴이 :</td>

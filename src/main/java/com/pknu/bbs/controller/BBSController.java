@@ -73,7 +73,8 @@ public class BBSController {
 	}
 	
 	@RequestMapping("/update.bbs")
-	public ModelAndView updateArticle(BBSDto article, @ModelAttribute("pageNum") String pageNum){
+	public String updateArticle(BBSDto article, @ModelAttribute("pageNum") String pageNum){
+		System.out.println(article);
 		return bbsService.updateArticle(article);		
 	}
 	

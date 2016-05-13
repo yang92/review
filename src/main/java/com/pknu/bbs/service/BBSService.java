@@ -22,7 +22,7 @@ public interface BBSService {
 	//글 수정1
 	public ModelAndView updateForm(String weiver_no, int pageNum, int weiver_file);
 	//글 수정2
-	public ModelAndView updateArticle(BBSDto article);
+	public String updateArticle(BBSDto article);
 	//카테고리
 	public String getCategoryNum(String whatPage);
 

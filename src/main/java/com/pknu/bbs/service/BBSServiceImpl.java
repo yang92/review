@@ -146,6 +146,8 @@ public class BBSServiceImpl implements BBSService{
 		}
 
 		mav.addObject("article", article);
+		mav.addObject("pageNum", pageNum);
+		mav.addObject("weiver_no", weiver_no);
 		mav.addObject("weiver_file", weiver_file);
 
 		mav.setViewName("updateForm");
@@ -154,13 +156,11 @@ public class BBSServiceImpl implements BBSService{
 	}
 
 	@Override
-	public ModelAndView updateArticle(BBSDto article) {
-		mav= new ModelAndView();
+	public String updateArticle(BBSDto article) {
+		
 		bbsDao.updateArticle(article);
-		mav.addObject("articleNum", article.getWeiver_no());
-		mav.addObject("fileStatus", article.getWeiver_file());
-		mav.setViewName("readCar");		
-		return mav;
+		
+		return "redirect:/car.bbs?pageNum=1";
 	}
 
 	@Override
