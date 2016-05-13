@@ -113,20 +113,31 @@ $(function(){
 </script>
 </head>
 <body>
+
 <form action="/proj/write.bbs" method="post" id="writeForm">
 <!-- ------------------------------------------------------ -->
 <!-- 절취선------------------------------------------------------ -->
 <!-- ------------------------------------------------------ -->
+
 <div class="container">
+		
 		<div class="hero-unit">
-		<input type="text" class="form-control" id="title" name="title">
-<!-- 			<div class="pull-right"> -->
-<!-- 				<div class="fb-like" data-href="http://facebook.com/mindmupapp" -->
-<!-- 					data-send="false" data-layout="button_count" data-width="100" -->
-<!-- 					data-show-faces="false"></div> -->
-<!-- 			</div> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<label for="inputlg">제 목</label>  -->
+<!-- 					<input class="form-control input-lg" id="inputlg" type="text"> -->
+<!-- 				</div> -->
+				<form class="form-horizontal" role="form">
+					<div class="form-group form-group-lg">
+						<label class="col-sm-1 control-label" for="lg"><h4>제 목</h4></label>
+						<div class="col-sm-11">
+							<input class="form-control" type="text" id="lg">
+						</div>
+					</div>
+				</form>
+				<!-- 				<input type="text" class="form-control"  id="title" name="title" placeholder="제목"> -->
+		
 			<hr />
-<!-- 			<div id="alerts"></div> -->
+
 			<div class="btn-toolbar" data-role="editor-toolbar"
 				data-target="#editor">
 				<div class="btn-group">
@@ -210,7 +221,6 @@ $(function(){
 		
 		</div>
 		</form>
-			
 		<script>
 			$(function() {
 				function initToolbarBootstrapBindings() {
@@ -287,11 +297,12 @@ $(function(){
 			});
 		</script>
 		
-		<a href="http://210.119.12.240"><img
-			style="position: absolute; top: 0; right: 0; border: 0;"
-			src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-			alt="옆동네 가기"></a>
-		<div id="fb-root"></div>
+		</body>
+<!-- 		<a href="http://210.119.12.240"><img -->
+<!-- 			style="position: absolute; top: 0; right: 0; border: 0;" -->
+<!-- 			src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" -->
+<!-- 			alt="옆동네 가기"></a> -->
+<!-- 		<div id="fb-root"></div> -->
 </html>
 
 <!-- 공------------------------------------------------------ -->
