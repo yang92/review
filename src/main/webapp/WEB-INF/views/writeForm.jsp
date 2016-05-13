@@ -130,7 +130,7 @@ $(function(){
 					<div class="form-group form-group-lg">
 						<label class="col-sm-1 control-label" for="lg"><h4>제 목</h4></label>
 						<div class="col-sm-11">
-							<input class="form-control" type="text" id="lg">
+							<input class="form-control" type="text" id="title">
 						</div>
 					</div>
 				</form>

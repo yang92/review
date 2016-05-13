@@ -207,11 +207,7 @@
         
         
         
-        <div>
-        	<c:if test="${whatPage==car}">
-        	</c:if>
-        </div>
-        
+  
         
         
         
@@ -231,13 +227,14 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             ${article.weiver_title}
-                            <p class="pull-right">hit : ${article.weiver_hit}
+                            <p class="pull-right">글쓴이: ${article.weiver_id}&nbsp;&nbsp;|&nbsp;&nbsp;조회수 : ${article.weiver_hit}&nbsp;&nbsp;|&nbsp;&nbsp;
                             추천 : ${article.weiver_good}</p>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                       		${article.weiver_id} <br/><br/>
+                       		 <br/>
                        		${article.weiver_content}
+                       		<br/><br/>
                        		<div class="panel panel-default" id="userInfo">
                        		${article.weiver_id} <br/>
 <!--                        		<div class="col-ms-2"> -->
