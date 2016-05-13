@@ -12,7 +12,7 @@ import com.pknu.main.dto.CategoryDto;
 
 public interface BBSService {
 	// 게시판
-	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories);
+	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories, String target);
 	
 	// 글 읽기
 	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus);

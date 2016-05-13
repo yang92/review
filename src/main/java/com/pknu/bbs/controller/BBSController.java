@@ -27,11 +27,11 @@ public class BBSController {
 	private BBSService bbsService;
 	
 	@RequestMapping(value="/{whatPage}.bbs")
-	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage) {
+	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage, String target) {
 		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
 		getCategories = bbsService.getCategory();
 		
-		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage, getCategories);//list로 tableName이랑 pageNum전달
+		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage, getCategories, target);//list로 tableName이랑 pageNum전달
 	}
 
 	// 글 읽기

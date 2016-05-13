@@ -39,7 +39,7 @@ public class BBSServiceImpl implements BBSService{
 	
 	// 게시판
 	@Override
-	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories){
+	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories, String target){
 		
 		System.out.println(tableName);
 		int pageSize=10;
@@ -54,8 +54,11 @@ public class BBSServiceImpl implements BBSService{
 		getListDto.setEndRow(page.getEndRow());
 		getListDto.setTableName(tableName);
 
-		articleList=bbsDao.getArticles(getListDto);
-		
+//		if(target.equals(null)){
+			articleList=bbsDao.getArticles(getListDto);
+//		}else{
+//			articleList=bbsDao.getTarget(getListDto);
+//		}
 		mav.addObject("totalCount",totalCount);
 		mav.addObject("articleList",articleList);
 		mav.addObject("pageNum", pageNum);

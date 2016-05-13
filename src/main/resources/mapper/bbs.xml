@@ -16,6 +16,16 @@
 		WHERE RM BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
+	<select id="getTarget" parameterType="getListDto" resultType="BBSDto">
+		SELECT * 
+		FROM (SELECT ROWNUM RM, WEIVER.* FROM (SELECT *
+												FROM ${tableName}
+												ORDER BY weiver_no DESC)WEIVER)
+		WHERE RM BETWEEN #{startRow} AND #{endRow} AND WEIVER_TITLE LIKE #{target}
+	</select>
+	
+	
+	
 	<select id="getTableName" parameterType="String" resultType="String">
 		SELECT TABLENAME 
 		FROM CATEGORY 

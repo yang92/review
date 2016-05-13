@@ -15,6 +15,7 @@ import com.pknu.main.dto.CategoryDto;
 public interface BBSDao {
 	public int getArticleCount();
 	public List<BBSDto> getArticles(GetListDto getListDto);
+	public List<BBSDto> getTarget(GetListDto getListDto);
 	public String getTableName(String whatPage);
 	//읽기
 	public void hitUp(HashMap<String, String> hm);

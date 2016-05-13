@@ -191,10 +191,10 @@ function moveWrite() {
 					
 					
 <!-- 						검색기능 -->
-							<form action="#" method="get">
+							<form action="/proj/car.bbs?pageNum=1" method="get">
 								<div class="input-group">
 									<!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-									<input class="form-control" id="system-search" name="q"
+									<input class="form-control" id="target" name="target"
 										placeholder="Search for" required> <span
 										class="input-group-btn">
 										<button type="submit" class="btn btn-default">
