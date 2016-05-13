@@ -7,7 +7,7 @@
 	
 	<insert id="insertMember" parameterType="memberDto">
 		INSERT INTO MEMBER
-		VALUES(member_seq.nextval, #{id}, #{pw}, #{name}, #{email}, #{sex}, #{birth}, sysdate, 0, #{memo}, null, null, null, null)
+		VALUES(member_seq.nextval, #{member_id}, #{member_pw}, #{member_name}, #{member_email}, #{member_sex}, #{member_birth}, sysdate, 0, #{member_memo}, null, null, null, null)
 	</insert>
 	
 	<select id="selectPassword" parameterType="string" resultType="string">
@@ -41,6 +41,11 @@
 		
 	
 	</update>
+
+
+	<select id="getCategory" resultType="categoryDto">
+		SELECT CATEGORY_NAME, CATEGORY_REALNAME FROM CATEGORY
+	</select>
 	
 </mapper>
 

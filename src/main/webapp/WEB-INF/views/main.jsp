@@ -249,7 +249,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">weiver(feat. 태경 & 준영)</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -264,26 +264,26 @@
 	 
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="resources/images/척.PNG"  alt="Image">
+          <img src="resources/images/w_r.JPG"  alt="Image">
           <div class="carousel-caption">
-            <h3>척!</h3>
-            <p>vayne bug</p>
+            <h3>weiver_red</h3>
+            <p>위버 레드</p>
           </div>      
         </div>
 
         <div class="item">
-          <img src="resources/images/척 by lands59.jpg" alt="Image">
+          <img src="resources/images/w_b.JPG" alt="Image">
           <div class="carousel-caption">
-            <h3>sell this picture : 1billion$</h3>
-            <p> chuck! by lands59 </p>
+            <h3>weiver_blue</h3>
+            <p>위버 블루</p>
           </div>      
         </div>
         
         <div class="item">
-          <img src="resources/images/척 by H1000.jpg" alt="Image">
+          <img src="resources/images/w_g.JPG" alt="Image">
           <div class="carousel-caption">
-            <h3>Gold ganda</h3>
-            <p> chuck! by H1000 </p>
+            <h3>weiver_green</h3>
+            <p>위버 그린</p>
           </div>      
         </div>
       </div>

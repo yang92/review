@@ -2,6 +2,11 @@ package com.pknu.bbs.util;
 
 import javax.inject.Named;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.pknu.bbs.service.BBSService;
+import com.pknu.bbs.service.BBSServiceImpl;
+
 //@Component
 @Named
 public class Page {
@@ -10,6 +15,9 @@ public class Page {
 	private StringBuffer sb;
 		
 	public synchronized void paging(int pageNum, int totalCount, int pageSize, int pageBlock){
+		
+		
+		
 		int totalPage = (int) Math.ceil((double)totalCount/pageSize);
 		startRow = (pageNum - 1) * pageSize+1;
 		endRow = pageNum * pageSize;		
@@ -27,7 +35,7 @@ public class Page {
 			sb.append("<img src='resources/images/left.png' width='30' height='9'>");			
 		} else {
 			sb.append("<img src='resources/images/left.png' width='30' height='9'");
-			sb.append(" onclick='location.href=\"list.bbs?pageNum=");
+			sb.append(" onclick='location.href=\"car.bbs?pageNum=");
 			sb.append(startPage - pageBlock);
 			sb.append("\"' style='cursor:pointer'> ");
 		}
@@ -39,7 +47,7 @@ public class Page {
 				sb.append(i);
 				sb.append("</font></b>");
 			} else {
-				sb.append("&nbsp;&nbsp;<a href='list.bbs?pageNum=");
+				sb.append("&nbsp;&nbsp;<a href='car.bbs?pageNum=");
 				sb.append(i);
 				sb.append("'>");
 				sb.append(i);
@@ -50,7 +58,7 @@ public class Page {
 		sb.append("&nbsp;&nbsp;|");		
 		if(endPage < totalPage) {
 			sb.append("<img src='resources/images/right.png' width='30' height='9'");
-			sb.append(" onclick='location.href=\"list.bbs?pageNum=");
+			sb.append(" onclick='location.href=\"car.bbs?pageNum=");
 			sb.append(startPage + pageBlock);
 			sb.append("\"' style='cursor:pointer'> ");						
 		} else {

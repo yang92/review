@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pknu.main.dto.CategoryDto;
 import com.pknu.member.dao.MemberDao;
 import com.pknu.member.dto.MemberDto;
 import com.pknu.member.util.LoginStatus;
@@ -77,10 +78,15 @@ public class MemberServiceImpl implements MemberService{
 
 	// 프로필도 보고 수정도 하러가기
 	@Override	
-	public ModelAndView userProfile(String id) {
+	public ModelAndView userProfile(String id,ArrayList<CategoryDto> getCategories) {
 		mav=new ModelAndView();
+		
+		
+		
+		
 		memberDto = memberDao.userProfile(id);
 		mav.addObject("userInfo", memberDto);
+		mav.addObject("category", getCategories);
 		mav.setViewName("userProfile");
 		return mav;
 	}
@@ -92,7 +98,10 @@ public class MemberServiceImpl implements MemberService{
 		memberDao.profileUpdate(userInfo);
 	}
 	
-	
+	@Override
+	public ArrayList<CategoryDto> getCategory() {
+		return memberDao.getCategory();
+	}
 
 
 }

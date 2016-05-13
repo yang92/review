@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,6 +18,7 @@ import com.pknu.bbs.dto.GetListDto;
 import com.pknu.bbs.util.FileSaveHelper;
 import com.pknu.bbs.util.Page;
 import com.pknu.main.dto.CategoryDto;
+
 
 @Service
 public class BBSServiceImpl implements BBSService{
@@ -166,6 +168,7 @@ public class BBSServiceImpl implements BBSService{
 		return "redirect:/car.bbs?pageNum=1";
 	}
 
+	
 	@Override
 	public ArrayList<CategoryDto> getCategory() {
 		return bbsDao.getCategory();

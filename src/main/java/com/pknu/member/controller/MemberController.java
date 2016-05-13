@@ -1,5 +1,7 @@
 package com.pknu.member.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pknu.main.dto.CategoryDto;
 import com.pknu.member.dto.MemberDto;
 import com.pknu.member.service.MemberService;
 
@@ -70,7 +73,7 @@ public class MemberController {
 	@RequestMapping(value="/join.member", method = RequestMethod.POST)
 	public String join(MemberDto member){
 		memberService.insertMember(member);
-		return "main";
+		return "redirect:/";
 	}
 	
 	@RequestMapping("/logout.member")
@@ -94,7 +97,10 @@ public class MemberController {
 		id=(String) session.getAttribute("id");
 		System.out.println("프로필 보기 완료");
 		
-		return memberService.userProfile(id);
+		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+		getCategories = memberService.getCategory();
+		
+		return memberService.userProfile(id,getCategories);
 	}
 	
 	// 유저 프로필 수정ㅎ
@@ -115,4 +121,5 @@ public class MemberController {
 			return "carTest";
 		}
 
+		
 }

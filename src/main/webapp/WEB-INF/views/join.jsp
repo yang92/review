@@ -54,7 +54,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label" for="id">아이디</label>
         <div class="col-sm-6">
-          <input class="form-control" id="id" name="id" type="text" placeholder="아이디">
+          <input class="form-control" id="id" name="member_id" type="text" placeholder="아이디">
           <div id="idCheckStatus"></div>
         </div>
         </div>
@@ -62,7 +62,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label" for="pw">비밀번호</label>
         <div class="col-sm-6">
-          <input class="form-control" id="pw" name="pw" type="password" placeholder="비밀번호">
+          <input class="form-control" id="pw" name="member_pw" type="password" placeholder="비밀번호">
         <p class="help-block">숫자, 특수문자 포함 8자 이상</p>
         </div>
         </div>
@@ -77,13 +77,13 @@
         <div class="form-group">
             <label class="col-sm-3 control-label" for="name">이름</label>
           <div class="col-sm-6">
-            <input class="form-control" id="name" name="name" type="text" placeholder="이름">
+            <input class="form-control" id="name" name="member_name" type="text" placeholder="이름">
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-3 control-label" for="email">이메일</label>
         <div class="col-sm-6">
-          <input class="form-control" id="email" name="email" type="email" placeholder="이메일">
+          <input class="form-control" id="email" name="member_email" type="email" placeholder="이메일">
         </div>
         </div>
         
@@ -116,7 +116,7 @@
  	    <div class="form-group">
           <label class="col-sm-3 control-label" for="sex">성별</label>
         <div class="col-sm-6">
-          <select id="sex" name="sex" class="form-control">
+          <select id="sex" name="member_sex" class="form-control">
             	<option value="male">male</option>
             	<option value="female">female</option>
           </select>
@@ -133,7 +133,7 @@
  	    <div class="form-group">
           <label class="col-sm-3 control-label" for="birth">생년월일</label>
         <div class="col-sm-6">
-          <input class="form-control" id="birth" name="birth" type="text" placeholder="생년월일">
+          <input class="form-control" id="birth" name="member_birth" type="text" placeholder="생년월일">
         </div>
         </div>        
         
@@ -141,7 +141,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label" for="memo">자기소개</label>
         <div class="col-sm-6">
-          <textarea class="form-control" id="memo" name="memo" type="text" placeholder="자기소개"></textarea>
+          <textarea class="form-control" id="memo" name="member_memo" type="text" placeholder="자기소개"></textarea>
         </div>
         </div> 
         
