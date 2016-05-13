@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/w_r.JPG" />
+	
     <title>Weiver - 글 읽기</title>
 
     <!-- Bootstrap Core CSS -->
@@ -57,7 +58,7 @@
 
     <div id="wrapper">
 
-        <!-- Navigation -->
+         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -66,7 +67,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.main"><img src="resources/images/mainLogo.jpg" width="130"></a>
+                <a class="navbar-brand" href="main.main"><img src="resources/images/main.png" width="130"></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -124,86 +125,85 @@
                         
                         </c:forEach>
                         
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a>
-                        </li>
-                        <li>
-                            <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a>
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a> -->
                            
-                        </li>
-                        <li>
-                            <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a>
-                        </li>
-                        <li>
-                            <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/food.bbs">스마트폰</a>
-                                </li>
-                                <li>
-                                    <a href="/proj/food.bbs">컴퓨터</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/proj/game.bbs">Panels and Wells</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a> -->
+<!--                              <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">스마트폰</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">컴퓨터</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/game.bbs">Panels and Wells</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Third Level <span class="fa arrow"></span></a> -->
+<!--                                     <ul class="nav nav-third-level"> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                     </ul> -->
+<!--                                     /.nav-third-level -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="blank.html">Blank Page</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="login.html">Login Page</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        
         
         
         
@@ -236,7 +236,7 @@
                        		${article.weiver_content}
                        		<br/><br/>
                        		<div class="panel panel-default" id="userInfo">
-                       		${article.weiver_id} <br/>
+                       		&nbsp;&nbsp;${article.weiver_id} <br/>
 <!--                        		<div class="col-ms-2"> -->
                        		<img alt="이미지가 없습니다." src="resources/images/척.jpg" 
                                  class="img-thumbnail" id="profile_image" width="140" height="140">
@@ -246,6 +246,7 @@
 <!--                        		</div> -->
                        		</div>
                        		<div class="text-right">
+                       		
        					      <c:if test="${id !=null}">
 						    	  <td align="right">	    	
 						    	  <div class="btn-group">
@@ -271,6 +272,8 @@
 						    	  </td>   
 			      </c:if>  
                        		</div>
+                       		<br/>
+                  
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
                                     <i class="fa fa-comment fa-fw"></i> New Comment

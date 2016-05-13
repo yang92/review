@@ -8,7 +8,7 @@ import com.pknu.main.dto.CategoryDto;
 
 public interface MainService {
 
-	ModelAndView searchAll(String target);
+	ModelAndView searchAll(String target, ArrayList<CategoryDto> getCategories);
 
 	ArrayList<CategoryDto> getCategory();
 

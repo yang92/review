@@ -70,10 +70,12 @@ public class BBSServiceImpl implements BBSService{
 
 	// 글 읽기
 	@Override
-	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus) {
+	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, ArrayList<CategoryDto> getCategories, int fileStatus) {
 		mav = new ModelAndView();
 		BBSDto article=null;
 		List<FileDto> fileList = null;
+		
+		
 		
 		System.out.println("weiver ->>>"+weiver);
 		
@@ -91,6 +93,7 @@ public class BBSServiceImpl implements BBSService{
 		
 		mav.addObject("article", article);
 		mav.addObject("pageNum", pageNum);
+		mav.addObject("category", getCategories);
 		mav.setViewName("readCar");
 		
 		return mav;

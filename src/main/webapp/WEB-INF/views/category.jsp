@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.main"><img src="resources/images/mainLogo.jpg" width="130"></a>
+                <a class="navbar-brand" href="main.main"><img src="resources/images/main.png" width="130"></a>
             </div>
             <!-- /.navbar-header -->
 

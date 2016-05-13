@@ -19,10 +19,13 @@ public class MainServiceImpl implements MainService {
 	ModelAndView mav = new ModelAndView();
 	
 	@Override
-	public ModelAndView searchAll(String target) {
+	public ModelAndView searchAll(String target, ArrayList<CategoryDto> getCategories) {
 		List<BBSDto> articleList;
 		mav.addObject("target", target);
 		target = "%"+target+"%";
+		
+		mav.addObject("category", getCategories);
+		
 		
 		articleList = mainDao.searchTitle(target);
 		mav.addObject("articleList", articleList);

@@ -26,9 +26,11 @@ public class BBSController {
 	@Autowired
 	private BBSService bbsService;
 	
+	ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+	
 	@RequestMapping(value="/{whatPage}.bbs")
 	public ModelAndView listView(@RequestParam("pageNum") int pageNum, @PathVariable String whatPage, String target) {
-		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+		
 		getCategories = bbsService.getCategory();
 		
 		return bbsService.list(bbsService.getCategoryNum(whatPage), pageNum, whatPage, getCategories, target);//list로 tableName이랑 pageNum전달
@@ -39,7 +41,8 @@ public class BBSController {
 	public ModelAndView read_car(HttpServletRequest request, String weiver_no, int pageNum, int fileStatus){
 		//System.out.println("controller 에서의 weiver no : "+weiver_no);
 		String weiver="WEIVER_CAR";
-		return bbsService.readCar(weiver_no, weiver, pageNum, fileStatus);
+		getCategories = bbsService.getCategory();
+		return bbsService.readCar(weiver_no, weiver, pageNum, getCategories, fileStatus);
 	}
 	//글쓰기(writeForm)
 	@Transactional

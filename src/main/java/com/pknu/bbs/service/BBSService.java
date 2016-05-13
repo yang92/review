@@ -14,7 +14,7 @@ public interface BBSService {
 	public ModelAndView list(String tableName, int pageNum, String whatPage, ArrayList<CategoryDto> getCategories, String target);
 	
 	// 글 읽기
-	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, int fileStatus);
+	public ModelAndView readCar(String weiver_no, String weiver, int pageNum, ArrayList<CategoryDto> getCategories, int fileStatus);
 	// 글 쓰기
 	public String insertArticle(BBSDto article, HttpSession session);
 	// 글 삭제

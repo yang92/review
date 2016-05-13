@@ -12,7 +12,14 @@
     <meta name="author" content="">
 
     <title>Weiver</title>
-
+	
+	
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/w_r.JPG" />
+	
+	
+	
+	
+	
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 	
@@ -89,7 +96,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.main"><img src="resources/images/mainLogo.jpg" width="130"></a>
+                <a class="navbar-brand" href="main.main"><img src="resources/images/main.png" width="130"></a>
             </div>
             <!-- /.navbar-header -->
 

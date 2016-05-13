@@ -91,7 +91,7 @@ return result;
 	<div class="container text-center">
 		<div class="row">
 		<a href="/proj/main.main">
-		<img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
+		<img class="img-responsive center-block" src="resources/images/main.png" alt="Chania" width="200" height="50">
 		</a>
 		</div>
 	<hr>

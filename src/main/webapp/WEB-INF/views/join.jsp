@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/w_r.JPG" />
+    
+    
     <title>회원가입</title>
     
 <!--     생일 -->
@@ -40,7 +44,7 @@
         <div class="col-md-12">
         <div class="page-header">
         <a href="/proj/main.main">
-        <img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50">
+        <img class="img-responsive center-block" src="resources/images/main.png" alt="Chania" width="200" height="50">
         </a>
     	    	<h1>회원가입 <small>Register</small></h1>
     	    	

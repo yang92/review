@@ -1,25 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Weiver</title>
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/w_r.JPG" />
+
+
+    <title>weiver</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 	
     <!-- MetisMenu CSS -->
-    <link href="resources/css/metisMenu.min.css" rel="stylesheet">
+<!--     <link href="resources/css/metisMenu.min.css" rel="stylesheet"> -->
 
     <!-- Timeline CSS -->
-    <link href="resources/css/timeline.css" rel="stylesheet">
+<!--     <link href="resources/css/timeline.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
     <link href="resources/css/sb-admin-2.css" rel="stylesheet">
@@ -33,24 +37,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-<!--     table 전용 css -->
-<!--     <link rel="stylesheet" href="resources/css/table.css" media="screen" title="no title"> -->
-	
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    
-<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/table.js"></script>
-<title>자동차 게시판</title>
-
-
-
-
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <!-- 글씨 크기 조정 -->
 <style type="text/css">
@@ -124,11 +110,29 @@ function moveWrite() {
 	document.location.href="writeForm.bbs";
 }
 </script>
+
+<!-- back to TOP -->
+<style type="text/css">
+	.back-to-top {
+		cursor: pointer;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		display: none;
+	}
+</style>
+
+
+
+
 </head>
+
 <body>
-<div id="wrapper">
-<%-- <%@include file="category.jsp" %> --%>
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+    <div id="wrapper">
+
+         <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -136,7 +140,7 @@ function moveWrite() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.main"><img src="resources/images/mainLogo.jpg" width="130"></a>
+                <a class="navbar-brand" href="main.main"><img src="resources/images/main.png" width="130"></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -169,7 +173,7 @@ function moveWrite() {
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation" id="sidebar">
+            <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -194,14 +198,91 @@ function moveWrite() {
                         
                         </c:forEach>
                         
-                        
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-dashboard fa-fw"></i> 공지사항</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/food.bbs"><i class="fa fa-cutlery fa-fw"></i> 음식</a> -->
+                           
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/car.bbs?pageNum=1"><i class="fa fa-car fa-fw"></i> 자동차</a> -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/electronic.bbs"><i class="fa fa-desktop fa-fw"></i> 전자기기<span class="fa arrow"></span></a> -->
+<!--                              <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">스마트폰</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/food.bbs">컴퓨터</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="/proj/game.bbs"><i class="fa fa-gamepad fa-fw"></i> 게임<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="/proj/game.bbs">Panels and Wells</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Second Level Item</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="#">Third Level <span class="fa arrow"></span></a> -->
+<!--                                     <ul class="nav nav-third-level"> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                         <li> -->
+<!--                                             <a href="#">Third Level Item</a> -->
+<!--                                         </li> -->
+<!--                                     </ul> -->
+<!--                                     /.nav-third-level -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
+<!--                         <li> -->
+<!--                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a> -->
+<!--                             <ul class="nav nav-second-level"> -->
+<!--                                 <li> -->
+<!--                                     <a href="blank.html">Blank Page</a> -->
+<!--                                 </li> -->
+<!--                                 <li> -->
+<!--                                     <a href="login.html">Login Page</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                             /.nav-second-level -->
+<!--                         </li> -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        
+        
+        
+  
+        
+        
 
 <div class="container page-wrapper">
 	<div class="row">
@@ -313,7 +394,25 @@ function moveWrite() {
 
 
 </div>
- <!-- /#wrapper -->
+
+
+        
+        
+        
+        
+        
+
+
+
+<!-- back to TOP -->
+		<a id="back-to-top" href="#"
+			class="btn btn-primary btn-lg back-to-top" role="button"
+			title="Click to return on the top page" data-toggle="tooltip"
+			data-placement="left"><span
+			class="glyphicon glyphicon-chevron-up"></span></a>
+
+	</div>
+    <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="resources/js/jquery.min.js"></script>
@@ -324,7 +423,37 @@ function moveWrite() {
     <!-- Metis Menu Plugin JavaScript -->
     <script src="resources/js/metisMenu.min.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+<!--     <script src="resources/js/raphael-min.js"></script> -->
+<!--     <script src="resources/js/morris.min.js"></script> -->
+<!--     <script src="resources/js/morris-data.js"></script> -->
+
     <!-- Custom Theme JavaScript -->
     <script src="resources/js/sb-admin-2.js"></script>
+
+
+<!-- back to TOP -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 50) {
+					$('#back-to-top').fadeIn();
+				} else {
+					$('#back-to-top').fadeOut();
+				}
+			});
+			// scroll body to 0px on click
+			$('#back-to-top').click(function() {
+				$('#back-to-top').tooltip('hide');
+				$('body,html').animate({
+					scrollTop : 0
+				}, 800);
+				return false;
+			});
+
+			$('#back-to-top').tooltip('show');
+
+		});
+	</script>
 </body>
 </html>

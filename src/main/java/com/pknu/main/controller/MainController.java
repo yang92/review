@@ -42,7 +42,9 @@ public class MainController {
 	@RequestMapping(value="/search.main")
 	public ModelAndView search(String target) {
 //		System.out.println("POST POST POST POST POST ");
-		return mainService.searchAll(target);
+		ArrayList<CategoryDto> getCategories = new ArrayList<>(); 
+		getCategories = mainService.getCategory();
+		return mainService.searchAll(target, getCategories);
 	}
 	
 //	@RequestMapping(value="/search.main", method = RequestMethod.GET)

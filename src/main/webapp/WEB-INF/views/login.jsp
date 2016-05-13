@@ -8,6 +8,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="icon" href="../../favicon.ico">
 
+	<link rel="shortcut icon" type="image/x-icon" href="resources/images/w_r.JPG" />
+	
+	
+	
+	
 	<!-- Bootstrap -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- font awesome -->
@@ -25,7 +30,7 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-<title>Login</title>
+<title>로그인</title>
 <script>
 function moveJoin() {
 	document.location.href="join.member";
@@ -39,7 +44,7 @@ function moveMain() {
 <article class="container">
 <div class="col-md-12">
 <div class="page-header text-center">
-	<a href="/proj/main.main"><img class="img-responsive center-block" src="resources/images/mainLogo.jpg" alt="Chania" width="200" height="50"></a>
+	<a href="/proj/main.main"><img class="img-responsive center-block" src="resources/images/main.png" alt="Chania" width="200" height="50"></a>
 	<h1>로그인 <small>Login</small></h1>
 </div>
 <form class="form-horizontal" action="/proj/login.member" method="post">
